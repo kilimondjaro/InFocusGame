@@ -12,8 +12,7 @@ import CoreMedia
 
 class LearnViewController: UIViewController {
     @IBOutlet weak var videoPreview: UIView!
-    @IBOutlet weak var predictionLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var checkButton: UIButton!
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
@@ -25,11 +24,9 @@ class LearnViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        predictionLabel.text = ""
-        timeLabel.text = ""
-        
         learnProcessor = LearnProcessor(semaphore: semaphore)
         setUpCamera()
+        setUpInterface()
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,6 +35,11 @@ class LearnViewController: UIViewController {
     }
     
     // MARK: - Initialization
+    
+    func setUpInterface() {
+        checkButton.layer.cornerRadius = checkButton.frame.size.height / 2
+        checkButton.clipsToBounds = true
+    }
     
     func setUpCamera() {
         videoCapture = VideoCapture()
@@ -54,6 +56,11 @@ class LearnViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func checkButtonPressed(_ sender: UIButton) {
+        
+    }
+    
     
     // MARK: - UI stuff
     

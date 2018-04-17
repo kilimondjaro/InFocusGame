@@ -13,6 +13,8 @@ class LearnProcessor {
     let objectRecognition: ObjectRecognition?
     let semaphore: DispatchSemaphore?
     let voiveAssistant = VoiceAssistant()
+    private var isChecking = false
+    
     
     init(semaphore: DispatchSemaphore) {
         self.semaphore = semaphore
@@ -20,8 +22,8 @@ class LearnProcessor {
         objectRecognition?.setUpVision(completionHandler: requestDidComplete)
     }
     
-    func analyze(results: [(String, Double)]) {
-        
+    func check() {
+        isChecking = true
     }
     
     func requestDidComplete(request: VNRequest, error: Error?) {
@@ -34,9 +36,10 @@ class LearnProcessor {
             
             var hasNotebook = false
             for (i, pred) in top5.enumerated() {
-                if pred.0.range(of:"notebook") != nil {
+                if pred.0.components(separatedBy: " ")[0] == "n03642806" {
                     hasNotebook = true
                 }
+                
                 print(String(format: "%d: %@ (%3.2f%%)", i + 1, pred.0, pred.1 * 100))
             }
             
@@ -44,7 +47,6 @@ class LearnProcessor {
                 voiveAssistant.playFile(type: Voice.noticed)
             }
             
-//            analyze(results: top5)
             DispatchQueue.main.async {
                 self.semaphore?.signal()
             }

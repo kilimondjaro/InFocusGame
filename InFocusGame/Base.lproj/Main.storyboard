@@ -101,22 +101,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfu-fV-9fu" userLabel="Bottom menu">
                                 <rect key="frame" x="0.0" y="475" width="375" height="182"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-w6-nTi">
-                                        <rect key="frame" x="47" y="60" width="273" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vT-sv-g0O">
-                                        <rect key="frame" x="47" y="106" width="253" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlB-UK-zkO">
+                                        <rect key="frame" x="137" y="74" width="100" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.91804984140000001" blue="0.4674621961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Hgk-16-x8T"/>
+                                            <constraint firstAttribute="width" constant="100" id="qGg-WE-pZD"/>
+                                        </constraints>
+                                        <state key="normal" title="Check"/>
+                                        <connections>
+                                            <action selector="checkButtonPressed:" destination="XMe-zC-xdY" eventType="touchUpInside" id="Gzb-0R-yPZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BlB-UK-zkO" secondAttribute="bottom" constant="8" id="Ytb-mN-PSk"/>
+                                    <constraint firstItem="BlB-UK-zkO" firstAttribute="centerX" secondItem="bfu-fV-9fu" secondAttribute="centerX" id="fDd-ue-DtT"/>
                                     <constraint firstAttribute="height" constant="182" id="krO-zP-kXD"/>
                                     <constraint firstAttribute="width" constant="375" id="vM7-5K-9Ig"/>
                                 </constraints>
@@ -134,8 +134,7 @@
                         <viewLayoutGuide key="safeArea" id="xlX-VV-xVM"/>
                     </view>
                     <connections>
-                        <outlet property="predictionLabel" destination="gmx-w6-nTi" id="FBE-9C-3I3"/>
-                        <outlet property="timeLabel" destination="5vT-sv-g0O" id="jYv-Gg-s5c"/>
+                        <outlet property="checkButton" destination="BlB-UK-zkO" id="RSs-cg-GYY"/>
                         <outlet property="videoPreview" destination="KgQ-za-QFe" id="9P5-bV-rxC"/>
                     </connections>
                 </viewController>
