@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="149.59999999999999" y="115.59220389805098"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Type View Controller-->
         <scene sceneID="jjw-5f-Ier">
             <objects>
-                <viewController id="oal-s2-6ab" sceneMemberID="viewController">
+                <viewController id="oal-s2-6ab" customClass="GameTypeViewController" customModule="InFocusGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KyA-it-qY2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,6 +64,9 @@
                                 <rect key="frame" x="144" y="360" width="87" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Learn"/>
+                                <connections>
+                                    <segue destination="XMe-zC-xdY" kind="showDetail" id="V3C-yh-2Pn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-kk-hcf">
                                 <rect key="frame" x="163" y="425" width="49" height="30"/>
@@ -83,6 +86,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dg9-EG-Mon" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1040.8" y="115.59220389805098"/>
+        </scene>
+        <!--Learn View Controller-->
+        <scene sceneID="dxw-Ii-pgv">
+            <objects>
+                <viewController id="XMe-zC-xdY" customClass="LearnViewController" customModule="InFocusGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j68-0J-A4b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgQ-za-QFe" userLabel="Video Preview">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfu-fV-9fu" userLabel="Bottom menu">
+                                <rect key="frame" x="0.0" y="475" width="375" height="182"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-w6-nTi">
+                                        <rect key="frame" x="47" y="60" width="273" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vT-sv-g0O">
+                                        <rect key="frame" x="47" y="106" width="253" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="krO-zP-kXD"/>
+                                    <constraint firstAttribute="width" constant="375" id="vM7-5K-9Ig"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87991751269035534" green="0.87991751269035534" blue="0.87991751269035534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KgQ-za-QFe" firstAttribute="leading" secondItem="xlX-VV-xVM" secondAttribute="leading" id="1nz-xo-Nbf"/>
+                            <constraint firstItem="KgQ-za-QFe" firstAttribute="bottom" secondItem="xlX-VV-xVM" secondAttribute="bottom" id="DaT-lQ-MY7"/>
+                            <constraint firstItem="xlX-VV-xVM" firstAttribute="bottom" secondItem="bfu-fV-9fu" secondAttribute="bottom" constant="10" id="EMm-Yd-SeX"/>
+                            <constraint firstItem="bfu-fV-9fu" firstAttribute="leading" secondItem="KgQ-za-QFe" secondAttribute="leading" id="fnl-Fr-LaV"/>
+                            <constraint firstItem="KgQ-za-QFe" firstAttribute="trailing" secondItem="xlX-VV-xVM" secondAttribute="trailing" id="hzV-MU-yAx"/>
+                            <constraint firstItem="KgQ-za-QFe" firstAttribute="top" secondItem="j68-0J-A4b" secondAttribute="top" id="xB5-iT-DQJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xlX-VV-xVM"/>
+                    </view>
+                    <connections>
+                        <outlet property="predictionLabel" destination="gmx-w6-nTi" id="FBE-9C-3I3"/>
+                        <outlet property="timeLabel" destination="5vT-sv-g0O" id="jYv-Gg-s5c"/>
+                        <outlet property="videoPreview" destination="KgQ-za-QFe" id="9P5-bV-rxC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbp-fO-YAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5999999999999" y="115.59220389805098"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pBR-JC-EVN">

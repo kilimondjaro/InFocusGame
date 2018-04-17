@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		266503832085F13300947473 /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266503822085F13300947473 /* GameTypeViewController.swift */; };
+		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
+		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
+		2665038920860C0B00947473 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2665038820860C0B00947473 /* MobileNet.mlmodel */; };
 		26E035512085DF4400832BDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E035532085DF4400832BDF /* Localizable.strings */; };
 		26E0355E2085E60F00832BDF /* hi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26E035602085E60F00832BDF /* hi.mp3 */; };
 		26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723620851AAA004A9CC0 /* AppDelegate.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		266503822085F13300947473 /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
+		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		2665038820860C0B00947473 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		26E0354D2085DE7100832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		26E035542085DF4900832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26E035552085DF5A00832BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -86,6 +94,7 @@
 		26E035482085DC8E00832BDF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2665038820860C0B00947473 /* MobileNet.mlmodel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				26F8723820851AAA004A9CC0 /* RootViewController.swift */,
+				266503822085F13300947473 /* GameTypeViewController.swift */,
+				2665038420860B9000947473 /* LearnViewController.swift */,
+				2665038620860BC800947473 /* VideoCapture.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,8 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2665038520860B9000947473 /* LearnViewController.swift in Sources */,
 				26F8723F20851AAA004A9CC0 /* InFocusGame.xcdatamodeld in Sources */,
 				26F8723920851AAA004A9CC0 /* RootViewController.swift in Sources */,
+				266503832085F13300947473 /* GameTypeViewController.swift in Sources */,
+				2665038920860C0B00947473 /* MobileNet.mlmodel in Sources */,
+				2665038720860BC800947473 /* VideoCapture.swift in Sources */,
 				26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,7 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95JJXJGL3U;
 				INFOPLIST_FILE = InFocusGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,7 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95JJXJGL3U;
 				INFOPLIST_FILE = InFocusGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
