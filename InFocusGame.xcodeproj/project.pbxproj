@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26E035512085DF4400832BDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E035532085DF4400832BDF /* Localizable.strings */; };
+		26E0355E2085E60F00832BDF /* hi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26E035602085E60F00832BDF /* hi.mp3 */; };
 		26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723620851AAA004A9CC0 /* AppDelegate.swift */; };
-		26F8723920851AAA004A9CC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723820851AAA004A9CC0 /* ViewController.swift */; };
+		26F8723920851AAA004A9CC0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723820851AAA004A9CC0 /* RootViewController.swift */; };
 		26F8723C20851AAA004A9CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F8723A20851AAA004A9CC0 /* Main.storyboard */; };
 		26F8723F20851AAA004A9CC0 /* InFocusGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723D20851AAA004A9CC0 /* InFocusGame.xcdatamodeld */; };
 		26F8724120851AAC004A9CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F8724020851AAC004A9CC0 /* Assets.xcassets */; };
@@ -35,9 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26E0354D2085DE7100832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		26E035542085DF4900832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		26E035552085DF5A00832BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		26E0355F2085E60F00832BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Base; path = Base.lproj/hi.mp3; sourceTree = "<group>"; };
+		26E035622085ED0D00832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ru; path = ru.lproj/hi.mp3; sourceTree = "<group>"; };
 		26F8723320851AAA004A9CC0 /* InFocusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InFocusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F8723620851AAA004A9CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26F8723820851AAA004A9CC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26F8723820851AAA004A9CC0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		26F8723B20851AAA004A9CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26F8723E20851AAA004A9CC0 /* InFocusGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InFocusGame.xcdatamodel; sourceTree = "<group>"; };
 		26F8724020851AAC004A9CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +83,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26E035482085DC8E00832BDF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		26E0354A2085DCC600832BDF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		26E0354B2085DDB100832BDF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				26F8723820851AAA004A9CC0 /* RootViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		26E0354E2085DEA400832BDF /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				26E035532085DF4400832BDF /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		26E035592085E57100832BDF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				26E0355A2085E57900832BDF /* Voice */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		26E0355A2085E57900832BDF /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				26E035602085E60F00832BDF /* hi.mp3 */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
 		26F8722A20851AAA004A9CC0 = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +152,12 @@
 		26F8723520851AAA004A9CC0 /* InFocusGame */ = {
 			isa = PBXGroup;
 			children = (
+				26E035592085E57100832BDF /* Assets */,
+				26E0354E2085DEA400832BDF /* Localization */,
+				26E0354B2085DDB100832BDF /* Controllers */,
+				26E0354A2085DCC600832BDF /* Helpers */,
+				26E035482085DC8E00832BDF /* Models */,
 				26F8723620851AAA004A9CC0 /* AppDelegate.swift */,
-				26F8723820851AAA004A9CC0 /* ViewController.swift */,
 				26F8723A20851AAA004A9CC0 /* Main.storyboard */,
 				26F8724020851AAC004A9CC0 /* Assets.xcassets */,
 				26F8724220851AAC004A9CC0 /* LaunchScreen.storyboard */,
@@ -214,6 +271,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 26F8722A20851AAA004A9CC0;
 			productRefGroup = 26F8723420851AAA004A9CC0 /* Products */;
@@ -232,7 +290,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E0355E2085E60F00832BDF /* hi.mp3 in Resources */,
 				26F8724420851AAC004A9CC0 /* LaunchScreen.storyboard in Resources */,
+				26E035512085DF4400832BDF /* Localizable.strings in Resources */,
 				26F8724120851AAC004A9CC0 /* Assets.xcassets in Resources */,
 				26F8723C20851AAA004A9CC0 /* Main.storyboard in Resources */,
 			);
@@ -260,7 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F8723F20851AAA004A9CC0 /* InFocusGame.xcdatamodeld in Sources */,
-				26F8723920851AAA004A9CC0 /* ViewController.swift in Sources */,
+				26F8723920851AAA004A9CC0 /* RootViewController.swift in Sources */,
 				26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +357,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		26E035532085DF4400832BDF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26E035542085DF4900832BDF /* ru */,
+				26E035552085DF5A00832BDF /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		26E035602085E60F00832BDF /* hi.mp3 */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26E0355F2085E60F00832BDF /* Base */,
+				26E035622085ED0D00832BDF /* ru */,
+			);
+			name = hi.mp3;
+			sourceTree = "<group>";
+		};
 		26F8723A20851AAA004A9CC0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -309,6 +387,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				26F8724320851AAC004A9CC0 /* Base */,
+				26E0354D2085DE7100832BDF /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -320,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -380,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
