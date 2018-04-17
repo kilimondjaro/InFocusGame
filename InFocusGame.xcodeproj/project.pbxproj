@@ -11,6 +11,11 @@
 		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
 		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
 		2665038920860C0B00947473 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2665038820860C0B00947473 /* MobileNet.mlmodel */; };
+		2665038B20862B0100947473 /* noticed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2665038A20862B0100947473 /* noticed.mp3 */; };
+		2665038D20862B4F00947473 /* ObjectsTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038C20862B4F00947473 /* ObjectsTypes.swift */; };
+		2665039020862D2600947473 /* VoiceAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038F20862D2600947473 /* VoiceAssistant.swift */; };
+		2665039220862E4F00947473 /* ObjectRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665039120862E4E00947473 /* ObjectRecognition.swift */; };
+		26650394208636B100947473 /* LearnProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26650393208636B100947473 /* LearnProcessor.swift */; };
 		26E035512085DF4400832BDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E035532085DF4400832BDF /* Localizable.strings */; };
 		26E0355E2085E60F00832BDF /* hi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26E035602085E60F00832BDF /* hi.mp3 */; };
 		26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723620851AAA004A9CC0 /* AppDelegate.swift */; };
@@ -45,6 +50,11 @@
 		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		2665038820860C0B00947473 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		2665038A20862B0100947473 /* noticed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noticed.mp3; sourceTree = "<group>"; };
+		2665038C20862B4F00947473 /* ObjectsTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsTypes.swift; sourceTree = "<group>"; };
+		2665038F20862D2600947473 /* VoiceAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistant.swift; sourceTree = "<group>"; };
+		2665039120862E4E00947473 /* ObjectRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRecognition.swift; sourceTree = "<group>"; };
+		26650393208636B100947473 /* LearnProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnProcessor.swift; sourceTree = "<group>"; };
 		26E0354D2085DE7100832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		26E035542085DF4900832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26E035552085DF5A00832BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -91,6 +101,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2665038E20862CE800947473 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				2665038F20862D2600947473 /* VoiceAssistant.swift */,
+				2665039120862E4E00947473 /* ObjectRecognition.swift */,
+				26650393208636B100947473 /* LearnProcessor.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		26E035482085DC8E00832BDF /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +122,7 @@
 		26E0354A2085DCC600832BDF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2665038C20862B4F00947473 /* ObjectsTypes.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -136,6 +157,7 @@
 		26E0355A2085E57900832BDF /* Voice */ = {
 			isa = PBXGroup;
 			children = (
+				2665038A20862B0100947473 /* noticed.mp3 */,
 				26E035602085E60F00832BDF /* hi.mp3 */,
 			);
 			path = Voice;
@@ -164,6 +186,7 @@
 		26F8723520851AAA004A9CC0 /* InFocusGame */ = {
 			isa = PBXGroup;
 			children = (
+				2665038E20862CE800947473 /* View Models */,
 				26E035592085E57100832BDF /* Assets */,
 				26E0354E2085DEA400832BDF /* Localization */,
 				26E0354B2085DDB100832BDF /* Controllers */,
@@ -305,6 +328,7 @@
 				26E0355E2085E60F00832BDF /* hi.mp3 in Resources */,
 				26F8724420851AAC004A9CC0 /* LaunchScreen.storyboard in Resources */,
 				26E035512085DF4400832BDF /* Localizable.strings in Resources */,
+				2665038B20862B0100947473 /* noticed.mp3 in Resources */,
 				26F8724120851AAC004A9CC0 /* Assets.xcassets in Resources */,
 				26F8723C20851AAA004A9CC0 /* Main.storyboard in Resources */,
 			);
@@ -331,10 +355,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2665039220862E4F00947473 /* ObjectRecognition.swift in Sources */,
 				2665038520860B9000947473 /* LearnViewController.swift in Sources */,
+				2665039020862D2600947473 /* VoiceAssistant.swift in Sources */,
 				26F8723F20851AAA004A9CC0 /* InFocusGame.xcdatamodeld in Sources */,
 				26F8723920851AAA004A9CC0 /* RootViewController.swift in Sources */,
+				26650394208636B100947473 /* LearnProcessor.swift in Sources */,
 				266503832085F13300947473 /* GameTypeViewController.swift in Sources */,
+				2665038D20862B4F00947473 /* ObjectsTypes.swift in Sources */,
 				2665038920860C0B00947473 /* MobileNet.mlmodel in Sources */,
 				2665038720860BC800947473 /* VideoCapture.swift in Sources */,
 				26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */,

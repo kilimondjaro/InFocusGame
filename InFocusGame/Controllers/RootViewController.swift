@@ -16,6 +16,13 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url = Bundle.main.url(forResource: "hi", withExtension: "mp3")
+        do {
+            bombSoundEffect = try AVAudioPlayer(contentsOf: url!)
+            
+        } catch {
+            print("Could not load file")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +31,7 @@ class RootViewController: UIViewController {
     }
 
     @IBAction func playMusic(_ sender: UIButton) {
-        let url = Bundle.main.url(forResource: "hi", withExtension: "mp3")
-        
-        do {
-            bombSoundEffect = try AVAudioPlayer(contentsOf: url!)
-            bombSoundEffect?.play()
-        } catch {
-            print("Could not load file")
-        }
+        bombSoundEffect?.play()
     }
     
 }
