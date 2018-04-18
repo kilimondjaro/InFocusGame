@@ -1010,3 +1010,12 @@ let objectsTypes = [
      "n13133613": "ear, spike, capitulum",
      "n15075141": "toilet tissue, toilet paper, bathroom tissu"
 ]
+
+let flatObjects = [
+    "apple": ["n07742313", "n07760859"],
+    "banana": ["n07753592"],
+    "chair": ["n02791124", "n03376595", "n04099969"],
+    "cup": ["n03733805", "n07930864", "n03063599"],
+    "table": ["n03201208", "n03179701"],
+    "computer": ["n03832673", "n03642806", "n03085013"]
+]

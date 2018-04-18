@@ -10,9 +10,10 @@ import UIKit
 import Vision
 import CoreMedia
 
-class LearnViewController: UIViewController {
+class LearnViewController: UIViewController, LearnProcessotDelegate {
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var objectLabel: UILabel!
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
@@ -24,7 +25,7 @@ class LearnViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        learnProcessor = LearnProcessor(semaphore: semaphore)
+        initLearnProcessor()
         setUpCamera()
         setUpInterface()
     }
@@ -35,6 +36,13 @@ class LearnViewController: UIViewController {
     }
     
     // MARK: - Initialization
+    
+    func initLearnProcessor() {
+        learnProcessor = LearnProcessor(semaphore: semaphore)
+        learnProcessor?.delegate = self
+        let object = learnProcessor?.pickUpObjectForSearch()
+        objectLabel.text = object
+    }
     
     func setUpInterface() {
         checkButton.layer.cornerRadius = checkButton.frame.size.height / 2
@@ -57,8 +65,18 @@ class LearnViewController: UIViewController {
         }
     }
     
+    func objectChecked(correct: Bool) {
+        print(correct ? "TRUE" : "FALSE")
+        if (correct) {
+            DispatchQueue.main.async {
+                let object = self.learnProcessor?.pickUpObjectForSearch()
+                self.objectLabel.text = object
+            }
+        }
+    }
+    
     @IBAction func checkButtonPressed(_ sender: UIButton) {
-        
+        learnProcessor?.check()
     }
     
     

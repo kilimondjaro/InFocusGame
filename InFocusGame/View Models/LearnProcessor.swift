@@ -9,12 +9,19 @@
 import Foundation
 import Vision
 
+protocol LearnProcessotDelegate: class {
+    func objectChecked(correct: Bool)
+}
+
 class LearnProcessor {
     let objectRecognition: ObjectRecognition?
     let semaphore: DispatchSemaphore?
     let voiveAssistant = VoiceAssistant()
     private var isChecking = false
-    
+    private var checkCounter = 0
+    private var checkCounterValue = 0
+    private var currentObject = "apple"
+    weak var delegate: LearnProcessotDelegate?
     
     init(semaphore: DispatchSemaphore) {
         self.semaphore = semaphore
@@ -26,26 +33,75 @@ class LearnProcessor {
         isChecking = true
     }
     
+    func pickUpObjectForSearch() -> String {
+        let number = arc4random_uniform(UInt32(flatObjects.count))
+        let object = Array(flatObjects.keys)[Int(number)]
+        currentObject = object
+    
+        return object
+    }
+    
+    
+    func resultContainsObject(values: [(String, Double)], bound: Int?) -> Bool {
+        for (i, pred) in values.enumerated() {
+            if (bound != nil && i >= bound!) {
+                return false
+            }
+            
+            let id = pred.0.components(separatedBy: " ")[0]
+            if (flatObjects[currentObject]?.contains(id))! && pred.1 > 0.15 {
+                print("\(i) - \(pred.0) - \(pred.1)")
+                return true
+            }
+        }
+        return false
+    }
+    
+    
+    
+    func noticed(values: [(String, Double)]) {
+        if (resultContainsObject(values: values, bound: nil)) {
+            voiveAssistant.playFile(type: Voice.noticed)
+        }
+    }
+    
+    // TODO - optimize selection mechanism
+    func processCheck(values: [(String, Double)]) {
+        if (checkCounter >= 10) {
+            if (checkCounterValue > 5) {
+                delegate?.objectChecked(correct: true)
+            }
+            else {
+                delegate?.objectChecked(correct: false)
+            }
+            checkCounterValue = 0
+            checkCounter = 0
+            isChecking = false
+        }
+        else {
+            checkCounter += 1
+            
+            checkCounterValue += resultContainsObject(values: values, bound: 3) ? 1 : 0
+        }
+    }
+    
     func requestDidComplete(request: VNRequest, error: Error?) {
         if let observations = request.results as? [VNClassificationObservation] {
             
             // The observations appear to be sorted by confidence already, so we
             // take the top 5 and map them to an array of (String, Double) tuples.
+            
+            
             let top5 = observations.prefix(through: 4)
                 .map { ($0.identifier, Double($0.confidence)) }
             
-            var hasNotebook = false
-            for (i, pred) in top5.enumerated() {
-                if pred.0.components(separatedBy: " ")[0] == "n03642806" {
-                    hasNotebook = true
-                }
-                
-                print(String(format: "%d: %@ (%3.2f%%)", i + 1, pred.0, pred.1 * 100))
+            if (isChecking) {
+                processCheck(values: top5)
+            }
+            else {
+                noticed(values: top5)
             }
             
-            if (hasNotebook) {
-                voiveAssistant.playFile(type: Voice.noticed)
-            }
             
             DispatchQueue.main.async {
                 self.semaphore?.signal()

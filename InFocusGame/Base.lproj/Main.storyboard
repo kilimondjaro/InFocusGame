@@ -98,6 +98,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgQ-za-QFe" userLabel="Video Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfX-MA-UsG" userLabel="Upper View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="170"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEb-qe-2J9">
+                                        <rect key="frame" x="55" y="8" width="264" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="Gxb-HL-IfD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vEb-qe-2J9" firstAttribute="leading" secondItem="hfX-MA-UsG" secondAttribute="leading" constant="55" id="5Nd-E9-lOi"/>
+                                    <constraint firstItem="vEb-qe-2J9" firstAttribute="top" secondItem="hfX-MA-UsG" secondAttribute="top" constant="8" id="FGA-qr-JGe"/>
+                                    <constraint firstAttribute="trailing" secondItem="vEb-qe-2J9" secondAttribute="trailing" constant="56" id="ZFL-bQ-IgW"/>
+                                    <constraint firstAttribute="height" constant="170" id="Zee-wr-iVm"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfu-fV-9fu" userLabel="Bottom menu">
                                 <rect key="frame" x="0.0" y="475" width="375" height="182"/>
                                 <subviews>
@@ -125,8 +145,11 @@
                         <color key="backgroundColor" red="0.87991751269035534" green="0.87991751269035534" blue="0.87991751269035534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KgQ-za-QFe" firstAttribute="leading" secondItem="xlX-VV-xVM" secondAttribute="leading" id="1nz-xo-Nbf"/>
+                            <constraint firstItem="hfX-MA-UsG" firstAttribute="top" secondItem="xlX-VV-xVM" secondAttribute="top" id="Bas-QF-x32"/>
                             <constraint firstItem="KgQ-za-QFe" firstAttribute="bottom" secondItem="xlX-VV-xVM" secondAttribute="bottom" id="DaT-lQ-MY7"/>
                             <constraint firstItem="xlX-VV-xVM" firstAttribute="bottom" secondItem="bfu-fV-9fu" secondAttribute="bottom" constant="10" id="EMm-Yd-SeX"/>
+                            <constraint firstItem="hfX-MA-UsG" firstAttribute="trailing" secondItem="xlX-VV-xVM" secondAttribute="trailing" id="Ubd-4t-ZBp"/>
+                            <constraint firstItem="hfX-MA-UsG" firstAttribute="leading" secondItem="xlX-VV-xVM" secondAttribute="leading" id="dKB-zL-65t"/>
                             <constraint firstItem="bfu-fV-9fu" firstAttribute="leading" secondItem="KgQ-za-QFe" secondAttribute="leading" id="fnl-Fr-LaV"/>
                             <constraint firstItem="KgQ-za-QFe" firstAttribute="trailing" secondItem="xlX-VV-xVM" secondAttribute="trailing" id="hzV-MU-yAx"/>
                             <constraint firstItem="KgQ-za-QFe" firstAttribute="top" secondItem="j68-0J-A4b" secondAttribute="top" id="xB5-iT-DQJ"/>
@@ -135,6 +158,7 @@
                     </view>
                     <connections>
                         <outlet property="checkButton" destination="BlB-UK-zkO" id="RSs-cg-GYY"/>
+                        <outlet property="objectLabel" destination="vEb-qe-2J9" id="uJ8-og-75m"/>
                         <outlet property="videoPreview" destination="KgQ-za-QFe" id="9P5-bV-rxC"/>
                     </connections>
                 </viewController>
