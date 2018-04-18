@@ -20,13 +20,32 @@ class LearnProcessor {
     private var isChecking = false
     private var checkCounter = 0
     private var checkCounterValue = 0
+    private var currentObjectIndex = 0
     private var currentObject = "apple"
     weak var delegate: LearnProcessotDelegate?
+    private var flatObjectsData: [String: Bool] = [:]
+    private var filteredObjectsCount = 0
+    private var randomObjectSequence: [Int] = []
+    
     
     init(semaphore: DispatchSemaphore) {
         self.semaphore = semaphore
         objectRecognition = ObjectRecognition()
         objectRecognition?.setUpVision(completionHandler: requestDidComplete)
+        
+        
+        
+        let result = CoreDataManager.instance.fetch(entity: "FlatObjects")
+        for data in result {
+            for name in Constants.flatObjects {
+                flatObjectsData[name] = data.value(forKey: name) as? Bool
+            }
+        }
+        
+        let filteredObjets = Constants.flatObjects.filter(({ flatObjectsData[$0]! }))
+        filteredObjectsCount = filteredObjets.count
+        
+        randomObjectSequence = (0...filteredObjectsCount-1).shuffled()
     }
     
     func check() {
@@ -34,10 +53,17 @@ class LearnProcessor {
     }
     
     func pickUpObjectForSearch() -> String {
-        let number = arc4random_uniform(UInt32(Constants.flatObjects.count))
-        let object = Constants.flatObjects[Int(number)]
+        
+        let values = Constants.flatObjects.filter(({ flatObjectsData[$0]! }))
+        let object = values[randomObjectSequence[currentObjectIndex]]
+        currentObjectIndex += 1
         currentObject = object
-    
+        
+        if (currentObjectIndex > filteredObjectsCount - 1) {
+            currentObjectIndex = 0
+            randomObjectSequence = (0...filteredObjectsCount-1).shuffled()
+        }
+        
         return object
     }
     
@@ -49,7 +75,7 @@ class LearnProcessor {
             }
             
             let id = pred.0.components(separatedBy: " ")[0]
-            if (objectsDict[currentObject]?.contains(id))! && pred.1 > 0.15 {
+            if (flatObjectsData[currentObject]! && (objectsDict[currentObject]?.contains(id))! && pred.1 > 0.15) {
                 print("\(i) - \(pred.0) - \(pred.1)")
                 return true
             }
@@ -72,6 +98,8 @@ class LearnProcessor {
                 delegate?.objectChecked(correct: true)
             }
             else {
+                // TODO - move it
+                voiveAssistant.playFile(type: Voice.oops)
                 delegate?.objectChecked(correct: false)
             }
             checkCounterValue = 0

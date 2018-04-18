@@ -40,7 +40,7 @@ class ObjectsListsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return flatObjects.count
+        return Constants.flatObjects.count
     }
 
     
@@ -49,7 +49,7 @@ class ObjectsListsTableViewController: UITableViewController {
         // TODO - change for many sections
         // TODO - add localization
         
-        let obj = flatObjects[indexPath.row]
+        let obj = Constants.flatObjects[indexPath.row]
         cell.objectSwitch.isOn = flatObjectsData[obj]!
         cell.objectLabel.text =  obj
         cell.objectName = obj

@@ -12,6 +12,8 @@
 		26109E3C208766D100038E4F /* ObjectsListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E3B208766D100038E4F /* ObjectsListsTableViewController.swift */; };
 		26109E3E208767C700038E4F /* ObjectsListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E3D208767C700038E4F /* ObjectsListsTableViewCell.swift */; };
 		26109E4220879B6700038E4F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E4120879B6700038E4F /* CoreDataManager.swift */; };
+		26109E442087C97800038E4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E432087C97800038E4F /* Extensions.swift */; };
+		26109E462087CF9300038E4F /* oops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E452087CF9300038E4F /* oops.mp3 */; };
 		266503832085F13300947473 /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266503822085F13300947473 /* GameTypeViewController.swift */; };
 		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
 		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
@@ -56,6 +58,8 @@
 		26109E3B208766D100038E4F /* ObjectsListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListsTableViewController.swift; sourceTree = "<group>"; };
 		26109E3D208767C700038E4F /* ObjectsListsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListsTableViewCell.swift; sourceTree = "<group>"; };
 		26109E4120879B6700038E4F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		26109E432087C97800038E4F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		26109E452087CF9300038E4F /* oops.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oops.mp3; sourceTree = "<group>"; };
 		266503822085F13300947473 /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
 		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			children = (
 				2665038C20862B4F00947473 /* ObjectsTypes.swift */,
 				26109E4120879B6700038E4F /* CoreDataManager.swift */,
+				26109E432087C97800038E4F /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 		26E0355A2085E57900832BDF /* Voice */ = {
 			isa = PBXGroup;
 			children = (
+				26109E452087CF9300038E4F /* oops.mp3 */,
 				2665038A20862B0100947473 /* noticed.mp3 */,
 				26E035602085E60F00832BDF /* hi.mp3 */,
 			);
@@ -342,6 +348,7 @@
 			files = (
 				26E0355E2085E60F00832BDF /* hi.mp3 in Resources */,
 				26F8724420851AAC004A9CC0 /* LaunchScreen.storyboard in Resources */,
+				26109E462087CF9300038E4F /* oops.mp3 in Resources */,
 				26E035512085DF4400832BDF /* Localizable.strings in Resources */,
 				2665038B20862B0100947473 /* noticed.mp3 in Resources */,
 				26F8724120851AAC004A9CC0 /* Assets.xcassets in Resources */,
@@ -384,6 +391,7 @@
 				2665038720860BC800947473 /* VideoCapture.swift in Sources */,
 				26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */,
 				26109E3E208767C700038E4F /* ObjectsListsTableViewCell.swift in Sources */,
+				26109E442087C97800038E4F /* Extensions.swift in Sources */,
 				26109E4220879B6700038E4F /* CoreDataManager.swift in Sources */,
 				26109E3720875CE600038E4F /* SettingsViewController.swift in Sources */,
 			);

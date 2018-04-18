@@ -27,18 +27,8 @@ class ObjectsListsTableViewCell: UITableViewCell {
     }
     
     @IBAction func switchObject(_ sender: UISwitch) {
-        let context = CoreDataManager.instance.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FlatObjects")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                data.setValue(objectSwitch.isOn, forKey: objectName)
-            }
-            try context.save()
-        } catch {
-            print("Failed")
-        }
+        // TODO - change for many sections
+        CoreDataManager.instance.setValue(entity: "FlatObjects", key: objectName, value: objectSwitch.isOn)
     }
     
 }

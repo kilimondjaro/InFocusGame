@@ -1018,17 +1018,6 @@ struct Constants {
 }
 
 
-let flatObjects = [
-    "apple",
-    "banana",
-    "chair",
-    "cup",
-    "table",
-    "computer"
-]
-
-
-
 let objectsDict = [
     "apple": ["n07742313", "n07760859"],
     "banana": ["n07753592"],
