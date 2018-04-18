@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 let objectsTypes = [
     "n01440764": "tench, Tinca tinca",
@@ -1010,6 +1011,11 @@ let objectsTypes = [
      "n13133613": "ear, spike, capitulum",
      "n15075141": "toilet tissue, toilet paper, bathroom tissu"
 ]
+
+
+struct Constants {
+    static var flatObjects: [String] = CoreDataManager.instance.getAttributes(entity: "FlatObjects")
+}
 
 
 let flatObjects = [

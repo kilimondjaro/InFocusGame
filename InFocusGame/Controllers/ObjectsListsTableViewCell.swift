@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ObjectsListsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var objectLabel: UILabel!
+    @IBOutlet weak var objectSwitch: UISwitch!
+    var objectName = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +27,18 @@ class ObjectsListsTableViewCell: UITableViewCell {
     }
     
     @IBAction func switchObject(_ sender: UISwitch) {
+        let context = CoreDataManager.instance.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FlatObjects")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                data.setValue(objectSwitch.isOn, forKey: objectName)
+            }
+            try context.save()
+        } catch {
+            print("Failed")
+        }
     }
     
 }

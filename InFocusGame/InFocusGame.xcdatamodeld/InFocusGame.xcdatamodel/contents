@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FlatObjects" representedClassName="FlatObjects" syncable="YES" codeGenerationType="class">
+        <attribute name="apple" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="banana" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="chair" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="computer" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cup" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="table" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
-        <attribute name="flatObjects" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="flatObjects" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlatObjects" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Settings" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="Settings" positionX="-326" positionY="9" width="128" height="58"/>
+        <element name="FlatObjects" positionX="-54" positionY="0" width="128" height="133"/>
     </elements>
 </model>

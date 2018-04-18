@@ -183,6 +183,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="objectLabel" destination="dtQ-xh-R4N" id="tik-lR-xkN"/>
+                                    <outlet property="objectSwitch" destination="A1d-n1-bvC" id="7rV-aT-ecR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

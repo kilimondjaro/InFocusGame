@@ -11,6 +11,7 @@
 		26109E3920875DFF00038E4F /* GameSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E3820875DFF00038E4F /* GameSettingsViewController.swift */; };
 		26109E3C208766D100038E4F /* ObjectsListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E3B208766D100038E4F /* ObjectsListsTableViewController.swift */; };
 		26109E3E208767C700038E4F /* ObjectsListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E3D208767C700038E4F /* ObjectsListsTableViewCell.swift */; };
+		26109E4220879B6700038E4F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E4120879B6700038E4F /* CoreDataManager.swift */; };
 		266503832085F13300947473 /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266503822085F13300947473 /* GameTypeViewController.swift */; };
 		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
 		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
@@ -54,6 +55,7 @@
 		26109E3820875DFF00038E4F /* GameSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsViewController.swift; sourceTree = "<group>"; };
 		26109E3B208766D100038E4F /* ObjectsListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListsTableViewController.swift; sourceTree = "<group>"; };
 		26109E3D208767C700038E4F /* ObjectsListsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListsTableViewCell.swift; sourceTree = "<group>"; };
+		26109E4120879B6700038E4F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		266503822085F13300947473 /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
 		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2665038C20862B4F00947473 /* ObjectsTypes.swift */,
+				26109E4120879B6700038E4F /* CoreDataManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				2665038720860BC800947473 /* VideoCapture.swift in Sources */,
 				26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */,
 				26109E3E208767C700038E4F /* ObjectsListsTableViewCell.swift in Sources */,
+				26109E4220879B6700038E4F /* CoreDataManager.swift in Sources */,
 				26109E3720875CE600038E4F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

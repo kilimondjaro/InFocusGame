@@ -34,8 +34,8 @@ class LearnProcessor {
     }
     
     func pickUpObjectForSearch() -> String {
-        let number = arc4random_uniform(UInt32(flatObjects.count))
-        let object = flatObjects[Int(number)]
+        let number = arc4random_uniform(UInt32(Constants.flatObjects.count))
+        let object = Constants.flatObjects[Int(number)]
         currentObject = object
     
         return object

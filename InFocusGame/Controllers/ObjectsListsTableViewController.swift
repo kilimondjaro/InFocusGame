@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class ObjectsListsTableViewController: UITableViewController {
 
+    private var flatObjectsData: [String: Bool] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let result = CoreDataManager.instance.fetch(entity: "FlatObjects")
+        
+        for data in result {
+            for name in Constants.flatObjects {                
+                flatObjectsData[name] = data.value(forKey: name) as? Bool
+            }
+        }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +48,11 @@ class ObjectsListsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "objectsListsCell", for: indexPath) as! ObjectsListsTableViewCell
         // TODO - change for many sections
         // TODO - add localization
-        cell.objectLabel.text = flatObjects[indexPath.row]
+        
+        let obj = flatObjects[indexPath.row]
+        cell.objectSwitch.isOn = flatObjectsData[obj]!
+        cell.objectLabel.text =  obj
+        cell.objectName = obj
         return cell
     }
     
