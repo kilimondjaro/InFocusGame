@@ -27,12 +27,16 @@ class LearnViewController: UIViewController, LearnProcessotDelegate {
         
         initLearnProcessor()
         setUpCamera()
-        setUpInterface()
+        setUpInterface()        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print(#function)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.videoCapture.stop()
     }
     
     // MARK: - Initialization

@@ -11,8 +11,7 @@ import AVFoundation
 
 class RootViewController: UIViewController {
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = NSLocalizedString("inFocus", comment: "")
+        super.viewDidLoad()        
     }
 
     override func didReceiveMemoryWarning() {
