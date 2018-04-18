@@ -35,7 +35,7 @@ class LearnProcessor {
     
     func pickUpObjectForSearch() -> String {
         let number = arc4random_uniform(UInt32(flatObjects.count))
-        let object = Array(flatObjects.keys)[Int(number)]
+        let object = flatObjects[Int(number)]
         currentObject = object
     
         return object
@@ -49,7 +49,7 @@ class LearnProcessor {
             }
             
             let id = pred.0.components(separatedBy: " ")[0]
-            if (flatObjects[currentObject]?.contains(id))! && pred.1 > 0.15 {
+            if (objectsDict[currentObject]?.contains(id))! && pred.1 > 0.15 {
                 print("\(i) - \(pred.0) - \(pred.1)")
                 return true
             }

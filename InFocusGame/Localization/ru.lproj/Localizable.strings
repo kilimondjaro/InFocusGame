@@ -6,3 +6,6 @@
   Copyright © 2018 Kirill Babich. All rights reserved.
 */
 
+"gameSettings" = "Настройки Игры";
+"settings" = "Настройки";
+"inFocus" = "In Focus";

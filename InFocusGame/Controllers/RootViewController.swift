@@ -10,29 +10,14 @@ import UIKit
 import AVFoundation
 
 class RootViewController: UIViewController {
-
-    @IBOutlet weak var playButton: UIButton!
-    var bombSoundEffect: AVAudioPlayer?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = Bundle.main.url(forResource: "hi", withExtension: "mp3")
-        do {
-            bombSoundEffect = try AVAudioPlayer(contentsOf: url!)
-            
-        } catch {
-            print("Could not load file")
-        }
+        self.navigationItem.title = NSLocalizedString("inFocus", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func playMusic(_ sender: UIButton) {
-        bombSoundEffect?.play()
-    }
-    
 }
 

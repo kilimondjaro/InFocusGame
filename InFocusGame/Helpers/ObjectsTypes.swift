@@ -1011,7 +1011,19 @@ let objectsTypes = [
      "n15075141": "toilet tissue, toilet paper, bathroom tissu"
 ]
 
+
 let flatObjects = [
+    "apple",
+    "banana",
+    "chair",
+    "cup",
+    "table",
+    "computer"
+]
+
+
+
+let objectsDict = [
     "apple": ["n07742313", "n07760859"],
     "banana": ["n07753592"],
     "chair": ["n02791124", "n03376595", "n04099969"],
