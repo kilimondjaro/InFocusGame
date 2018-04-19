@@ -33,6 +33,13 @@
 		26650394208636B100947473 /* LearnProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26650393208636B100947473 /* LearnProcessor.swift */; };
 		2678900D2088DA7B00D8CA0C /* SoundSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678900C2088DA7B00D8CA0C /* SoundSettingsViewController.swift */; };
 		2678900F2088F28B00D8CA0C /* FaultInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678900E2088F28B00D8CA0C /* FaultInfoViewController.swift */; };
+		26CF16B32089069600775B7A /* chair.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16AD2089069500775B7A /* chair.mp3 */; };
+		26CF16B42089069600775B7A /* banana.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16AE2089069600775B7A /* banana.mp3 */; };
+		26CF16B52089069600775B7A /* computer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16AF2089069600775B7A /* computer.mp3 */; };
+		26CF16B62089069600775B7A /* table.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16B02089069600775B7A /* table.mp3 */; };
+		26CF16B72089069600775B7A /* apple.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16B12089069600775B7A /* apple.mp3 */; };
+		26CF16B82089069600775B7A /* cup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16B22089069600775B7A /* cup.mp3 */; };
+		26CF16BA20891CAF00775B7A /* find.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16B920891CAF00775B7A /* find.mp3 */; };
 		26E035512085DF4400832BDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E035532085DF4400832BDF /* Localizable.strings */; };
 		26E0355E2085E60F00832BDF /* hi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26E035602085E60F00832BDF /* hi.mp3 */; };
 		26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723620851AAA004A9CC0 /* AppDelegate.swift */; };
@@ -89,6 +96,13 @@
 		26650393208636B100947473 /* LearnProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnProcessor.swift; sourceTree = "<group>"; };
 		2678900C2088DA7B00D8CA0C /* SoundSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsViewController.swift; sourceTree = "<group>"; };
 		2678900E2088F28B00D8CA0C /* FaultInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultInfoViewController.swift; sourceTree = "<group>"; };
+		26CF16AD2089069500775B7A /* chair.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chair.mp3; sourceTree = "<group>"; };
+		26CF16AE2089069600775B7A /* banana.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = banana.mp3; sourceTree = "<group>"; };
+		26CF16AF2089069600775B7A /* computer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = computer.mp3; sourceTree = "<group>"; };
+		26CF16B02089069600775B7A /* table.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = table.mp3; sourceTree = "<group>"; };
+		26CF16B12089069600775B7A /* apple.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple.mp3; sourceTree = "<group>"; };
+		26CF16B22089069600775B7A /* cup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cup.mp3; sourceTree = "<group>"; };
+		26CF16B920891CAF00775B7A /* find.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = find.mp3; sourceTree = "<group>"; };
 		26E0354D2085DE7100832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		26E035542085DF4900832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26E035552085DF5A00832BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -201,6 +215,13 @@
 		26E0355A2085E57900832BDF /* Voice */ = {
 			isa = PBXGroup;
 			children = (
+				26CF16B920891CAF00775B7A /* find.mp3 */,
+				26CF16B12089069600775B7A /* apple.mp3 */,
+				26CF16AE2089069600775B7A /* banana.mp3 */,
+				26CF16AD2089069500775B7A /* chair.mp3 */,
+				26CF16AF2089069600775B7A /* computer.mp3 */,
+				26CF16B22089069600775B7A /* cup.mp3 */,
+				26CF16B02089069600775B7A /* table.mp3 */,
 				26109E572088936F00038E4F /* banana_desc.mp3 */,
 				26109E55208892E200038E4F /* cup_desc.mp3 */,
 				26109E532088926A00038E4F /* table_desc.mp3 */,
@@ -382,13 +403,20 @@
 				26F8724420851AAC004A9CC0 /* LaunchScreen.storyboard in Resources */,
 				26109E462087CF9300038E4F /* oops.mp3 in Resources */,
 				26109E542088926A00038E4F /* table_desc.mp3 in Resources */,
+				26CF16B32089069600775B7A /* chair.mp3 in Resources */,
 				26E035512085DF4400832BDF /* Localizable.strings in Resources */,
+				26CF16B62089069600775B7A /* table.mp3 in Resources */,
 				26109E582088936F00038E4F /* banana_desc.mp3 in Resources */,
+				26CF16B52089069600775B7A /* computer.mp3 in Resources */,
+				26CF16BA20891CAF00775B7A /* find.mp3 in Resources */,
 				2665038B20862B0100947473 /* noticed.mp3 in Resources */,
 				26F8724120851AAC004A9CC0 /* Assets.xcassets in Resources */,
+				26CF16B72089069600775B7A /* apple.mp3 in Resources */,
 				26109E56208892E200038E4F /* cup_desc.mp3 in Resources */,
 				26F8723C20851AAA004A9CC0 /* Main.storyboard in Resources */,
 				26109E52208891F800038E4F /* computer_desc.mp3 in Resources */,
+				26CF16B82089069600775B7A /* cup.mp3 in Resources */,
+				26CF16B42089069600775B7A /* banana.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

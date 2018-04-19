@@ -23,6 +23,7 @@ enum Voice {
 
 class VoiceAssistant {
     private var player: AVAudioPlayer?
+    private var sequencePlayer: AVQueuePlayer?
     
     private init() {}
     
@@ -48,6 +49,21 @@ class VoiceAssistant {
         }
     }
     
+    private func loadSequenceFiles(names: [String]) {
+        var items: [AVPlayerItem] = []
+        do {
+            for name in names {
+                let url = Bundle.main.url(forResource: name, withExtension: "mp3")
+                items.append(AVPlayerItem(url: url!))
+            }
+            
+            sequencePlayer = AVQueuePlayer(items: items)
+            
+        } catch {
+            print("Could not load \"\(names)\" audio files")
+        }
+    }
+    
     
     func playFile(type: Voice) {
         
@@ -60,13 +76,21 @@ class VoiceAssistant {
     }
     
     func playFile(name: String) {
-        
         if ((player != nil && (player?.isPlaying)!) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
             return
         }
         
         loadFile(name: name)
         player?.play()
+    }
+    
+    func playSequence(names: [String]) {
+        if ((player != nil && (player?.isPlaying)!) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
+            return
+        }
+        
+        loadSequenceFiles(names: names)
+        sequencePlayer?.play()
     }
     
     func stop() {

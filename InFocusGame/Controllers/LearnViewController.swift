@@ -13,7 +13,7 @@ import CoreMedia
 class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewControllerDelegate {
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var checkButton: UIButton!
-    @IBOutlet weak var objectLabel: UILabel!
+    @IBOutlet weak var objectLabel: UIButton!
     @IBOutlet weak var life1: UIButton!
     @IBOutlet weak var life2: UIButton!
     @IBOutlet weak var life3: UIButton!
@@ -55,7 +55,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         learnProcessor?.delegate = self
         let object = learnProcessor?.pickUpObjectForSearch()
         currentObject = object!
-        objectLabel.text = object
+        self.objectLabel.setTitle(object, for: UIControlState.normal)
     }
     
     func setUpInterface() {
@@ -88,9 +88,10 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         DispatchQueue.main.async {
             if (correct) {
                 let object = self.learnProcessor?.pickUpObjectForSearch()
-                self.objectLabel.text = object
+                self.objectLabel.setTitle(object, for: UIControlState.normal)
                 self.currentObject = object!
                 self.failCounter = 0
+                VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
             }
             else {
                 self.failCounter += 1
@@ -135,6 +136,10 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         self.providesPresentationContextTransitionStyle = true
         
         self.overlayBlurredBackgroundView()
+    }
+    
+    @IBAction func objectLabelPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(name: currentObject)        
     }
     
     func overlayBlurredBackgroundView() {
