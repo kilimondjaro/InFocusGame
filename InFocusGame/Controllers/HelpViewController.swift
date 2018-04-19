@@ -24,6 +24,7 @@ class HelpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        objectLabel.textColor = UIColor.white
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,7 +42,7 @@ class HelpViewController: UIViewController {
         
         imageView.image = UIImage(named: object)
         objectLabel.text = object
-        VoiceAssistant.instance.playFile(name: object)
+        VoiceAssistant.instance.playFile(name: "\(object)_desc")
     }
 
     override func didReceiveMemoryWarning() {

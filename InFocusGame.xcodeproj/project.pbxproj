@@ -16,12 +16,12 @@
 		26109E482088658600038E4F /* ObjectsListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E472088658600038E4F /* ObjectsListsViewController.swift */; };
 		26109E4A2088727400038E4F /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E492088727400038E4F /* HelpViewController.swift */; };
 		26109E4C2088875B00038E4F /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E4B2088875B00038E4F /* GameOverViewController.swift */; };
-		26109E4E20888F5500038E4F /* apple.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E4D20888F5500038E4F /* apple.mp3 */; };
-		26109E50208891B700038E4F /* chair.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E4F208891B700038E4F /* chair.mp3 */; };
-		26109E52208891F800038E4F /* computer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E51208891F800038E4F /* computer.mp3 */; };
-		26109E542088926A00038E4F /* table.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E532088926A00038E4F /* table.mp3 */; };
-		26109E56208892E200038E4F /* cup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E55208892E200038E4F /* cup.mp3 */; };
-		26109E582088936F00038E4F /* banana.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E572088936F00038E4F /* banana.mp3 */; };
+		26109E4E20888F5500038E4F /* apple_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E4D20888F5500038E4F /* apple_desc.mp3 */; };
+		26109E50208891B700038E4F /* chair_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E4F208891B700038E4F /* chair_desc.mp3 */; };
+		26109E52208891F800038E4F /* computer_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E51208891F800038E4F /* computer_desc.mp3 */; };
+		26109E542088926A00038E4F /* table_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E532088926A00038E4F /* table_desc.mp3 */; };
+		26109E56208892E200038E4F /* cup_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E55208892E200038E4F /* cup_desc.mp3 */; };
+		26109E582088936F00038E4F /* banana_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E572088936F00038E4F /* banana_desc.mp3 */; };
 		266503832085F13300947473 /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266503822085F13300947473 /* GameTypeViewController.swift */; };
 		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
 		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
@@ -72,12 +72,12 @@
 		26109E472088658600038E4F /* ObjectsListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListsViewController.swift; sourceTree = "<group>"; };
 		26109E492088727400038E4F /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		26109E4B2088875B00038E4F /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
-		26109E4D20888F5500038E4F /* apple.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple.mp3; sourceTree = "<group>"; };
-		26109E4F208891B700038E4F /* chair.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chair.mp3; sourceTree = "<group>"; };
-		26109E51208891F800038E4F /* computer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = computer.mp3; sourceTree = "<group>"; };
-		26109E532088926A00038E4F /* table.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = table.mp3; sourceTree = "<group>"; };
-		26109E55208892E200038E4F /* cup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cup.mp3; sourceTree = "<group>"; };
-		26109E572088936F00038E4F /* banana.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = banana.mp3; sourceTree = "<group>"; };
+		26109E4D20888F5500038E4F /* apple_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple_desc.mp3; sourceTree = "<group>"; };
+		26109E4F208891B700038E4F /* chair_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chair_desc.mp3; sourceTree = "<group>"; };
+		26109E51208891F800038E4F /* computer_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = computer_desc.mp3; sourceTree = "<group>"; };
+		26109E532088926A00038E4F /* table_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = table_desc.mp3; sourceTree = "<group>"; };
+		26109E55208892E200038E4F /* cup_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cup_desc.mp3; sourceTree = "<group>"; };
+		26109E572088936F00038E4F /* banana_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = banana_desc.mp3; sourceTree = "<group>"; };
 		266503822085F13300947473 /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
 		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -201,12 +201,12 @@
 		26E0355A2085E57900832BDF /* Voice */ = {
 			isa = PBXGroup;
 			children = (
-				26109E572088936F00038E4F /* banana.mp3 */,
-				26109E55208892E200038E4F /* cup.mp3 */,
-				26109E532088926A00038E4F /* table.mp3 */,
-				26109E51208891F800038E4F /* computer.mp3 */,
-				26109E4F208891B700038E4F /* chair.mp3 */,
-				26109E4D20888F5500038E4F /* apple.mp3 */,
+				26109E572088936F00038E4F /* banana_desc.mp3 */,
+				26109E55208892E200038E4F /* cup_desc.mp3 */,
+				26109E532088926A00038E4F /* table_desc.mp3 */,
+				26109E51208891F800038E4F /* computer_desc.mp3 */,
+				26109E4F208891B700038E4F /* chair_desc.mp3 */,
+				26109E4D20888F5500038E4F /* apple_desc.mp3 */,
 				26109E452087CF9300038E4F /* oops.mp3 */,
 				2665038A20862B0100947473 /* noticed.mp3 */,
 				26E035602085E60F00832BDF /* hi.mp3 */,
@@ -376,19 +376,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26109E50208891B700038E4F /* chair.mp3 in Resources */,
+				26109E50208891B700038E4F /* chair_desc.mp3 in Resources */,
 				26E0355E2085E60F00832BDF /* hi.mp3 in Resources */,
-				26109E4E20888F5500038E4F /* apple.mp3 in Resources */,
+				26109E4E20888F5500038E4F /* apple_desc.mp3 in Resources */,
 				26F8724420851AAC004A9CC0 /* LaunchScreen.storyboard in Resources */,
 				26109E462087CF9300038E4F /* oops.mp3 in Resources */,
-				26109E542088926A00038E4F /* table.mp3 in Resources */,
+				26109E542088926A00038E4F /* table_desc.mp3 in Resources */,
 				26E035512085DF4400832BDF /* Localizable.strings in Resources */,
-				26109E582088936F00038E4F /* banana.mp3 in Resources */,
+				26109E582088936F00038E4F /* banana_desc.mp3 in Resources */,
 				2665038B20862B0100947473 /* noticed.mp3 in Resources */,
 				26F8724120851AAC004A9CC0 /* Assets.xcassets in Resources */,
-				26109E56208892E200038E4F /* cup.mp3 in Resources */,
+				26109E56208892E200038E4F /* cup_desc.mp3 in Resources */,
 				26F8723C20851AAA004A9CC0 /* Main.storyboard in Resources */,
-				26109E52208891F800038E4F /* computer.mp3 in Resources */,
+				26109E52208891F800038E4F /* computer_desc.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

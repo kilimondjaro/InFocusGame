@@ -22,7 +22,8 @@ class FaultInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        objectLabel.textColor = UIColor.white
+        hintLabel.textColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {

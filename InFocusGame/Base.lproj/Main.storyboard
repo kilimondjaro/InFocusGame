@@ -569,7 +569,6 @@
         <image name="heart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SLl-fR-EUK"/>
         <segue reference="JUa-om-3vp"/>
         <segue reference="4bN-hx-fxM"/>
         <segue reference="eT6-EX-lVX"/>
