@@ -14,6 +14,10 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var objectLabel: UILabel!
+    @IBOutlet weak var life1: UIButton!
+    @IBOutlet weak var life2: UIButton!
+    @IBOutlet weak var life3: UIButton!
+    
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
@@ -21,6 +25,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     var framesDone = 0
     var frameCapturingStartTime = CACurrentMediaTime()
     let semaphore = DispatchSemaphore(value: 2)
+    var currentObject = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +50,16 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         learnProcessor = LearnProcessor(semaphore: semaphore)
         learnProcessor?.delegate = self
         let object = learnProcessor?.pickUpObjectForSearch()
+        currentObject = object!
         objectLabel.text = object
     }
     
     func setUpInterface() {
         checkButton.layer.cornerRadius = checkButton.frame.size.height / 2
         checkButton.clipsToBounds = true
+        life1.setImage(UIImage(named: "heart"), for: UIControlState.normal)
+        life2.setImage(UIImage(named: "heart"), for: UIControlState.normal)
+        life3.setImage(UIImage(named: "heart"), for: UIControlState.normal)
     }
     
     func setUpCamera() {
@@ -75,6 +84,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
             DispatchQueue.main.async {
                 let object = self.learnProcessor?.pickUpObjectForSearch()
                 self.objectLabel.text = object
+                self.currentObject = object!
             }
         }
     }
@@ -115,6 +125,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
             if identifier == "showHelpView" {
                 if let viewController = segue.destination as? HelpViewController {
                     viewController.delegate = self
+                    viewController.object = self.currentObject
                     viewController.modalPresentationStyle = .overFullScreen
                 }
             }

@@ -13,8 +13,12 @@ protocol ModalViewControllerDelegate: class {
 }
 
 class HelpViewController: UIViewController {
-     weak var delegate: ModalViewControllerDelegate?
+    weak var delegate: ModalViewControllerDelegate?
+    
+    var object = ""
+    
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,8 @@ class HelpViewController: UIViewController {
         let tintedCancelImage = cancelImage?.withRenderingMode(.alwaysTemplate)
         cancelButton.setImage(tintedCancelImage, for: .normal)
         cancelButton.tintColor = .white
+        
+        imageView.image = UIImage(named: object)
     }
 
     override func didReceiveMemoryWarning() {
