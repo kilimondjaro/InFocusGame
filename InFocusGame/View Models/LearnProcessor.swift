@@ -25,6 +25,7 @@ class LearnProcessor {
     private var flatObjectsData: [String: Bool] = [:]
     private var filteredObjectsCount = 0
     private var randomObjectSequence: [Int] = []
+    private var objectIsNoticed = false
     
     
     init(semaphore: DispatchSemaphore) {
@@ -86,7 +87,15 @@ class LearnProcessor {
     
     func noticed(values: [(String, Double)]) {
         if (resultContainsObject(values: values, bound: nil)) {
+            if (objectIsNoticed) {
+                return
+            }
+            objectIsNoticed = true
             VoiceAssistant.instance.playFile(type: Voice.noticed)
+            
+        }
+        else {
+            objectIsNoticed = false
         }
     }
     
