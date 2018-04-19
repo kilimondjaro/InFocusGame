@@ -10,7 +10,7 @@ import UIKit
 import Vision
 import CoreMedia
 
-class LearnViewController: UIViewController, LearnProcessotDelegate {
+class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewControllerDelegate {
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var objectLabel: UILabel!
@@ -83,6 +83,43 @@ class LearnViewController: UIViewController, LearnProcessotDelegate {
         learnProcessor?.check()
     }
     
+    @IBAction func helpButtonPressed(_ sender: UIButton) {
+        self.definesPresentationContext = true
+        self.providesPresentationContextTransitionStyle = true
+        
+        self.overlayBlurredBackgroundView()
+    }
+    
+    func overlayBlurredBackgroundView() {
+        
+        let blurredBackgroundView = UIVisualEffectView()
+        
+        blurredBackgroundView.frame = view.frame
+        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
+        
+        view.addSubview(blurredBackgroundView)
+        
+    }
+    
+    func removeBlurredBackgroundView() {
+        
+        for subview in view.subviews {
+            if subview.isKind(of: UIVisualEffectView.self) {
+                subview.removeFromSuperview()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "showHelpView" {
+                if let viewController = segue.destination as? HelpViewController {
+                    viewController.delegate = self
+                    viewController.modalPresentationStyle = .overFullScreen
+                }
+            }
+        }
+    }
     
     // MARK: - UI stuff
     
