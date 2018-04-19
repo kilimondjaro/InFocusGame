@@ -10,6 +10,13 @@ import UIKit
 import Vision
 import CoreMedia
 
+protocol ModalViewControllerDelegate: class {
+    func removeBlurredBackgroundView()
+    func pickUpNewObject()
+    var videoCapture: VideoCapture! {get set}
+}
+
+
 class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewControllerDelegate {
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var checkButton: UIButton!
@@ -87,21 +94,15 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         
         DispatchQueue.main.async {
             if (correct) {
-                let object = self.learnProcessor?.pickUpObjectForSearch()
-                self.objectLabel.setTitle(object, for: UIControlState.normal)
-                self.currentObject = object!
-                self.failCounter = 0
-                VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
+                self.overlayBlurredBackgroundView(style: .light)
+                self.performSegue(withIdentifier: "showMatchView", sender: self)
             }
             else {
                 self.failCounter += 1
                 if let incorrectObjName = incorrectObject, self.failCounter == 2 {
                     self.incorrectObject = incorrectObjName
                     
-                    self.definesPresentationContext = true
-                    self.providesPresentationContextTransitionStyle = true
-                    
-                    self.overlayBlurredBackgroundView()
+                    self.overlayBlurredBackgroundView(style: .dark)
                     self.performSegue(withIdentifier: "showFaultInfo", sender: self)
                 }
                 if (self.failCounter == 3) {
@@ -127,30 +128,36 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         }
     }
     
+    func pickUpNewObject() {
+        let object = self.learnProcessor?.pickUpObjectForSearch()
+        self.objectLabel.setTitle(object, for: UIControlState.normal)
+        self.currentObject = object!
+        self.failCounter = 0
+        VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
+    }
+    
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         learnProcessor?.check()
     }
     
     @IBAction func helpButtonPressed(_ sender: UIButton) {
-        self.definesPresentationContext = true
-        self.providesPresentationContextTransitionStyle = true
-        
-        self.overlayBlurredBackgroundView()
+        self.overlayBlurredBackgroundView(style: .dark)
     }
     
     @IBAction func objectLabelPressed(_ sender: UIButton) {
         VoiceAssistant.instance.playFile(name: currentObject)        
     }
     
-    func overlayBlurredBackgroundView() {
+    func overlayBlurredBackgroundView(style: UIBlurEffectStyle) {
+        self.definesPresentationContext = true
+        self.providesPresentationContextTransitionStyle = true
         
         let blurredBackgroundView = UIVisualEffectView()
         
         blurredBackgroundView.frame = view.frame
-        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
+        blurredBackgroundView.effect = UIBlurEffect(style: style)
         
         view.addSubview(blurredBackgroundView)
-        
     }
     
     func removeBlurredBackgroundView() {
@@ -178,6 +185,15 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                     viewController.delegate = self
                     viewController.correctObject = self.currentObject
                     viewController.incorrectObject = self.incorrectObject
+                    viewController.modalPresentationStyle = .overFullScreen
+                    self.videoCapture.stop()
+                    VoiceAssistant.instance.stop()
+                }
+            }
+            if identifier == "showMatchView" {
+                if let viewController = segue.destination as? MatchViewController {
+                    viewController.delegate = self
+                    viewController.object = self.currentObject
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
