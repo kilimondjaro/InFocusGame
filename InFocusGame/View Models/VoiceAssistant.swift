@@ -51,7 +51,7 @@ class VoiceAssistant {
     
     func playFile(type: Voice) {
         
-        if (player != nil && (player?.isPlaying)!) {
+        if ((player != nil && (player?.isPlaying)!) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
             return
         }
         
@@ -61,7 +61,7 @@ class VoiceAssistant {
     
     func playFile(name: String) {
         
-        if (player != nil && (player?.isPlaying)!) {
+        if ((player != nil && (player?.isPlaying)!) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
             return
         }
         

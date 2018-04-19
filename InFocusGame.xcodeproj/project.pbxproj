@@ -31,6 +31,7 @@
 		2665039020862D2600947473 /* VoiceAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038F20862D2600947473 /* VoiceAssistant.swift */; };
 		2665039220862E4F00947473 /* ObjectRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665039120862E4E00947473 /* ObjectRecognition.swift */; };
 		26650394208636B100947473 /* LearnProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26650393208636B100947473 /* LearnProcessor.swift */; };
+		2678900D2088DA7B00D8CA0C /* SoundSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678900C2088DA7B00D8CA0C /* SoundSettingsViewController.swift */; };
 		26E035512085DF4400832BDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E035532085DF4400832BDF /* Localizable.strings */; };
 		26E0355E2085E60F00832BDF /* hi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26E035602085E60F00832BDF /* hi.mp3 */; };
 		26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723620851AAA004A9CC0 /* AppDelegate.swift */; };
@@ -85,6 +86,7 @@
 		2665038F20862D2600947473 /* VoiceAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistant.swift; sourceTree = "<group>"; };
 		2665039120862E4E00947473 /* ObjectRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRecognition.swift; sourceTree = "<group>"; };
 		26650393208636B100947473 /* LearnProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnProcessor.swift; sourceTree = "<group>"; };
+		2678900C2088DA7B00D8CA0C /* SoundSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsViewController.swift; sourceTree = "<group>"; };
 		26E0354D2085DE7100832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		26E035542085DF4900832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26E035552085DF5A00832BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				26109E472088658600038E4F /* ObjectsListsViewController.swift */,
 				26109E492088727400038E4F /* HelpViewController.swift */,
 				26109E4B2088875B00038E4F /* GameOverViewController.swift */,
+				2678900C2088DA7B00D8CA0C /* SoundSettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				2665039220862E4F00947473 /* ObjectRecognition.swift in Sources */,
 				2665038520860B9000947473 /* LearnViewController.swift in Sources */,
 				26109E4C2088875B00038E4F /* GameOverViewController.swift in Sources */,
+				2678900D2088DA7B00D8CA0C /* SoundSettingsViewController.swift in Sources */,
 				2665039020862D2600947473 /* VoiceAssistant.swift in Sources */,
 				26109E3920875DFF00038E4F /* GameSettingsViewController.swift in Sources */,
 				26F8723F20851AAA004A9CC0 /* InFocusGame.xcdatamodeld in Sources */,
