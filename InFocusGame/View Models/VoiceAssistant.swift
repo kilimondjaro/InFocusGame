@@ -24,6 +24,9 @@ enum Voice {
 class VoiceAssistant {
     private var player: AVAudioPlayer?
     
+    private init() {}
+    
+    static let instance = VoiceAssistant()
     
     private func loadFile(type: Voice) {
         let url = Bundle.main.url(forResource: type.getUrl(), withExtension: "mp3")
@@ -32,6 +35,16 @@ class VoiceAssistant {
             
         } catch {
             print("Could not load \"\(type.getUrl())\" audio file")
+        }
+    }
+    
+    private func loadFile(name: String) {
+        let url = Bundle.main.url(forResource: name, withExtension: "mp3")
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            
+        } catch {
+            print("Could not load \"\(name)\" audio file")
         }
     }
     
@@ -44,5 +57,21 @@ class VoiceAssistant {
         
         loadFile(type: type)
         player?.play()
+    }
+    
+    func playFile(name: String) {
+        
+        if (player != nil && (player?.isPlaying)!) {
+            return
+        }
+        
+        loadFile(name: name)
+        player?.play()
+    }
+    
+    func stop() {
+        if (player != nil && (player?.isPlaying)!) {
+            player?.stop()
+        }
     }
 }

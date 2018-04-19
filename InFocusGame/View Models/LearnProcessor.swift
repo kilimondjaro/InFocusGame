@@ -15,8 +15,7 @@ protocol LearnProcessotDelegate: class {
 
 class LearnProcessor {
     let objectRecognition: ObjectRecognition?
-    let semaphore: DispatchSemaphore?
-    let voiveAssistant = VoiceAssistant()
+    let semaphore: DispatchSemaphore?    
     private var isChecking = false
     private var checkCounter = 0
     private var checkCounterValue = 0
@@ -87,7 +86,7 @@ class LearnProcessor {
     
     func noticed(values: [(String, Double)]) {
         if (resultContainsObject(values: values, bound: nil)) {
-            voiveAssistant.playFile(type: Voice.noticed)
+            VoiceAssistant.instance.playFile(type: Voice.noticed)
         }
     }
     
@@ -100,7 +99,7 @@ class LearnProcessor {
             }
             else {
                 // TODO - move it
-                voiveAssistant.playFile(type: Voice.oops)
+                VoiceAssistant.instance.playFile(type: Voice.oops)
                 delegate?.objectChecked(correct: false)
             }
             checkCounterValue = 0

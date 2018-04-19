@@ -10,6 +10,7 @@ import UIKit
 
 protocol ModalViewControllerDelegate: class {
     func removeBlurredBackgroundView()
+    var videoCapture: VideoCapture! {get set}
 }
 
 class HelpViewController: UIViewController {
@@ -38,6 +39,7 @@ class HelpViewController: UIViewController {
         cancelButton.tintColor = .white
         
         imageView.image = UIImage(named: object)
+        VoiceAssistant.instance.playFile(name: object)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +50,8 @@ class HelpViewController: UIViewController {
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
         delegate?.removeBlurredBackgroundView()
+        VoiceAssistant.instance.stop()
+        delegate?.videoCapture.start()
     }
     
     /*

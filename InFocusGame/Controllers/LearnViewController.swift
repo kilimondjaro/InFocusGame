@@ -154,6 +154,8 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                     viewController.delegate = self
                     viewController.object = self.currentObject
                     viewController.modalPresentationStyle = .overFullScreen
+                    self.videoCapture.stop()
+                    VoiceAssistant.instance.stop()
                 }
             }
         }
