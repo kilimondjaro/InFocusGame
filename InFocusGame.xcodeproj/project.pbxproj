@@ -15,6 +15,7 @@
 		26109E462087CF9300038E4F /* oops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E452087CF9300038E4F /* oops.mp3 */; };
 		26109E482088658600038E4F /* ObjectsListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E472088658600038E4F /* ObjectsListsViewController.swift */; };
 		26109E4A2088727400038E4F /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E492088727400038E4F /* HelpViewController.swift */; };
+		26109E4C2088875B00038E4F /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E4B2088875B00038E4F /* GameOverViewController.swift */; };
 		266503832085F13300947473 /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266503822085F13300947473 /* GameTypeViewController.swift */; };
 		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
 		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
@@ -62,6 +63,7 @@
 		26109E452087CF9300038E4F /* oops.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oops.mp3; sourceTree = "<group>"; };
 		26109E472088658600038E4F /* ObjectsListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListsViewController.swift; sourceTree = "<group>"; };
 		26109E492088727400038E4F /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		26109E4B2088875B00038E4F /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		266503822085F13300947473 /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
 		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				26109E3D208767C700038E4F /* ObjectsListsTableViewCell.swift */,
 				26109E472088658600038E4F /* ObjectsListsViewController.swift */,
 				26109E492088727400038E4F /* HelpViewController.swift */,
+				26109E4B2088875B00038E4F /* GameOverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			files = (
 				2665039220862E4F00947473 /* ObjectRecognition.swift in Sources */,
 				2665038520860B9000947473 /* LearnViewController.swift in Sources */,
+				26109E4C2088875B00038E4F /* GameOverViewController.swift in Sources */,
 				2665039020862D2600947473 /* VoiceAssistant.swift in Sources */,
 				26109E3920875DFF00038E4F /* GameSettingsViewController.swift in Sources */,
 				26F8723F20851AAA004A9CC0 /* InFocusGame.xcdatamodeld in Sources */,

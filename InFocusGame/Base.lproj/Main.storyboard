@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASm-rr-RkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399" y="964"/>
+            <point key="canvasLocation" x="-924" y="1174"/>
         </scene>
         <!--Game Settings View Controller-->
         <scene sceneID="tbZ-nC-3dr">
@@ -155,7 +155,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijW-JY-Nc2">
                                 <rect key="frame" x="16" y="593" width="93" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="XB6-wU-KKq" kind="presentation" modalTransitionStyle="crossDissolve" id="oK4-3h-xwP"/>
                                 </connections>
@@ -167,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Erh-L2-DaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320.8" y="963.86806596701661"/>
+            <point key="canvasLocation" x="466" y="1300"/>
         </scene>
         <!--Objects Lists View Controller-->
         <scene sceneID="Jh3-BC-tTI">
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSf-Em-Y4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="963.86806596701661"/>
+            <point key="canvasLocation" x="1609" y="1383"/>
         </scene>
         <!--Learn View Controller-->
         <scene sceneID="dxw-Ii-pgv">
@@ -371,6 +371,7 @@
                         <outlet property="life3" destination="O9F-Eg-T8F" id="knu-Sp-gMw"/>
                         <outlet property="objectLabel" destination="vEb-qe-2J9" id="uJ8-og-75m"/>
                         <outlet property="videoPreview" destination="KgQ-za-QFe" id="9P5-bV-rxC"/>
+                        <segue destination="AgD-nc-iRn" kind="presentation" identifier="gameOver" modalTransitionStyle="crossDissolve" id="SLl-fR-EUK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbp-fO-YAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,7 +415,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWn-NZ-N7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2752.8000000000002" y="114.69265367316342"/>
+            <point key="canvasLocation" x="3006" y="-82"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="S10-8h-Hvl">
+            <objects>
+                <viewController id="AgD-nc-iRn" customClass="GameOverViewController" customModule="InFocusGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OPc-11-eGW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="td8-9T-eUe">
+                                <rect key="frame" x="165" y="502" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="wcq-Sx-QVQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYR-hk-G1b">
+                                <rect key="frame" x="153" y="453" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Try again"/>
+                                <connections>
+                                    <segue destination="XMe-zC-xdY" kind="presentation" modalTransitionStyle="crossDissolve" id="JUa-om-3vp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tn-SB-Wtx">
+                                <rect key="frame" x="45" y="140" width="284" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Lq9-b1-lyE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmf-tb-McK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3426" y="651"/>
         </scene>
     </scenes>
     <resources>
@@ -422,9 +463,11 @@
         <image name="heart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Iaj-Tc-Mhx"/>
+        <segue reference="JUa-om-3vp"/>
         <segue reference="QxH-nP-2Vq"/>
         <segue reference="oK4-3h-xwP"/>
         <segue reference="eT6-EX-lVX"/>
-        <segue reference="Obc-0x-W1Z"/>
+        <segue reference="wcq-Sx-QVQ"/>
     </inferredMetricsTieBreakers>
 </document>

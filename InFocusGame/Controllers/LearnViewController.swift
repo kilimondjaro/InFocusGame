@@ -26,6 +26,9 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     var frameCapturingStartTime = CACurrentMediaTime()
     let semaphore = DispatchSemaphore(value: 2)
     var currentObject = ""
+    var currentLives = 3
+    var lifeCounter = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,11 +83,34 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     
     func objectChecked(correct: Bool) {
         print(correct ? "TRUE" : "FALSE")
-        if (correct) {
-            DispatchQueue.main.async {
+        
+        DispatchQueue.main.async {
+            if (correct) {
                 let object = self.learnProcessor?.pickUpObjectForSearch()
                 self.objectLabel.text = object
                 self.currentObject = object!
+            }
+            else {
+                self.lifeCounter += 1
+                if (self.lifeCounter == 3) {
+                    self.lifeCounter = 0
+                    self.currentLives -= 1
+                    if (self.currentLives == 0) {
+                        self.performSegue(withIdentifier: "gameOver", sender: self)
+                    }
+                    else {
+                        switch self.currentLives {
+                        case 0:
+                            self.life3.setImage(UIImage(named: "grey_heart"), for: UIControlState.normal)
+                        case 1:
+                            self.life2.setImage(UIImage(named: "grey_heart"), for: UIControlState.normal)
+                        case 2:
+                            self.life1.setImage(UIImage(named: "grey_heart"), for: UIControlState.normal)
+                        default:
+                            return
+                        }
+                    }
+                }
             }
         }
     }
