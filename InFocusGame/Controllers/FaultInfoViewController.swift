@@ -1,5 +1,5 @@
 //
-//  HelpViewController.swift
+//  FaultInfoViewController.swift
 //  InFocusGame
 //
 //  Created by Kirill Babich on 19/04/2018.
@@ -8,22 +8,26 @@
 
 import UIKit
 
-protocol ModalViewControllerDelegate: class {
-    func removeBlurredBackgroundView()
-    var videoCapture: VideoCapture! {get set}
-}
-
-class HelpViewController: UIViewController {
+class FaultInfoViewController: UIViewController {
     weak var delegate: ModalViewControllerDelegate?
     
-    var object = ""
+    var correctObject = ""
+    var incorrectObject = ""
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var objectLabel: UILabel!
+    @IBOutlet weak var hintLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidLayoutSubviews() {
@@ -39,14 +43,11 @@ class HelpViewController: UIViewController {
         cancelButton.setImage(tintedCancelImage, for: .normal)
         cancelButton.tintColor = .white
         
-        imageView.image = UIImage(named: object)
-        objectLabel.text = object
-        VoiceAssistant.instance.playFile(name: object)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        imageView.image = UIImage(named: incorrectObject)
+        objectLabel.text = incorrectObject
+        hintLabel.text = "Oops, it's not a \(correctObject) - that's a \(incorrectObject)"
+        
+        //VoiceAssistant.instance.playFile(name: object)
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
@@ -55,7 +56,7 @@ class HelpViewController: UIViewController {
         VoiceAssistant.instance.stop()
         delegate?.videoCapture.start()
     }
-    
+
     /*
     // MARK: - Navigation
 

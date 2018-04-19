@@ -384,6 +384,7 @@
                         <outlet property="objectLabel" destination="vEb-qe-2J9" id="uJ8-og-75m"/>
                         <outlet property="videoPreview" destination="KgQ-za-QFe" id="9P5-bV-rxC"/>
                         <segue destination="AgD-nc-iRn" kind="presentation" identifier="gameOver" modalTransitionStyle="crossDissolve" id="SLl-fR-EUK"/>
+                        <segue destination="U28-We-Huz" kind="presentation" identifier="showFaultInfo" id="htf-Ih-5Ay"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbp-fO-YAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -408,26 +409,37 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SYO-Jb-xmA">
                                 <rect key="frame" x="16" y="179" width="343" height="309"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPQ-Pa-2Zt">
+                                <rect key="frame" x="10" y="90" width="355" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uPQ-Pa-2Zt" firstAttribute="leading" secondItem="Vkv-n7-AsQ" secondAttribute="leading" constant="10" id="78b-lS-5F7"/>
+                            <constraint firstItem="Vkv-n7-AsQ" firstAttribute="trailing" secondItem="uPQ-Pa-2Zt" secondAttribute="trailing" constant="10" id="AXG-Dp-ATB"/>
                             <constraint firstItem="SYO-Jb-xmA" firstAttribute="centerX" secondItem="RR3-U4-Rwi" secondAttribute="centerX" id="Ug4-1i-CRg"/>
                             <constraint firstItem="SYO-Jb-xmA" firstAttribute="centerY" secondItem="RR3-U4-Rwi" secondAttribute="centerY" id="Xpx-oA-XsU"/>
                             <constraint firstItem="SYO-Jb-xmA" firstAttribute="leading" secondItem="cFH-AN-7qw" secondAttribute="leading" id="ZQZ-c3-sEf"/>
+                            <constraint firstItem="SYO-Jb-xmA" firstAttribute="top" secondItem="uPQ-Pa-2Zt" secondAttribute="bottom" constant="43" id="c3p-Y1-74z"/>
                             <constraint firstItem="Vkv-n7-AsQ" firstAttribute="bottom" secondItem="SYO-Jb-xmA" secondAttribute="bottom" constant="179" id="dl7-hs-68B"/>
                             <constraint firstItem="cFH-AN-7qw" firstAttribute="top" secondItem="Vkv-n7-AsQ" secondAttribute="top" id="ehm-ME-0fk"/>
                             <constraint firstItem="cFH-AN-7qw" firstAttribute="leading" secondItem="Vkv-n7-AsQ" secondAttribute="leading" constant="16" id="kZe-n0-jwR"/>
+                            <constraint firstItem="uPQ-Pa-2Zt" firstAttribute="top" secondItem="Vkv-n7-AsQ" secondAttribute="top" constant="70" id="maJ-SI-iG7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vkv-n7-AsQ"/>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="cFH-AN-7qw" id="I6d-iy-HHW"/>
                         <outlet property="imageView" destination="SYO-Jb-xmA" id="PcA-wl-RJ1"/>
+                        <outlet property="objectLabel" destination="uPQ-Pa-2Zt" id="qJX-vH-m0z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWn-NZ-N7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3006" y="-82"/>
+            <point key="canvasLocation" x="3103" y="-67"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="S10-8h-Hvl">
@@ -490,12 +502,74 @@
             </objects>
             <point key="canvasLocation" x="3424.8000000000002" y="650.82458770614699"/>
         </scene>
+        <!--Fault Info View Controller-->
+        <scene sceneID="10Y-pE-PBm">
+            <objects>
+                <viewController id="U28-We-Huz" customClass="FaultInfoViewController" customModule="InFocusGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qfl-fc-qDV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovE-kU-kB4">
+                                <rect key="frame" x="16" y="20" width="33" height="33"/>
+                                <state key="normal" image="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="U28-We-Huz" eventType="touchUpInside" id="Am7-n0-Qjn"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ROu-1t-tcq">
+                                <rect key="frame" x="16" y="179" width="343" height="309"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lN-Ab-FQe">
+                                <rect key="frame" x="10" y="90" width="355" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, It's not an apple, that's a lemon" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciF-bl-qBC">
+                                <rect key="frame" x="16" y="526" width="343" height="103"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ROu-1t-tcq" firstAttribute="leading" secondItem="ovE-kU-kB4" secondAttribute="leading" id="4km-RJ-SvZ"/>
+                            <constraint firstItem="qCI-o1-kMw" firstAttribute="bottom" secondItem="ROu-1t-tcq" secondAttribute="bottom" constant="179" id="FIT-Nx-4DE"/>
+                            <constraint firstItem="ovE-kU-kB4" firstAttribute="leading" secondItem="qCI-o1-kMw" secondAttribute="leading" constant="16" id="FIc-5R-vjL"/>
+                            <constraint firstItem="ciF-bl-qBC" firstAttribute="leading" secondItem="qCI-o1-kMw" secondAttribute="leading" constant="16" id="Fvd-nQ-WzT"/>
+                            <constraint firstItem="2lN-Ab-FQe" firstAttribute="leading" secondItem="qCI-o1-kMw" secondAttribute="leading" constant="10" id="IXu-5s-hL1"/>
+                            <constraint firstItem="qCI-o1-kMw" firstAttribute="trailing" secondItem="ciF-bl-qBC" secondAttribute="trailing" constant="16" id="Iah-cC-R5h"/>
+                            <constraint firstItem="qCI-o1-kMw" firstAttribute="bottom" secondItem="ciF-bl-qBC" secondAttribute="bottom" constant="38" id="hPY-FK-S58"/>
+                            <constraint firstItem="ROu-1t-tcq" firstAttribute="centerX" secondItem="Qfl-fc-qDV" secondAttribute="centerX" id="jZR-w9-ESn"/>
+                            <constraint firstItem="ROu-1t-tcq" firstAttribute="top" secondItem="2lN-Ab-FQe" secondAttribute="bottom" constant="43" id="maS-Jp-rkg"/>
+                            <constraint firstItem="2lN-Ab-FQe" firstAttribute="top" secondItem="qCI-o1-kMw" secondAttribute="top" constant="70" id="pYY-ke-ryN"/>
+                            <constraint firstItem="ovE-kU-kB4" firstAttribute="top" secondItem="qCI-o1-kMw" secondAttribute="top" id="qro-2W-lnV"/>
+                            <constraint firstItem="qCI-o1-kMw" firstAttribute="trailing" secondItem="2lN-Ab-FQe" secondAttribute="trailing" constant="10" id="tcv-5H-Cuy"/>
+                            <constraint firstItem="ciF-bl-qBC" firstAttribute="top" secondItem="ROu-1t-tcq" secondAttribute="bottom" constant="38" id="xEA-DA-gqL"/>
+                            <constraint firstItem="ROu-1t-tcq" firstAttribute="centerY" secondItem="Qfl-fc-qDV" secondAttribute="centerY" id="ywK-1Q-FUJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qCI-o1-kMw"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="ovE-kU-kB4" id="WlW-Ac-TWj"/>
+                        <outlet property="hintLabel" destination="ciF-bl-qBC" id="oeK-LR-87e"/>
+                        <outlet property="imageView" destination="ROu-1t-tcq" id="ZSV-kD-xmh"/>
+                        <outlet property="objectLabel" destination="2lN-Ab-FQe" id="Dtc-sV-Gdd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNU-YB-8LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2493.5999999999999" y="1020.5397301349326"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cancel" width="33" height="33"/>
         <image name="heart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="SLl-fR-EUK"/>
         <segue reference="JUa-om-3vp"/>
         <segue reference="4bN-hx-fxM"/>
         <segue reference="eT6-EX-lVX"/>

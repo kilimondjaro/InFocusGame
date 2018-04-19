@@ -10,7 +10,7 @@ import Foundation
 import Vision
 
 protocol LearnProcessotDelegate: class {
-    func objectChecked(correct: Bool)
+    func objectChecked(correct: Bool, incorrectObject: String?)
 }
 
 class LearnProcessor {
@@ -26,6 +26,7 @@ class LearnProcessor {
     private var filteredObjectsCount = 0
     private var randomObjectSequence: [Int] = []
     private var objectIsNoticed = false
+    private var lastCheckedObjectsDict: [String: Int] = [:]
     
     
     init(semaphore: DispatchSemaphore) {
@@ -67,7 +68,6 @@ class LearnProcessor {
         return object
     }
     
-    
     func resultContainsObject(values: [(String, Double)], bound: Int?) -> Bool {
         for (i, pred) in values.enumerated() {
             if (bound != nil && i >= bound!) {
@@ -104,19 +104,31 @@ class LearnProcessor {
         if (checkCounter >= 10) {
             isChecking = false
             if (checkCounterValue > 5) {
-                delegate?.objectChecked(correct: true)
+                delegate?.objectChecked(correct: true, incorrectObject: nil)
             }
             else {
                 // TODO - move it
-                VoiceAssistant.instance.playFile(type: Voice.oops)
-                delegate?.objectChecked(correct: false)
+                let last = lastCheckedObjectsDict.max { a, b in a.value < b.value }
+                if let lastObjectIndex = objectsDict.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }) {
+                    if (objectsDict[lastObjectIndex] != nil) {
+                        delegate?.objectChecked(correct: false, incorrectObject: objectsDict[lastObjectIndex].key)
+                    }
+                }
+                else {
+                    VoiceAssistant.instance.playFile(type: Voice.oops)
+                    delegate?.objectChecked(correct: false, incorrectObject: nil)
+                }
             }
+            lastCheckedObjectsDict = [:]
             checkCounterValue = 0
             checkCounter = 0
         }
         else {
             checkCounter += 1
             
+            let first = (values.first?.0)!
+            
+            lastCheckedObjectsDict[first] = lastCheckedObjectsDict[first] == nil ? 1 : lastCheckedObjectsDict[first]! + 1
             checkCounterValue += resultContainsObject(values: values, bound: 3) ? 1 : 0
         }
     }

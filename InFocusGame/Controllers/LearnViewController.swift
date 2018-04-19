@@ -28,6 +28,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     var currentObject = ""
     var currentLives = 3
     var failCounter = 0
+    var incorrectObject = ""
     
     
     override func viewDidLoad() {
@@ -81,7 +82,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         }
     }
     
-    func objectChecked(correct: Bool) {
+    func objectChecked(correct: Bool, incorrectObject: String?) {
         print(correct ? "TRUE" : "FALSE")
         
         DispatchQueue.main.async {
@@ -93,6 +94,15 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
             }
             else {
                 self.failCounter += 1
+                if let incorrectObjName = incorrectObject, self.failCounter == 2 {
+                    self.incorrectObject = incorrectObjName
+                    
+                    self.definesPresentationContext = true
+                    self.providesPresentationContextTransitionStyle = true
+                    
+                    self.overlayBlurredBackgroundView()
+                    self.performSegue(withIdentifier: "showFaultInfo", sender: self)
+                }
                 if (self.failCounter == 3) {
                     self.failCounter = 0
                     self.currentLives -= 1
@@ -153,6 +163,16 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                 if let viewController = segue.destination as? HelpViewController {
                     viewController.delegate = self
                     viewController.object = self.currentObject
+                    viewController.modalPresentationStyle = .overFullScreen
+                    self.videoCapture.stop()
+                    VoiceAssistant.instance.stop()
+                }
+            }
+            if identifier == "showFaultInfo" {
+                if let viewController = segue.destination as? FaultInfoViewController {
+                    viewController.delegate = self
+                    viewController.correctObject = self.currentObject
+                    viewController.incorrectObject = self.incorrectObject
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
