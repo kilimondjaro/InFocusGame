@@ -94,6 +94,7 @@ class LearnProcessor {
     // TODO - optimize selection mechanism
     func processCheck(values: [(String, Double)]) {
         if (checkCounter >= 10) {
+            isChecking = false
             if (checkCounterValue > 5) {
                 delegate?.objectChecked(correct: true)
             }
@@ -104,7 +105,6 @@ class LearnProcessor {
             }
             checkCounterValue = 0
             checkCounter = 0
-            isChecking = false
         }
         else {
             checkCounter += 1

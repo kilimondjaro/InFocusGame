@@ -27,7 +27,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     let semaphore = DispatchSemaphore(value: 2)
     var currentObject = ""
     var currentLives = 3
-    var lifeCounter = 0
+    var failCounter = 0
     
     
     override func viewDidLoad() {
@@ -89,11 +89,12 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                 let object = self.learnProcessor?.pickUpObjectForSearch()
                 self.objectLabel.text = object
                 self.currentObject = object!
+                self.failCounter = 0
             }
             else {
-                self.lifeCounter += 1
-                if (self.lifeCounter == 3) {
-                    self.lifeCounter = 0
+                self.failCounter += 1
+                if (self.failCounter == 3) {
+                    self.failCounter = 0
                     self.currentLives -= 1
                     if (self.currentLives == 0) {
                         self.performSegue(withIdentifier: "gameOver", sender: self)
