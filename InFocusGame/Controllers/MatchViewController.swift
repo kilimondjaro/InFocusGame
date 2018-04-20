@@ -39,8 +39,7 @@ class MatchViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         delegate?.pickUpNewObject()
         delegate?.removeBlurredBackgroundView()
-        VoiceAssistant.instance.stop()
-        delegate?.videoCapture.start()
+        VoiceAssistant.instance.stop()        
     }
     
 

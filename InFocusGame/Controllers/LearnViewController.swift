@@ -36,6 +36,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     var currentLives = 3
     var failCounter = 0
     var incorrectObject = ""
+    var win = false
     
     
     override func viewDidLoad() {
@@ -62,6 +63,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         learnProcessor?.delegate = self
         let object = learnProcessor?.pickUpObjectForSearch()
         currentObject = object!
+        VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
         self.objectLabel.setTitle(object, for: UIControlState.normal)
     }
     
@@ -99,6 +101,9 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
             }
             else {
                 self.failCounter += 1
+                if (self.failCounter == 1) {
+                    VoiceAssistant.instance.playFile(type: Voice.oops)
+                }
                 if let incorrectObjName = incorrectObject, self.failCounter == 2 {
                     self.incorrectObject = incorrectObjName
                     
@@ -106,6 +111,9 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                     self.performSegue(withIdentifier: "showFaultInfo", sender: self)
                 }
                 if (self.failCounter == 3) {
+                    // TODO - Add animation and special sound
+                    
+                    VoiceAssistant.instance.playFile(type: Voice.oops)
                     self.failCounter = 0
                     self.currentLives -= 1
                     if (self.currentLives == 0) {
@@ -129,11 +137,18 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     }
     
     func pickUpNewObject() {
-        let object = self.learnProcessor?.pickUpObjectForSearch()
-        self.objectLabel.setTitle(object, for: UIControlState.normal)
-        self.currentObject = object!
-        self.failCounter = 0
-        VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
+        if let object = self.learnProcessor?.pickUpObjectForSearch() {
+            self.objectLabel.setTitle(object, for: UIControlState.normal)
+            self.currentObject = object
+            self.failCounter = 0
+            VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
+            self.videoCapture.start()
+        }
+        else {
+            self.win = true
+            performSegue(withIdentifier: "gameOver", sender: self)
+        }
+        
     }
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
@@ -195,6 +210,13 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                     viewController.delegate = self
                     viewController.object = self.currentObject
                     viewController.modalPresentationStyle = .overFullScreen
+                    self.videoCapture.stop()
+                    VoiceAssistant.instance.stop()
+                }
+            }
+            if identifier == "gameOver" {
+                if let viewController = segue.destination as? GameOverViewController {
+                    viewController.win = self.win
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }

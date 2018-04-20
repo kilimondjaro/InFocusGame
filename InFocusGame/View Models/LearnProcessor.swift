@@ -53,17 +53,17 @@ class LearnProcessor {
         isChecking = true
     }
     
-    func pickUpObjectForSearch() -> String {
+    func pickUpObjectForSearch() -> String? {
+        if (currentObjectIndex > filteredObjectsCount - 1) {
+            currentObjectIndex = 0
+            randomObjectSequence = (0...filteredObjectsCount-1).shuffled()
+            return nil
+        }
         
         let values = Constants.flatObjects.filter(({ flatObjectsData[$0]! }))
         let object = values[randomObjectSequence[currentObjectIndex]]
         currentObjectIndex += 1
         currentObject = object
-        
-        if (currentObjectIndex > filteredObjectsCount - 1) {
-            currentObjectIndex = 0
-            randomObjectSequence = (0...filteredObjectsCount-1).shuffled()
-        }
         
         return object
     }
@@ -109,16 +109,14 @@ class LearnProcessor {
             else {
                 // TODO - move it
                 let last = lastCheckedObjectsDict.max { a, b in a.value < b.value }
-                if let lastObjectIndex = objectsDict.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }) {
-                    if (objectsDict[lastObjectIndex] != nil) {
-                        delegate?.objectChecked(correct: false, incorrectObject: objectsDict[lastObjectIndex].key)
-                    }
+                if let lastObjectIndex = objectsDict.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), objectsDict[lastObjectIndex] != nil {
+                    delegate?.objectChecked(correct: false, incorrectObject: objectsDict[lastObjectIndex].key)
                 }
-                else {
-                    VoiceAssistant.instance.playFile(type: Voice.oops)
+                else {                    
                     delegate?.objectChecked(correct: false, incorrectObject: nil)
                 }
             }
+            print(3)
             lastCheckedObjectsDict = [:]
             checkCounterValue = 0
             checkCounter = 0

@@ -500,6 +500,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Lq9-b1-lyE"/>
                     </view>
+                    <connections>
+                        <outlet property="objectsDetectedLabel" destination="Y9A-Sj-Dgc" id="fGd-oD-upN"/>
+                        <outlet property="rightAnswersLabel" destination="AlU-Ob-X5A" id="fDd-FZ-1L6"/>
+                        <outlet property="scoreLabel" destination="fqs-z3-FqI" id="KUT-WL-ney"/>
+                        <outlet property="statusLabel" destination="6Tn-SB-Wtx" id="1jy-pc-cfv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmf-tb-McK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

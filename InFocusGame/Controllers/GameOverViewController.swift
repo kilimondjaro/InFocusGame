@@ -9,11 +9,17 @@
 import UIKit
 
 class GameOverViewController: UIViewController {
-
+    var win = false
+    
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var rightAnswersLabel: UILabel!
+    @IBOutlet weak var objectsDetectedLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        statusLabel.text = win ? "You Win!" : "Game Over"        
     }
 
     override func didReceiveMemoryWarning() {

@@ -84,7 +84,7 @@ class VoiceAssistant {
         player?.play()
     }
     
-    func playSequence(names: [String]) {
+    func playSequence(names: [String]) {        
         if ((player != nil && (player?.isPlaying)!) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
             return
         }
