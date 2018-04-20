@@ -37,7 +37,7 @@ class HelpViewController: UIViewController {
         
         imageView.image = UIImage(named: object)
         objectLabel.text = object
-        VoiceAssistant.instance.playFile(name: "\(object)_desc")
+        VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
     }
 
     override func didReceiveMemoryWarning() {

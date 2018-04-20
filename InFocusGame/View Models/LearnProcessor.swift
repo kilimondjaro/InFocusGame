@@ -91,7 +91,7 @@ class LearnProcessor {
                 return
             }
             objectIsNoticed = true
-            VoiceAssistant.instance.playFile(type: Voice.noticed)
+            VoiceAssistant.instance.playFile(type: Voice.noticed, overlap: false)
             
         }
         else {

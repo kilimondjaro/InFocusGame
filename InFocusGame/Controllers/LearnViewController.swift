@@ -107,7 +107,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         if (seconds == 30) {
             timer.invalidate()
             if let infoCount = Constants.objectsInfo[self.currentObject], loopCounter < infoCount {
-                VoiceAssistant.instance.playFile(name: "\(self.currentObject)_info_\(loopCounter)")
+                VoiceAssistant.instance.playFile(name: "\(self.currentObject)_info_\(loopCounter)", overlap: false)
                 loopCounter += 1
                 seconds = 60
                 self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer)
@@ -132,7 +132,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
             else {
                 self.failCounter += 1
                 if (self.failCounter == 1) {
-                    VoiceAssistant.instance.playFile(type: Voice.oops)
+                    VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
                 }
                 if let incorrectObjName = incorrectObject, self.failCounter == 2 {
                     self.incorrectObject = incorrectObjName
@@ -143,7 +143,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                 if (self.failCounter == 3) {
                     // TODO - Add animation and special sound
                     
-                    VoiceAssistant.instance.playFile(type: Voice.oops)
+                    VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
                     self.failCounter = 0
                     self.currentLives -= 1
                     if (self.currentLives == 0) {
@@ -192,7 +192,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     }
     
     @IBAction func objectLabelPressed(_ sender: UIButton) {
-        VoiceAssistant.instance.playFile(name: currentObject)        
+        VoiceAssistant.instance.playFile(name: currentObject, overlap: true)
     }
     
     func overlayBlurredBackgroundView(style: UIBlurEffectStyle) {

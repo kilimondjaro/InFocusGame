@@ -66,9 +66,9 @@ class VoiceAssistant {
     }
     
     
-    func playFile(type: Voice) {
+    func playFile(type: Voice, overlap: Bool) {
         
-        if ((player != nil && (player?.isPlaying)!) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
+        if ((player != nil && (player?.isPlaying)! && !overlap) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
             return
         }
         
@@ -76,8 +76,8 @@ class VoiceAssistant {
         player?.play()
     }
     
-    func playFile(name: String) {
-        if ((player != nil && (player?.isPlaying)!) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
+    func playFile(name: String, overlap: Bool) {
+        if ((player != nil && (player?.isPlaying)! && !overlap) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
             return
         }
         

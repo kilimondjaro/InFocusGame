@@ -27,7 +27,7 @@ class MatchViewController: UIViewController {
         
         imageView.image = UIImage(named: object)
         objectLabel.text = object
-        VoiceAssistant.instance.playFile(name: "match")
+        VoiceAssistant.instance.playFile(name: "match", overlap: true)
     }
     
     override func didReceiveMemoryWarning() {

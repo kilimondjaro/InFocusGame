@@ -48,7 +48,7 @@ class FaultInfoViewController: UIViewController {
         objectLabel.text = incorrectObject
         hintLabel.text = "Oops, it's not a \(correctObject) - that's a \(incorrectObject)"
         
-        //VoiceAssistant.instance.playFile(name: object)
+        VoiceAssistant.instance.playFile(name: "\(incorrectObject)_oops", overlap: true)
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
