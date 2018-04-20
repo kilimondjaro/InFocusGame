@@ -32,19 +32,29 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     var framesDone = 0
     var frameCapturingStartTime = CACurrentMediaTime()
     let semaphore = DispatchSemaphore(value: 2)
+    
+    // Objects
     var currentObject = ""
+    var incorrectObject = ""
+    
+    // Lives
     var currentLives = 3
     var failCounter = 0
-    var incorrectObject = ""
+    
+    // Win or Not
     var win = false
     
+    // Timer
+    var timer = Timer()
+    var loopCounter = 0
+    var seconds = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initLearnProcessor()
         setUpCamera()
-        setUpInterface()        
+        setUpInterface()
+        initLearnProcessor()
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,10 +71,11 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
     func initLearnProcessor() {
         learnProcessor = LearnProcessor(semaphore: semaphore)
         learnProcessor?.delegate = self
-        let object = learnProcessor?.pickUpObjectForSearch()
-        currentObject = object!
-        VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
-        self.objectLabel.setTitle(object, for: UIControlState.normal)
+        pickUpNewObject()
+//        let object = learnProcessor?.pickUpObjectForSearch()
+//        currentObject = object!
+//        VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
+//        self.objectLabel.setTitle(object, for: UIControlState.normal)
     }
     
     func setUpInterface() {
@@ -89,6 +100,25 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                 self.videoCapture.start()
             }
         }
+    }
+    
+    func updateTimer(timer: Timer) {
+        seconds -= 1
+        if (seconds == 30) {
+            timer.invalidate()
+            if let infoCount = Constants.objectsInfo[self.currentObject], loopCounter < infoCount {
+                VoiceAssistant.instance.playFile(name: "\(self.currentObject)_info_\(loopCounter)")
+                loopCounter += 1
+                seconds = 60
+                self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer)
+            }
+        }
+    }
+    
+    func runTimer() {
+        seconds = 60
+        loopCounter = 0
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer)
     }
     
     func objectChecked(correct: Bool, incorrectObject: String?) {
@@ -142,6 +172,8 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
             self.currentObject = object
             self.failCounter = 0
             VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
+            runTimer()
+            
             self.videoCapture.start()
         }
         else {

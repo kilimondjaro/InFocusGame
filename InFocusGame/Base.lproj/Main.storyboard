@@ -635,9 +635,10 @@
         <image name="heart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2UZ-1p-Pq3"/>
         <segue reference="JUa-om-3vp"/>
         <segue reference="4bN-hx-fxM"/>
         <segue reference="eT6-EX-lVX"/>
-        <segue reference="wcq-Sx-QVQ"/>
+        <segue reference="Obc-0x-W1Z"/>
     </inferredMetricsTieBreakers>
 </document>

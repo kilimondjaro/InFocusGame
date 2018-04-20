@@ -1,5 +1,5 @@
 //
-//  ObjectsTypes.swift
+//  Constants.swift
 //  InFocusGame
 //
 //  Created by Kirill Babich on 17/04/2018.
@@ -1015,6 +1015,10 @@ let objectsTypes = [
 
 struct Constants {
     static var flatObjects: [String] = CoreDataManager.instance.getAttributes(entity: "FlatObjects")
+    static let objectsInfo: [String: Int] = [
+        "computer": 2,
+        "cup": 1
+    ]
 }
 
 

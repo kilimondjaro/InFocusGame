@@ -30,9 +30,10 @@ class VoiceAssistant {
     static let instance = VoiceAssistant()
     
     private func loadFile(type: Voice) {
-        let url = Bundle.main.url(forResource: type.getUrl(), withExtension: "mp3")
         do {
-            player = try AVAudioPlayer(contentsOf: url!)
+            if let url = Bundle.main.url(forResource: type.getUrl(), withExtension: "mp3") {
+                player = try AVAudioPlayer(contentsOf: url)
+            }
             
         } catch {
             print("Could not load \"\(type.getUrl())\" audio file")
@@ -40,10 +41,10 @@ class VoiceAssistant {
     }
     
     private func loadFile(name: String) {
-        let url = Bundle.main.url(forResource: name, withExtension: "mp3")
         do {
-            player = try AVAudioPlayer(contentsOf: url!)
-            
+            if let url = Bundle.main.url(forResource: name, withExtension: "mp3") {
+                player = try AVAudioPlayer(contentsOf: url)
+            }
         } catch {
             print("Could not load \"\(name)\" audio file")
         }
@@ -53,12 +54,12 @@ class VoiceAssistant {
         var items: [AVPlayerItem] = []
         do {
             for name in names {
-                let url = Bundle.main.url(forResource: name, withExtension: "mp3")
-                items.append(AVPlayerItem(url: url!))
+                if let url = Bundle.main.url(forResource: name, withExtension: "mp3") {
+                    items.append(AVPlayerItem(url: url))
+                }
             }
             
             sequencePlayer = AVQueuePlayer(items: items)
-            
         } catch {
             print("Could not load \"\(names)\" audio files")
         }
