@@ -805,8 +805,20 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeP-HQ-xfB" userLabel="Upper View">
                                 <rect key="frame" x="0.0" y="20" width="375" height="170"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6h-7R-qJb">
+                                        <rect key="frame" x="169" y="8" width="36" height="36"/>
+                                        <color key="backgroundColor" red="0.18235303735567784" green="0.80764197335025378" blue="0.18528486962021984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="Cy4-Xd-YRf"/>
+                                            <constraint firstAttribute="height" constant="36" id="TZJ-CQ-BKJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="CUL-CU-Owf"/>
+                                    <constraint firstItem="O6h-7R-qJb" firstAttribute="top" secondItem="YeP-HQ-xfB" secondAttribute="top" constant="8" id="D7H-WL-1nE"/>
+                                    <constraint firstItem="O6h-7R-qJb" firstAttribute="centerX" secondItem="YeP-HQ-xfB" secondAttribute="centerX" id="KSe-RO-swx"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tX1-6i-h3P" userLabel="Bottom menu">
@@ -864,13 +876,14 @@
                     </view>
                     <connections>
                         <outlet property="scanButton" destination="w4K-Ch-r3p" id="JlM-k9-fHy"/>
+                        <outlet property="scannableLabel" destination="O6h-7R-qJb" id="NDN-bZ-SB2"/>
                         <outlet property="videoPreview" destination="i7o-Pb-bNg" id="0Rs-bd-95O"/>
                         <segue destination="a7S-Rb-awv" kind="presentation" identifier="showInfo" id="HPF-aJ-dJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7j-Qp-D73" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090" y="929"/>
+            <point key="canvasLocation" x="2088.8000000000002" y="928.78560719640188"/>
         </scene>
     </scenes>
     <resources>

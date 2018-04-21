@@ -11,6 +11,7 @@ import Vision
 
 protocol ScanProcessorDelegate: class {
     func objectScanned(object: String?)
+    func objectDetected(object: String?)
 }
 
 class ScanProcessor {
@@ -41,8 +42,8 @@ class ScanProcessor {
 
             // TODO - move it
             let last = lastScannedObjectsDict.max { a, b in a.value < b.value }
-            if let lastObjectIndex = Constants.objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), objectsDict[lastObjectIndex] != nil {
-                delegate?.objectScanned(object: objectsDict[lastObjectIndex].key)
+            if let lastObjectIndex = Constants.objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), Constants.objectsIds[lastObjectIndex] != nil {
+                delegate?.objectScanned(object: Constants.objectsIds[lastObjectIndex].key)
             }
             else {
                 delegate?.objectScanned(object: nil)
@@ -60,6 +61,17 @@ class ScanProcessor {
         }
     }
     
+    func processDetection(values: [(String, Double)]) {
+        for object in values {
+            let id = object.0.components(separatedBy: " ")[0]
+            if let index = Constants.objectsIds.index(where: { $1.contains(id) }), Constants.objectsIds[index] != nil {
+                delegate?.objectDetected(object: Constants.objectsIds[index].key)
+                return
+            }
+        }
+        delegate?.objectDetected(object: nil)
+    }
+    
     func requestDidComplete(request: VNRequest, error: Error?) {
         if let observations = request.results as? [VNClassificationObservation] {
             
@@ -69,9 +81,9 @@ class ScanProcessor {
             if (isScanning) {
                 processScan(values: top5)
             }
-//            else {
-//                noticed(values: top5)
-//            }
+            else {
+                processDetection(values: Array(top5.prefix(through: 1)))
+            }
             
             
             DispatchQueue.main.async {

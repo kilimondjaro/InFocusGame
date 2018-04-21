@@ -9,7 +9,7 @@
 import Foundation
 import Vision
 
-protocol LearnProcessotDelegate: class {
+protocol LearnProcessorDelegate: class {
     func objectChecked(correct: Bool, incorrectObject: String?)
 }
 
@@ -21,7 +21,7 @@ class LearnProcessor {
     private var checkCounterValue = 0
     private var currentObjectIndex = 0
     private var currentObject = "apple"
-    weak var delegate: LearnProcessotDelegate?
+    weak var delegate: LearnProcessorDelegate?
     private var flatObjectsData: [String: Bool] = [:]
     private var filteredObjectsCount = 0
     private var randomObjectSequence: [Int] = []

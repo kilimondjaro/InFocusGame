@@ -16,7 +16,7 @@ protocol ModalViewControllerDelegate: class {
 }
 
 
-class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewControllerDelegate {
+class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewControllerDelegate {
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var objectLabel: UIButton!

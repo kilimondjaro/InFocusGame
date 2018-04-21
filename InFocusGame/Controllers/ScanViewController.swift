@@ -13,6 +13,7 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
 
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var scannableLabel: UIView!
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
@@ -26,7 +27,7 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpCamera()
         setUpInterface()
         initScanProcessor()
@@ -44,6 +45,8 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     func setUpInterface() {
         scanButton.layer.cornerRadius = scanButton.frame.size.height / 2
         scanButton.clipsToBounds = true
+        scannableLabel.layer.cornerRadius = scannableLabel.frame.size.height / 2
+        scannableLabel.backgroundColor = UIColor.gray
     }
     
     func setUpCamera() {
@@ -74,9 +77,20 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     func objectScanned(object: String?) {
         DispatchQueue.main.async {
             if let obj = object {
-                self.scannedObject = object!
+                self.scannedObject = obj
                 self.overlayBlurredBackgroundView(style: .dark)
                 self.performSegue(withIdentifier: "showInfo", sender: self)
+            }
+        }
+    }
+    
+    func objectDetected(object: String?) {
+        DispatchQueue.main.async {
+            if let obj = object {
+                self.scannableLabel.backgroundColor = UIColor.green
+            }
+            else {
+                self.scannableLabel.backgroundColor = UIColor.gray
             }
         }
     }
@@ -96,7 +110,6 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     }
     
     func removeBlurredBackgroundView() {
-        
         for subview in view.subviews {
             if subview.isKind(of: UIVisualEffectView.self) {
                 subview.removeFromSuperview()
