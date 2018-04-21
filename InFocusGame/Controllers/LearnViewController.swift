@@ -171,7 +171,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     
     func pickUpNewObject() {
         if let object = self.learnProcessor?.pickUpObjectForSearch() {
-            self.objectLabel.setTitle(object, for: UIControlState.normal)
+            self.objectLabel.setTitle(NSLocalizedString(object, comment: ""), for: .normal)
             self.currentObject = object
             self.failCounter = 0
             VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])

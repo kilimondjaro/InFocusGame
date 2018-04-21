@@ -45,8 +45,8 @@ class FaultInfoViewController: UIViewController {
         cancelButton.tintColor = .white
         
         imageView.image = UIImage(named: incorrectObject)
-        objectLabel.text = incorrectObject
-        hintLabel.text = "Oops, it's not a \(correctObject) - that's a \(incorrectObject)"
+        objectLabel.text = NSLocalizedString(incorrectObject, comment: "")
+        hintLabel.text = "" //"Oops, it's not a \(NSLocalizedString(correctObject, comment: "")) - that's a \(NSLocalizedString(incorrectObject, comment: ""))"
         
         VoiceAssistant.instance.playFile(name: "\(incorrectObject)_oops", overlap: true)
     }

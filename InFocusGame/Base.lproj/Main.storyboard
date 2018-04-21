@@ -191,7 +191,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_settings" translatesAutoresizingMaskIntoConstraints="NO" id="kuj-62-PgT">
-                                <rect key="frame" x="0.0" y="20" width="374" height="346"/>
+                                <rect key="frame" x="0.0" y="20" width="373.5" height="346"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnG-wc-BQa">
                                 <rect key="frame" x="65" y="521" width="245" height="45"/>
@@ -457,7 +457,10 @@
                                             <constraint firstAttribute="height" constant="30" id="DFi-O3-eMv"/>
                                             <constraint firstAttribute="width" constant="30" id="r6X-Du-IhY"/>
                                         </constraints>
-                                        <state key="normal" title="Skip"/>
+                                        <state key="normal" title="Exit"/>
+                                        <connections>
+                                            <segue destination="oal-s2-6ab" kind="presentation" modalTransitionStyle="crossDissolve" id="NKO-KB-ZAk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -505,10 +508,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqx-hi-vdP">
                                         <rect key="frame" x="247" y="117" width="118" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.68302508939761764" blue="0.52527709155562485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Exit"/>
-                                        <connections>
-                                            <segue destination="oal-s2-6ab" kind="presentation" modalTransitionStyle="crossDissolve" id="eT6-EX-lVX"/>
-                                        </connections>
+                                        <state key="normal" title="Skip"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -817,11 +817,24 @@
                                             <constraint firstAttribute="height" constant="36" id="TZJ-CQ-BKJ"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1z-Vo-Rc7">
+                                        <rect key="frame" x="14" y="11" width="132" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="132" id="5Ly-4g-3VT"/>
+                                            <constraint firstAttribute="height" constant="30" id="NQw-SX-2ks"/>
+                                        </constraints>
+                                        <state key="normal" title="Exit"/>
+                                        <connections>
+                                            <segue destination="oal-s2-6ab" kind="presentation" modalTransitionStyle="crossDissolve" id="2yh-fD-PxE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="CUL-CU-Owf"/>
                                     <constraint firstItem="O6h-7R-qJb" firstAttribute="top" secondItem="YeP-HQ-xfB" secondAttribute="top" constant="8" id="D7H-WL-1nE"/>
+                                    <constraint firstItem="W1z-Vo-Rc7" firstAttribute="top" secondItem="YeP-HQ-xfB" secondAttribute="top" constant="11" id="Jbo-OZ-RME"/>
                                     <constraint firstItem="O6h-7R-qJb" firstAttribute="centerX" secondItem="YeP-HQ-xfB" secondAttribute="centerX" id="KSe-RO-swx"/>
+                                    <constraint firstItem="W1z-Vo-Rc7" firstAttribute="leading" secondItem="YeP-HQ-xfB" secondAttribute="leading" constant="14" id="hN0-vl-xEY"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tX1-6i-h3P" userLabel="Bottom menu">
@@ -839,26 +852,16 @@
                                             <action selector="scanButtonPressed:" destination="xhy-eN-mUC" eventType="touchUpInside" id="Oga-YI-aov"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHp-Gx-ExX">
-                                        <rect key="frame" x="247" y="117" width="118" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.68302508939999995" blue="0.52527709160000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Exit"/>
-                                        <connections>
-                                            <segue destination="oal-s2-6ab" kind="presentation" modalTransitionStyle="crossDissolve" id="1ER-EB-EjP"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="w4K-Ch-r3p" firstAttribute="centerX" secondItem="tX1-6i-h3P" secondAttribute="centerX" id="3VY-zw-VTT"/>
                                     <constraint firstAttribute="bottom" secondItem="w4K-Ch-r3p" secondAttribute="bottom" constant="8" id="5d5-uu-j1Q"/>
-                                    <constraint firstItem="wHp-Gx-ExX" firstAttribute="leading" secondItem="w4K-Ch-r3p" secondAttribute="trailing" constant="10" id="BDv-le-UKF"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="182" id="Kb8-Of-zjK"/>
                                     <constraint firstAttribute="height" constant="182" id="LKh-6K-0tc"/>
-                                    <constraint firstAttribute="trailing" secondItem="wHp-Gx-ExX" secondAttribute="trailing" constant="10" id="Nqf-BZ-FU4"/>
-                                    <constraint firstAttribute="bottom" secondItem="wHp-Gx-ExX" secondAttribute="bottom" constant="35" id="c4c-26-U6y"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" red="0.87991751269999996" green="0.87991751269999996" blue="0.87991751269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YeP-HQ-xfB" firstAttribute="trailing" secondItem="J4V-qc-0T6" secondAttribute="trailing" id="3A9-ZJ-jzq"/>
                             <constraint firstItem="i7o-Pb-bNg" firstAttribute="bottom" secondItem="J4V-qc-0T6" secondAttribute="bottom" id="3Ug-c6-QLP"/>
@@ -886,7 +889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7j-Qp-D73" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2088.8000000000002" y="928.78560719640188"/>
+            <point key="canvasLocation" x="2088.28125" y="928.71093749999989"/>
         </scene>
     </scenes>
     <resources>
@@ -1094,11 +1097,10 @@ AAAAAAAAAAAALHU
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dta-U1-lvc"/>
-        <segue reference="HPF-aJ-dJj"/>
+        <segue reference="q55-5a-T5C"/>
         <segue reference="Wk1-5L-HRl"/>
         <segue reference="4bN-hx-fxM"/>
-        <segue reference="1ER-EB-EjP"/>
+        <segue reference="NKO-KB-ZAk"/>
         <segue reference="adS-wc-BSj"/>
     </inferredMetricsTieBreakers>
 </document>

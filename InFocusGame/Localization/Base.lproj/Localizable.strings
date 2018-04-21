@@ -9,3 +9,12 @@
 "gameSettings" = "Game Settings";
 "settings" = "Settings";
 "inFocus" = "In Focus";
+
+
+
+"apple" = "Apple";
+"banana" = "Banana";
+"chair" = "Chair";
+"table" = "Table";
+"computer" = "Computer";
+"cup" = "Cup";

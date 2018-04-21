@@ -58,7 +58,7 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
         
         let obj = objects[indexPath.row]
         cell.objectSwitch.isOn = flatObjectsData[obj]!
-        cell.objectLabel.text =  obj
+        cell.objectLabel.text =  NSLocalizedString(obj, comment: "")
         cell.objectName = obj
         return cell
     }

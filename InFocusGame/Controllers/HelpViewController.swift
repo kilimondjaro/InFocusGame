@@ -36,7 +36,8 @@ class HelpViewController: UIViewController {
         cancelButton.tintColor = .white
         
         imageView.image = UIImage(named: object)
-        objectLabel.text = object
+        
+        objectLabel.text = NSLocalizedString(object, comment: "")
         VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
     }
 

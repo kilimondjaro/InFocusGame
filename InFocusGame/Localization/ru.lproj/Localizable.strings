@@ -9,3 +9,12 @@
 "gameSettings" = "Настройки Игры";
 "settings" = "Настройки";
 "inFocus" = "In Focus";
+
+
+
+"apple" = "Яблоко";
+"banana" = "Банан";
+"chair" = "Стул";
+"table" = "Стол";
+"computer" = "Компьютер";
+"cup" = "Чашка";

@@ -60,7 +60,7 @@ class LearnProcessor {
             }
             
             let id = pred.0.components(separatedBy: " ")[0]
-            if ((objectsDict[currentObject]?.contains(id))! && pred.1 > 0.15) {
+            if ((Constants.objectsIds[currentObject]?.contains(id))! && pred.1 > 0.15) {
                 print("\(i) - \(pred.0) - \(pred.1)")
                 return true
             }
@@ -94,8 +94,8 @@ class LearnProcessor {
             else {
                 // TODO - move it
                 let last = lastCheckedObjectsDict.max { a, b in a.value < b.value }
-                if let lastObjectIndex = objectsDict.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), objectsDict[lastObjectIndex] != nil {
-                    delegate?.objectChecked(correct: false, incorrectObject: objectsDict[lastObjectIndex].key)
+                if let lastObjectIndex = Constants.objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), Constants.objectsIds[lastObjectIndex] != nil {
+                    delegate?.objectChecked(correct: false, incorrectObject: Constants.objectsIds[lastObjectIndex].key)
                 }
                 else {                    
                     delegate?.objectChecked(correct: false, incorrectObject: nil)

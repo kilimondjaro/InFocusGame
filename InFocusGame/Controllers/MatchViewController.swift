@@ -26,7 +26,7 @@ class MatchViewController: UIViewController {
         view.backgroundColor = UIColor.clear
         
         imageView.image = UIImage(named: object)
-        objectLabel.text = object
+        objectLabel.text = NSLocalizedString(object, comment: "")
         VoiceAssistant.instance.playFile(name: "match", overlap: true)
     }
     
