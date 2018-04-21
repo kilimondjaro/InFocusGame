@@ -49,7 +49,7 @@ class HelpViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         delegate?.removeBlurredBackgroundView()
         VoiceAssistant.instance.stop()
-        delegate?.continueProcess()
+        delegate?.continueProcess(from: nil)
     }
     
     /*

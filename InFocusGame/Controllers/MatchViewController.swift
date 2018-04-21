@@ -39,7 +39,7 @@ class MatchViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         VoiceAssistant.instance.stop()
         delegate?.removeBlurredBackgroundView()
-        delegate?.continueProcess()
+        delegate?.continueProcess(from: "match")
     }
     
 

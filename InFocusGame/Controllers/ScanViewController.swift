@@ -70,7 +70,7 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
         scanProcessor?.delegate = self
     }
     
-    func continueProcess() {
+    func continueProcess(from: String?) {
         videoCapture.start()
     }
     

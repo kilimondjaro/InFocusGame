@@ -12,7 +12,7 @@ import CoreMedia
 
 protocol ModalViewControllerDelegate: class {
     func removeBlurredBackgroundView()
-    func continueProcess()
+    func continueProcess(from: String?)
 }
 
 
@@ -97,8 +97,10 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
         }
     }
     
-    func continueProcess() {
-        pickUpNewObject()
+    func continueProcess(from: String?) {
+        if let f = from, f == "match" {
+            pickUpNewObject()
+        }
         videoCapture.start()
     }
     
