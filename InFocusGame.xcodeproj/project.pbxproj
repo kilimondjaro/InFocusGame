@@ -34,6 +34,7 @@
 		2678900D2088DA7B00D8CA0C /* SoundSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678900C2088DA7B00D8CA0C /* SoundSettingsViewController.swift */; };
 		2678900F2088F28B00D8CA0C /* FaultInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678900E2088F28B00D8CA0C /* FaultInfoViewController.swift */; };
 		26A82C12208B46D8009ACE8C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82C11208B46D8009ACE8C /* ScanViewController.swift */; };
+		26A82C14208B73C7009ACE8C /* ScanProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A82C13208B73C7009ACE8C /* ScanProcessor.swift */; };
 		26CF16B32089069600775B7A /* chair.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16AD2089069500775B7A /* chair.mp3 */; };
 		26CF16B42089069600775B7A /* banana.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16AE2089069600775B7A /* banana.mp3 */; };
 		26CF16B52089069600775B7A /* computer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16AF2089069600775B7A /* computer.mp3 */; };
@@ -108,6 +109,7 @@
 		2678900C2088DA7B00D8CA0C /* SoundSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsViewController.swift; sourceTree = "<group>"; };
 		2678900E2088F28B00D8CA0C /* FaultInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultInfoViewController.swift; sourceTree = "<group>"; };
 		26A82C11208B46D8009ACE8C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		26A82C13208B73C7009ACE8C /* ScanProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProcessor.swift; sourceTree = "<group>"; };
 		26CF16AD2089069500775B7A /* chair.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chair.mp3; sourceTree = "<group>"; };
 		26CF16AE2089069600775B7A /* banana.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = banana.mp3; sourceTree = "<group>"; };
 		26CF16AF2089069600775B7A /* computer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = computer.mp3; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				2665038F20862D2600947473 /* VoiceAssistant.swift */,
 				2665039120862E4E00947473 /* ObjectRecognition.swift */,
 				26650393208636B100947473 /* LearnProcessor.swift */,
+				26A82C13208B73C7009ACE8C /* ScanProcessor.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				2665038720860BC800947473 /* VideoCapture.swift in Sources */,
 				26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */,
 				26109E3E208767C700038E4F /* ObjectsListsTableViewCell.swift in Sources */,
+				26A82C14208B73C7009ACE8C /* ScanProcessor.swift in Sources */,
 				26CF16BE2089325900775B7A /* MatchViewController.swift in Sources */,
 				26109E442087C97800038E4F /* Extensions.swift in Sources */,
 				26109E4220879B6700038E4F /* CoreDataManager.swift in Sources */,

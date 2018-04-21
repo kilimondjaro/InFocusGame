@@ -12,8 +12,7 @@ import CoreMedia
 
 protocol ModalViewControllerDelegate: class {
     func removeBlurredBackgroundView()
-    func pickUpNewObject()
-    var videoCapture: VideoCapture! {get set}
+    func continueProcess()
 }
 
 
@@ -72,10 +71,6 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         learnProcessor = LearnProcessor(semaphore: semaphore)
         learnProcessor?.delegate = self
         pickUpNewObject()
-//        let object = learnProcessor?.pickUpObjectForSearch()
-//        currentObject = object!
-//        VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
-//        self.objectLabel.setTitle(object, for: UIControlState.normal)
     }
     
     func setUpInterface() {
@@ -100,6 +95,11 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
                 self.videoCapture.start()
             }
         }
+    }
+    
+    func continueProcess() {
+        pickUpNewObject()
+        videoCapture.start()
     }
     
     func updateTimer(timer: Timer) {
@@ -183,6 +183,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         }
         
     }
+
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         learnProcessor?.check()

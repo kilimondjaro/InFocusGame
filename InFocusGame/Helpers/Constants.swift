@@ -1019,6 +1019,8 @@ struct Constants {
         "computer": 2,
         "cup": 1
     ]
+    
+    static let objectsIds = objectsDict
 }
 
 
