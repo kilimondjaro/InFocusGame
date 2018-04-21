@@ -22,31 +22,17 @@ class LearnProcessor {
     private var currentObjectIndex = 0
     private var currentObject = "apple"
     weak var delegate: LearnProcessorDelegate?
-    private var flatObjectsData: [String: Bool] = [:]
-    private var filteredObjectsCount = 0
     private var randomObjectSequence: [Int] = []
     private var objectIsNoticed = false
     private var lastCheckedObjectsDict: [String: Int] = [:]
-    
+    let objects = Constants.flatObjects
     
     init(semaphore: DispatchSemaphore) {
         self.semaphore = semaphore
         objectRecognition = ObjectRecognition()
         objectRecognition?.setUpVision(completionHandler: requestDidComplete)
         
-        
-        
-        let result = CoreDataManager.instance.fetch(entity: "FlatObjects")
-        for data in result {
-            for name in Constants.flatObjects {
-                flatObjectsData[name] = data.value(forKey: name) as? Bool
-            }
-        }
-        
-        let filteredObjets = Constants.flatObjects.filter(({ flatObjectsData[$0]! }))
-        filteredObjectsCount = filteredObjets.count
-        
-        randomObjectSequence = (0...filteredObjectsCount-1).shuffled()
+        randomObjectSequence = (0...objects.count-1).shuffled()
     }
     
     func check() {
@@ -54,14 +40,13 @@ class LearnProcessor {
     }
     
     func pickUpObjectForSearch() -> String? {
-        if (currentObjectIndex > filteredObjectsCount - 1) {
+        if (currentObjectIndex > objects.count - 1) {
             currentObjectIndex = 0
-            randomObjectSequence = (0...filteredObjectsCount-1).shuffled()
+            randomObjectSequence = (0...objects.count-1).shuffled()
             return nil
         }
         
-        let values = Constants.flatObjects.filter(({ flatObjectsData[$0]! }))
-        let object = values[randomObjectSequence[currentObjectIndex]]
+        let object = objects[randomObjectSequence[currentObjectIndex]]
         currentObjectIndex += 1
         currentObject = object
         
@@ -75,7 +60,7 @@ class LearnProcessor {
             }
             
             let id = pred.0.components(separatedBy: " ")[0]
-            if (flatObjectsData[currentObject]! && (objectsDict[currentObject]?.contains(id))! && pred.1 > 0.15) {
+            if ((objectsDict[currentObject]?.contains(id))! && pred.1 > 0.15) {
                 print("\(i) - \(pred.0) - \(pred.1)")
                 return true
             }

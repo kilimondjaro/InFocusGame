@@ -13,14 +13,16 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
     private var flatObjectsData: [String: Bool] = [:]
     @IBOutlet weak var tableView: UITableView!
     
+    let objects = CoreDataManager.instance.getAttributes(entity: "FlatObjects")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let result = CoreDataManager.instance.fetch(entity: "FlatObjects")
         
+        
         for data in result {
-            for name in Constants.flatObjects {
+            for name in objects {
                 flatObjectsData[name] = data.value(forKey: name) as? Bool
             }
         }
@@ -45,7 +47,7 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Constants.flatObjects.count
+        return objects.count
     }
     
     
@@ -54,7 +56,7 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
         // TODO - change for many sections
         // TODO - add localization
         
-        let obj = Constants.flatObjects[indexPath.row]
+        let obj = objects[indexPath.row]
         cell.objectSwitch.isOn = flatObjectsData[obj]!
         cell.objectLabel.text =  obj
         cell.objectName = obj

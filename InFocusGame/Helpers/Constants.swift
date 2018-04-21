@@ -1014,7 +1014,12 @@ let objectsTypes = [
 
 
 struct Constants {
-    static var flatObjects: [String] = CoreDataManager.instance.getAttributes(entity: "FlatObjects")
+    
+    static var flatObjects: [String] {
+        let data = CoreDataManager.instance.fetch(entity: "FlatObjects")[0]
+        return CoreDataManager.instance.getAttributes(entity: "FlatObjects").filter(({ (data.value(forKey: $0) as? Bool)! }))
+    }
+    
     static let objectsInfo: [String: Int] = [
         "computer": 2,
         "cup": 1

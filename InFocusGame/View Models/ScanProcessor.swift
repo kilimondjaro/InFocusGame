@@ -18,6 +18,7 @@ class ScanProcessor {
     let objectRecognition = ObjectRecognition()
     let semaphore: DispatchSemaphore?
     
+    let objects = Constants.flatObjects
     
     weak var delegate: ScanProcessorDelegate?
     
@@ -43,10 +44,9 @@ class ScanProcessor {
             // TODO - move it
             let last = lastScannedObjectsDict.max { a, b in a.value < b.value }
             if let lastObjectIndex = Constants.objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), Constants.objectsIds[lastObjectIndex] != nil {
-                delegate?.objectScanned(object: Constants.objectsIds[lastObjectIndex].key)
-            }
-            else {
-                delegate?.objectScanned(object: nil)
+                if (objects.contains(Constants.objectsIds[lastObjectIndex].key)) {
+                    delegate?.objectScanned(object: Constants.objectsIds[lastObjectIndex].key)
+                }
             }
             
             lastScannedObjectsDict = [:]
@@ -65,7 +65,12 @@ class ScanProcessor {
         for object in values {
             let id = object.0.components(separatedBy: " ")[0]
             if let index = Constants.objectsIds.index(where: { $1.contains(id) }), Constants.objectsIds[index] != nil {
-                delegate?.objectDetected(object: Constants.objectsIds[index].key)
+                if (objects.contains(Constants.objectsIds[index].key)) {
+                    delegate?.objectDetected(object: Constants.objectsIds[index].key)
+                }
+                else {
+                    delegate?.objectDetected(object: nil)
+                }
                 return
             }
         }
