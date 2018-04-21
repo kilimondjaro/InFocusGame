@@ -1,25 +1,19 @@
 //
-//  GameTypeViewController.swift
+//  ScanViewController.swift
 //  InFocusGame
 //
-//  Created by Kirill Babich on 17/04/2018.
+//  Created by Kirill Babich on 21/04/2018.
 //  Copyright © 2018 Kirill Babich. All rights reserved.
 //
 
 import UIKit
 
-class GameTypeViewController: UIViewController {
+class ScanViewController: UIViewController {
 
-    @IBOutlet weak var scanButton: UIButton!
-    @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var readButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        scanButton.layer.cornerRadius = scanButton.frame.size.height / 2
-        searchButton.layer.cornerRadius = searchButton.frame.size.height / 2
-        readButton.layer.cornerRadius = readButton.frame.size.height / 2
-        backButton.layer.cornerRadius = backButton.frame.size.height / 2
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

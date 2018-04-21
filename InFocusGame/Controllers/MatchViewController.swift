@@ -37,9 +37,9 @@ class MatchViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        VoiceAssistant.instance.stop()     
         delegate?.pickUpNewObject()
         delegate?.removeBlurredBackgroundView()
-        VoiceAssistant.instance.stop()        
     }
     
 

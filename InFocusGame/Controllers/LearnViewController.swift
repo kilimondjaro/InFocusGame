@@ -127,6 +127,7 @@ class LearnViewController: UIViewController, LearnProcessotDelegate, ModalViewCo
         DispatchQueue.main.async {
             if (correct) {
                 self.overlayBlurredBackgroundView(style: .light)
+                self.timer.invalidate()
                 self.performSegue(withIdentifier: "showMatchView", sender: self)
             }
             else {

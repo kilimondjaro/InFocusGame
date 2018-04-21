@@ -10,10 +10,19 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var gameButton: UIButton!
+    @IBOutlet weak var soundButton: UIButton!
+    @IBOutlet weak var aboutButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = NSLocalizedString("settings", comment: "")
-        // Do any additional setup after loading the view.
+        
+        gameButton.layer.cornerRadius = gameButton.frame.size.height / 2
+        soundButton.layer.cornerRadius = soundButton.frame.size.height / 2
+        aboutButton.layer.cornerRadius = aboutButton.frame.size.height / 2
+        backButton.layer.cornerRadius = backButton.frame.size.height / 2
     }
 
     override func didReceiveMemoryWarning() {
