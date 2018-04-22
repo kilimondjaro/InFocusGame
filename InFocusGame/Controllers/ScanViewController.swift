@@ -47,6 +47,12 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
         scanButton.clipsToBounds = true
         scannableLabel.layer.cornerRadius = scannableLabel.frame.size.height / 2
         scannableLabel.backgroundColor = UIColor.gray
+        
+        let blurredBackgroundView = UIVisualEffectView()
+        blurredBackgroundView.frame = view.frame
+        blurredBackgroundView.effect = UIBlurEffect(style: .light)
+        
+        videoPreview.addSubview(blurredBackgroundView)
     }
     
     func setUpCamera() {

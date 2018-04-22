@@ -24,6 +24,8 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     @IBOutlet weak var life2: UIButton!
     @IBOutlet weak var life3: UIButton!
     
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var upperView: UIView!
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
@@ -48,9 +50,12 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     var loopCounter = 0
     var seconds = 60
     
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpCamera()
         setUpInterface()
         initLearnProcessor()
@@ -62,7 +67,10 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        VoiceAssistant.instance.stop()
+        self.timer.invalidate()
         self.videoCapture.stop()
+        UIApplication.shared.statusBarStyle = .default
     }
     
     // MARK: - Initialization
@@ -79,6 +87,15 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
         life1.setImage(UIImage(named: "heart"), for: UIControlState.normal)
         life2.setImage(UIImage(named: "heart"), for: UIControlState.normal)
         life3.setImage(UIImage(named: "heart"), for: UIControlState.normal)
+        
+        bottomView.layer.cornerRadius = bottomView.frame.size.height / 2
+        
+        upperView.layer.cornerRadius = upperView.frame.size.height / 2
+        
+        let blurredBackgroundView = UIVisualEffectView()
+        blurredBackgroundView.frame = view.frame
+        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
+        videoPreview.addSubview(blurredBackgroundView)
     }
     
     func setUpCamera() {
@@ -273,6 +290,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     
     func resizePreviewLayer() {
         videoCapture.previewLayer?.frame = videoPreview.bounds
+        
     }
 }
 

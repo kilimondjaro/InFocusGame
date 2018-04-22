@@ -28,7 +28,7 @@ public class VideoCapture: NSObject {
     public func setUp(sessionPreset: AVCaptureSession.Preset = .medium,
                       completion: @escaping (Bool) -> Void) {
         queue.async {
-            let success = self.setUpCamera(sessionPreset: sessionPreset)
+            let success = self.setUpCamera(sessionPreset: sessionPreset)            
             DispatchQueue.main.async {
                 completion(success)
             }
@@ -54,7 +54,7 @@ public class VideoCapture: NSObject {
         }
         
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspect
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         previewLayer.connection?.videoOrientation = .portrait
         self.previewLayer = previewLayer
         

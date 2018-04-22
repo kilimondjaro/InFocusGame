@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let entity = NSEntityDescription.entity(forEntityName: "FlatObjects", in: context)
             let newObj = NSManagedObject(entity: entity!, insertInto: context)
             
-            for i in Constants.flatObjects {
+            for i in CoreDataManager.instance.getAttributes(entity: "FlatObjects") {
                 newObj.setValue(true, forKey: i)
             }
             

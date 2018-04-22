@@ -13,7 +13,7 @@ class RootViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         playButton.layer.cornerRadius = playButton.frame.size.height / 2
     }
 
