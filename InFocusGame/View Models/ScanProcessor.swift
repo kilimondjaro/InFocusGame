@@ -64,7 +64,7 @@ class ScanProcessor {
     func processDetection(values: [(String, Double)]) {
         for object in values {
             let id = object.0.components(separatedBy: " ")[0]
-            if let index = Constants.objectsIds.index(where: { $1.contains(id) }), Constants.objectsIds[index] != nil {
+            if let index = Constants.objectsIds.index(where: { $1.contains(id) }), Constants.objectsIds[index] != nil, object.1 > 0.15 {
                 if (objects.contains(Constants.objectsIds[index].key)) {
                     delegate?.objectDetected(object: Constants.objectsIds[index].key)
                 }
@@ -87,7 +87,7 @@ class ScanProcessor {
                 processScan(values: top5)
             }
             else {
-                processDetection(values: Array(top5.prefix(through: 1)))
+                processDetection(values: top5) //Array(top5.prefix(through: 1))
             }
             
             

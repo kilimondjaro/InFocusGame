@@ -22,6 +22,7 @@
 		26109E542088926A00038E4F /* table_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E532088926A00038E4F /* table_desc.mp3 */; };
 		26109E56208892E200038E4F /* cup_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E55208892E200038E4F /* cup_desc.mp3 */; };
 		26109E582088936F00038E4F /* banana_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E572088936F00038E4F /* banana_desc.mp3 */; };
+		262C30F220909B21008BF588 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C30F120909B21008BF588 /* AboutViewController.swift */; };
 		266503832085F13300947473 /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266503822085F13300947473 /* GameTypeViewController.swift */; };
 		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
 		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
@@ -97,6 +98,7 @@
 		26109E532088926A00038E4F /* table_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = table_desc.mp3; sourceTree = "<group>"; };
 		26109E55208892E200038E4F /* cup_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cup_desc.mp3; sourceTree = "<group>"; };
 		26109E572088936F00038E4F /* banana_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = banana_desc.mp3; sourceTree = "<group>"; };
+		262C30F120909B21008BF588 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		266503822085F13300947473 /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
 		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				2678900E2088F28B00D8CA0C /* FaultInfoViewController.swift */,
 				26CF16BD2089325900775B7A /* MatchViewController.swift */,
 				26A82C11208B46D8009ACE8C /* ScanViewController.swift */,
+				262C30F120909B21008BF588 /* AboutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				26109E4A2088727400038E4F /* HelpViewController.swift in Sources */,
 				2665038720860BC800947473 /* VideoCapture.swift in Sources */,
 				26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */,
+				262C30F220909B21008BF588 /* AboutViewController.swift in Sources */,
 				26109E3E208767C700038E4F /* ObjectsListsTableViewCell.swift in Sources */,
 				26A82C14208B73C7009ACE8C /* ScanProcessor.swift in Sources */,
 				26CF16BE2089325900775B7A /* MatchViewController.swift in Sources */,

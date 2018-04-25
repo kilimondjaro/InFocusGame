@@ -88,9 +88,6 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
         life2.setImage(UIImage(named: "heart"), for: UIControlState.normal)
         life3.setImage(UIImage(named: "heart"), for: UIControlState.normal)
         
-        bottomView.layer.cornerRadius = bottomView.frame.size.height / 2
-        
-        upperView.layer.cornerRadius = upperView.frame.size.height / 2
         
         let blurredBackgroundView = UIVisualEffectView()
         blurredBackgroundView.frame = view.frame

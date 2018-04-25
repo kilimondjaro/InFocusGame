@@ -12,8 +12,8 @@ import CoreMedia
 class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewControllerDelegate {
 
     @IBOutlet weak var videoPreview: UIView!
-    @IBOutlet weak var scanButton: UIButton!
-    @IBOutlet weak var scannableLabel: UIView!
+    @IBOutlet weak var scanButton: UIButton!    
+    @IBOutlet weak var bottomView: UIView!
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
@@ -44,9 +44,8 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     
     func setUpInterface() {
         scanButton.layer.cornerRadius = scanButton.frame.size.height / 2
-        scanButton.clipsToBounds = true
-        scannableLabel.layer.cornerRadius = scannableLabel.frame.size.height / 2
-        scannableLabel.backgroundColor = UIColor.gray
+        scanButton.clipsToBounds = true 
+
         
         let blurredBackgroundView = UIVisualEffectView()
         blurredBackgroundView.frame = view.frame
@@ -93,10 +92,10 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     func objectDetected(object: String?) {
         DispatchQueue.main.async {
             if let obj = object {
-                self.scannableLabel.backgroundColor = UIColor.green
+                self.scanButton.setImage(UIImage(named: "scan"), for: .normal)
             }
             else {
-                self.scannableLabel.backgroundColor = UIColor.gray
+                self.scanButton.setImage(UIImage(named: "scan-gray"), for: .normal)
             }
         }
     }

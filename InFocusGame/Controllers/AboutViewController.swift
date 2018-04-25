@@ -1,21 +1,19 @@
 //
-//  SoundSettingsViewController.swift
+//  AboutViewController.swift
 //  InFocusGame
 //
-//  Created by Kirill Babich on 19/04/2018.
+//  Created by Kirill Babich on 25/04/2018.
 //  Copyright © 2018 Kirill Babich. All rights reserved.
 //
 
 import UIKit
 
-class SoundSettingsViewController: UIViewController {
-    @IBOutlet weak var voiceAssistantSwitch: UISwitch!
-    
+class AboutViewController: UIViewController {
+
     @IBOutlet weak var backButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        voiceAssistantSwitch.isOn = UserDefaults.standard.bool(forKey: "voiceAssistant")
-        // Do any additional setup after loading the view.
+
         backButton.layer.cornerRadius = backButton.frame.size.height / 2
     }
 
@@ -24,11 +22,7 @@ class SoundSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func voiceAssistatChange(_ sender: UISwitch) {
-        UserDefaults.standard.set(voiceAssistantSwitch.isOn, forKey: "voiceAssistant")
-        
-    }
-    
+
     /*
     // MARK: - Navigation
 
