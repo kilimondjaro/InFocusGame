@@ -24,6 +24,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     @IBOutlet weak var life2: UIButton!
     @IBOutlet weak var life3: UIButton!
     
+    @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var upperView: UIView!
     
@@ -52,6 +53,8 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
+        self.overlayBlurredBackgroundView(style: .dark)
+        self.performSegue(withIdentifier: "showNewObject", sender: self)
     }
     
     override func viewDidLoad() {
@@ -142,7 +145,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
         
         DispatchQueue.main.async {
             if (correct) {
-                self.overlayBlurredBackgroundView(style: .light)
+                self.overlayBlurredBackgroundView(style: .dark)
                 self.timer.invalidate()
                 self.performSegue(withIdentifier: "showMatchView", sender: self)
             }
@@ -185,10 +188,11 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     
     func pickUpNewObject() {
         if let object = self.learnProcessor?.pickUpObjectForSearch() {
+            self.timer.invalidate()
             self.objectLabel.setTitle(NSLocalizedString(object, comment: ""), for: .normal)
             self.currentObject = object
             self.failCounter = 0
-            VoiceAssistant.instance.playSequence(names: ["find", self.currentObject])
+            VoiceAssistant.instance.playSequence(names: ["find", self.currentObject], overlap: true)
             runTimer()
             
             self.videoCapture.start()
@@ -200,6 +204,11 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
         
     }
 
+    @IBAction func skipButtonPressed(_ sender: Any) {
+        pickUpNewObject()
+        self.overlayBlurredBackgroundView(style: .dark)
+        self.performSegue(withIdentifier: "showNewObject", sender: self)
+    }
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         learnProcessor?.check()
@@ -236,10 +245,21 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
+            if identifier == "showNewObject" {
+                if let viewController = segue.destination as? HelpViewController {
+                    viewController.delegate = self
+                    viewController.object = self.currentObject
+                    viewController.playHelp = false
+                    viewController.modalPresentationStyle = .overFullScreen
+                    self.videoCapture.stop()
+                    VoiceAssistant.instance.stop()
+                }
+            }
             if identifier == "showHelpView" {
                 if let viewController = segue.destination as? HelpViewController {
                     viewController.delegate = self
                     viewController.object = self.currentObject
+                    viewController.playHelp = true
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()

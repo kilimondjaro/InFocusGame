@@ -395,7 +395,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="664"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vbt-9Z-JDT" id="zFx-3o-6XW">
@@ -589,6 +589,9 @@
                                             <constraint firstAttribute="height" constant="70" id="VuU-Ek-Nhr"/>
                                         </constraints>
                                         <state key="normal" image="skip"/>
+                                        <connections>
+                                            <action selector="skipButtonPressed:" destination="XMe-zC-xdY" eventType="touchUpInside" id="YhB-BB-1na"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87991751269999996" green="0.87991751269999996" blue="0.87991751269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -626,11 +629,13 @@
                         <outlet property="life2" destination="FbF-3t-Wme" id="xCu-tD-zU6"/>
                         <outlet property="life3" destination="O9F-Eg-T8F" id="knu-Sp-gMw"/>
                         <outlet property="objectLabel" destination="SDP-qq-0u1" id="gHb-Ff-ihY"/>
+                        <outlet property="skipButton" destination="Pqx-hi-vdP" id="ldd-9W-h0c"/>
                         <outlet property="upperView" destination="hfX-MA-UsG" id="Fhj-0X-HlG"/>
                         <outlet property="videoPreview" destination="KgQ-za-QFe" id="9P5-bV-rxC"/>
                         <segue destination="AgD-nc-iRn" kind="presentation" identifier="gameOver" modalTransitionStyle="crossDissolve" id="SLl-fR-EUK"/>
                         <segue destination="U28-We-Huz" kind="presentation" identifier="showFaultInfo" id="htf-Ih-5Ay"/>
                         <segue destination="x96-Sm-poR" kind="presentation" identifier="showMatchView" id="7sL-kT-BIC"/>
+                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showNewObject" id="Pgo-hS-gMg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbp-fO-YAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -652,7 +657,7 @@
                                     <action selector="cancelButtonPressed:" destination="a7S-Rb-awv" eventType="touchUpInside" id="D1y-gK-jE2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SYO-Jb-xmA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SYO-Jb-xmA">
                                 <rect key="frame" x="16" y="213" width="343" height="386"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPQ-Pa-2Zt">
@@ -864,16 +869,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xv8-Lz-e9A">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xv8-Lz-e9A">
                                 <rect key="frame" x="15" y="155" width="345" height="430"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jn3-RN-ao6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jn3-RN-ao6">
                                 <rect key="frame" x="86" y="650" width="203" height="90"/>
-                                <color key="backgroundColor" red="1" green="0.91804984140000001" blue="0.4674621961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.84705882349999995" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="ilb-w8-zT8"/>
                                 </constraints>
-                                <state key="normal" title="Next"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="next"/>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="x96-Sm-poR" eventType="touchUpInside" id="RaK-ci-4QC"/>
                                 </connections>
@@ -887,6 +893,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-3b-xEB">
+                                <rect key="frame" x="102.66666666666669" y="321.66666666666669" width="170" height="170"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -898,20 +907,24 @@
                             <constraint firstItem="jn3-RN-ao6" firstAttribute="top" secondItem="xv8-Lz-e9A" secondAttribute="bottom" constant="65" id="Yzm-rm-UEj"/>
                             <constraint firstItem="ngl-nm-bSq" firstAttribute="trailing" secondItem="jn3-RN-ao6" secondAttribute="trailing" constant="86" id="cQ0-aD-Gpo"/>
                             <constraint firstItem="ngl-nm-bSq" firstAttribute="trailing" secondItem="xv8-Lz-e9A" secondAttribute="trailing" constant="15" id="e4Q-YE-sdh"/>
+                            <constraint firstItem="ymg-3b-xEB" firstAttribute="centerY" secondItem="fgp-Aw-ziY" secondAttribute="centerY" id="eDo-fm-pip"/>
                             <constraint firstItem="xv8-Lz-e9A" firstAttribute="leading" secondItem="ngl-nm-bSq" secondAttribute="leading" constant="15" id="nSQ-yQ-UIG"/>
                             <constraint firstItem="uDb-Fo-q0s" firstAttribute="leading" secondItem="ngl-nm-bSq" secondAttribute="leading" constant="15" id="rqq-9g-qe0"/>
                             <constraint firstItem="ngl-nm-bSq" firstAttribute="bottom" secondItem="jn3-RN-ao6" secondAttribute="bottom" constant="38" id="vag-vg-LuA"/>
+                            <constraint firstItem="ymg-3b-xEB" firstAttribute="centerX" secondItem="fgp-Aw-ziY" secondAttribute="centerX" id="wDS-bL-zbJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ngl-nm-bSq"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="xv8-Lz-e9A" id="7BA-DM-IV0"/>
+                        <outlet property="nextButton" destination="jn3-RN-ao6" id="C68-fo-uiZ"/>
                         <outlet property="objectLabel" destination="uDb-Fo-q0s" id="bNT-P1-cLW"/>
+                        <outlet property="starImage" destination="ymg-3b-xEB" id="tmr-LI-Ucx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nj2-mz-1QI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6446" y="1039"/>
+            <point key="canvasLocation" x="6445.6000000000004" y="1038.1773399014778"/>
         </scene>
         <!--Fault Info View Controller-->
         <scene sceneID="10Y-pE-PBm">
@@ -928,7 +941,7 @@
                                     <action selector="cancelButtonPressed:" destination="U28-We-Huz" eventType="touchUpInside" id="Am7-n0-Qjn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ROu-1t-tcq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ROu-1t-tcq">
                                 <rect key="frame" x="16" y="213" width="343" height="386"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lN-Ab-FQe">
@@ -1327,15 +1340,17 @@ AAAAAAAAAAAALHU
         </image>
         <image name="children_learning" width="626" height="626"/>
         <image name="help" width="70" height="70"/>
+        <image name="next" width="85" height="85"/>
         <image name="scan" width="100" height="100"/>
         <image name="skip" width="70" height="70"/>
+        <image name="star" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cbX-Xi-qi2"/>
-        <segue reference="HPF-aJ-dJj"/>
+        <segue reference="Pgo-hS-gMg"/>
         <segue reference="Wk1-5L-HRl"/>
         <segue reference="Yvh-84-rLi"/>
-        <segue reference="wGe-vV-XZY"/>
+        <segue reference="NKO-KB-ZAk"/>
         <segue reference="PlT-gK-Wfr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@ class HelpViewController: UIViewController {
     weak var delegate: ModalViewControllerDelegate?
     
     var object = ""
+    var playHelp = false
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
@@ -38,7 +39,10 @@ class HelpViewController: UIViewController {
         imageView.image = UIImage(named: object)
         
         objectLabel.text = NSLocalizedString(object, comment: "")
-        VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
+        
+        if playHelp {
+            VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

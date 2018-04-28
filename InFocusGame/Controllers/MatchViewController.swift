@@ -16,18 +16,34 @@ class MatchViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var objectLabel: UILabel!
+    @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         objectLabel.textColor = UIColor.white
+        starImage.alpha = 0
+        nextButton.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {
         view.backgroundColor = UIColor.clear
-        
-        imageView.image = UIImage(named: object)
+        self.starImage.frame =  self.starImage.frame.insetBy(dx: 50, dy: 50)
+//        imageView.image = UIImage(named: object)
+        nextButton.layer.cornerRadius = nextButton.frame.size.height / 2
         objectLabel.text = NSLocalizedString(object, comment: "")
         VoiceAssistant.instance.playFile(name: "match", overlap: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1.5, animations: {
+            self.starImage.alpha = 1
+            self.starImage.frame =  self.starImage.frame.insetBy(dx: -80, dy: -80)
+            self.starImage.rotate360Degrees(duration: 1.5, completionDelegate: nil)
+        }){ (succeed) -> Void in
+            self.nextButton.isHidden = false
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,16 +57,25 @@ class MatchViewController: UIViewController {
         delegate?.removeBlurredBackgroundView()
         delegate?.continueProcess(from: "match")
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension UIView {
+    func rotate360Degrees(duration: CFTimeInterval = 1.0, completionDelegate: AnyObject? = nil) {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat(M_PI * 2.0)
+        rotateAnimation.duration = duration
+        
+        if let delegate: AnyObject = completionDelegate {
+            rotateAnimation.delegate = delegate as! CAAnimationDelegate
+        }
+        self.layer.add(rotateAnimation, forKey: nil)
+    }
+}
+
+
+
+
+
+
+
