@@ -13,8 +13,7 @@ class MatchViewController: UIViewController {
     weak var delegate: ModalViewControllerDelegate?
     
     var object = ""
-    
-    @IBOutlet weak var imageView: UIImageView!
+        
     @IBOutlet weak var objectLabel: UILabel!
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
