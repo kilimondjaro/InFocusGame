@@ -14,35 +14,46 @@ class MatchViewController: UIViewController {
     
     var object = ""
         
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var objectLabel: UILabel!
-    @IBOutlet weak var starImage: UIImageView!
+    
+    @IBOutlet weak var star1: UIImageView!
+    @IBOutlet weak var star2: UIImageView!
+    @IBOutlet weak var star3: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var starsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         objectLabel.textColor = UIColor.white
-        starImage.alpha = 0
         nextButton.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {
         view.backgroundColor = UIColor.clear
-        self.starImage.frame =  self.starImage.frame.insetBy(dx: 50, dy: 50)
-//        imageView.image = UIImage(named: object)
+        imageView.image = UIImage(named: object)
         nextButton.layer.cornerRadius = nextButton.frame.size.height / 2
         objectLabel.text = NSLocalizedString(object, comment: "")
         VoiceAssistant.instance.playFile(name: "match", overlap: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 1.5, animations: {
-            self.starImage.alpha = 1
-            self.starImage.frame =  self.starImage.frame.insetBy(dx: -80, dy: -80)
-            self.starImage.rotate360Degrees(duration: 1.5, completionDelegate: nil)
+    
+    func animateStar(star: UIImageView) {
+        UIView.animate(withDuration: 0.7, animations: {
+            star.alpha = 1
+            star.frame =  star.frame.insetBy(dx: -50, dy: -50)
+            star.rotate360Degrees(duration: 0.7, completionDelegate: nil)
         }){ (succeed) -> Void in
-            self.nextButton.isHidden = false
+            UIView.animate(withDuration: 1.5, animations: {
+                star.frame = star.frame.insetBy(dx: 50, dy: 50)
+                star.image = UIImage(named: "star")
+            })
         }
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        animateStar(star: star1)
+        self.nextButton.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
