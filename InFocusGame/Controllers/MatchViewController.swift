@@ -13,6 +13,7 @@ class MatchViewController: UIViewController {
     weak var delegate: ModalViewControllerDelegate?
     
     var object = ""
+    var lives = 3
         
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var objectLabel: UILabel!
@@ -38,21 +39,36 @@ class MatchViewController: UIViewController {
     }
     
     
-    func animateStar(star: UIImageView) {
+    func animateStar(counter: Int) {
+        if (counter == self.lives) {
+            return
+        }
+        
+        var star = star1!
+        
+        if (counter == 1) {
+            star = star2!
+        }
+        if (counter == 2) {
+            star = star3!
+        }
+        
         UIView.animate(withDuration: 0.7, animations: {
             star.alpha = 1
             star.frame =  star.frame.insetBy(dx: -50, dy: -50)
             star.rotate360Degrees(duration: 0.7, completionDelegate: nil)
         }){ (succeed) -> Void in
-            UIView.animate(withDuration: 1.5, animations: {
+            UIView.animate(withDuration: 0.7, animations: {
                 star.frame = star.frame.insetBy(dx: 50, dy: 50)
                 star.image = UIImage(named: "star")
-            })
+            }){ (succeed) -> Void in
+                self.animateStar(counter: counter + 1)
+            }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        animateStar(star: star1)
+        animateStar(counter: 0)
         self.nextButton.isHidden = false
     }
     

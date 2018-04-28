@@ -20,9 +20,6 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var objectLabel: UIButton!
-    @IBOutlet weak var life1: UIButton!
-    @IBOutlet weak var life2: UIButton!
-    @IBOutlet weak var life3: UIButton!
     
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
@@ -87,9 +84,6 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     func setUpInterface() {
         checkButton.layer.cornerRadius = checkButton.frame.size.height / 2
         checkButton.clipsToBounds = true
-        life1.setImage(UIImage(named: "heart"), for: UIControlState.normal)
-        life2.setImage(UIImage(named: "heart"), for: UIControlState.normal)
-        life3.setImage(UIImage(named: "heart"), for: UIControlState.normal)
         
         
         let blurredBackgroundView = UIVisualEffectView()
@@ -165,21 +159,9 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                     
                     VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
                     self.failCounter = 0
-                    self.currentLives -= 1
-                    if (self.currentLives == 0) {
-                        self.performSegue(withIdentifier: "gameOver", sender: self)
-                    }
-                    else {
-                        switch self.currentLives {
-                        case 0:
-                            self.life3.setImage(UIImage(named: "grey_heart"), for: UIControlState.normal)
-                        case 1:
-                            self.life2.setImage(UIImage(named: "grey_heart"), for: UIControlState.normal)
-                        case 2:
-                            self.life1.setImage(UIImage(named: "grey_heart"), for: UIControlState.normal)
-                        default:
-                            return
-                        }
+                    
+                    if (self.currentLives > 0) {
+                        self.currentLives -= 1
                     }
                 }
             }
@@ -279,6 +261,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                 if let viewController = segue.destination as? MatchViewController {
                     viewController.delegate = self
                     viewController.object = self.currentObject
+                    viewController.lives = self.currentLives
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
