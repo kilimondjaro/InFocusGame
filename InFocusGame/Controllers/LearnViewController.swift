@@ -111,8 +111,12 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     func continueProcess(from: String?) {
         if let f = from, f == "match" {
             pickUpNewObject()
+            self.overlayBlurredBackgroundView(style: .dark)
+            self.performSegue(withIdentifier: "showNewObject", sender: self)
         }
-        videoCapture.start()
+        else {
+            videoCapture.start()
+        }
     }
     
     func updateTimer(timer: Timer) {
@@ -177,7 +181,6 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
             VoiceAssistant.instance.playSequence(names: ["find", self.currentObject], overlap: true)
             runTimer()
             
-            self.videoCapture.start()
         }
         else {
             self.win = true

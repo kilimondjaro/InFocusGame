@@ -395,7 +395,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="664"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vbt-9Z-JDT" id="zFx-3o-6XW">
@@ -403,13 +403,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDs-jG-CH6">
-                                                    <rect key="frame" x="301" y="14" width="51" height="31"/>
+                                                    <rect key="frame" x="246" y="14" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="switchObject:" destination="Vbt-9Z-JDT" eventType="valueChanged" id="Bw5-RJ-6al"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njs-TC-CUC">
-                                                    <rect key="frame" x="15" y="19" width="259" height="21"/>
+                                                    <rect key="frame" x="15" y="19" width="204" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1011,13 +1011,13 @@
                                             <action selector="scanButtonPressed:" destination="xhy-eN-mUC" eventType="touchUpInside" id="Oga-YI-aov"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1z-Vo-Rc7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1z-Vo-Rc7">
                                         <rect key="frame" x="8" y="45" width="81" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="81" id="5Ly-4g-3VT"/>
                                             <constraint firstAttribute="height" constant="43" id="NQw-SX-2ks"/>
                                         </constraints>
-                                        <state key="normal" title="Exit"/>
+                                        <state key="normal" image="back"/>
                                         <connections>
                                             <segue destination="oal-s2-6ab" kind="presentation" modalTransitionStyle="crossDissolve" id="2yh-fD-PxE"/>
                                         </connections>
@@ -1150,10 +1150,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cbX-Xi-qi2"/>
-        <segue reference="Pgo-hS-gMg"/>
+        <segue reference="HPF-aJ-dJj"/>
         <segue reference="Wk1-5L-HRl"/>
         <segue reference="Yvh-84-rLi"/>
-        <segue reference="NKO-KB-ZAk"/>
+        <segue reference="2yh-fD-PxE"/>
         <segue reference="PlT-gK-Wfr"/>
     </inferredMetricsTieBreakers>
 </document>
