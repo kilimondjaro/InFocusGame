@@ -607,13 +607,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFH-AN-7qw">
-                                <rect key="frame" x="16" y="44" width="33" height="33"/>
-                                <state key="normal" image="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="a7S-Rb-awv" eventType="touchUpInside" id="D1y-gK-jE2"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SYO-Jb-xmA">
                                 <rect key="frame" x="16" y="213" width="343" height="386"/>
                             </imageView>
@@ -623,31 +616,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-q7-8R3">
+                                <rect key="frame" x="136" y="655" width="103" height="103"/>
+                                <color key="backgroundColor" red="0.87991751269999996" green="0.87991751269999996" blue="0.87991751269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="23r-Hz-2GI"/>
+                                    <constraint firstAttribute="height" constant="103" id="kgb-qa-ebs"/>
+                                </constraints>
+                                <state key="normal" image="ok"/>
+                                <connections>
+                                    <action selector="okButtonPressed:" destination="a7S-Rb-awv" eventType="touchUpInside" id="OWY-Y1-BuI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uPQ-Pa-2Zt" firstAttribute="leading" secondItem="Vkv-n7-AsQ" secondAttribute="leading" constant="10" id="78b-lS-5F7"/>
                             <constraint firstItem="Vkv-n7-AsQ" firstAttribute="trailing" secondItem="uPQ-Pa-2Zt" secondAttribute="trailing" constant="10" id="AXG-Dp-ATB"/>
                             <constraint firstItem="SYO-Jb-xmA" firstAttribute="centerX" secondItem="RR3-U4-Rwi" secondAttribute="centerX" id="Ug4-1i-CRg"/>
+                            <constraint firstItem="Vkv-n7-AsQ" firstAttribute="bottom" secondItem="hwC-q7-8R3" secondAttribute="bottom" constant="20" id="X0X-Zv-1A2"/>
                             <constraint firstItem="SYO-Jb-xmA" firstAttribute="centerY" secondItem="RR3-U4-Rwi" secondAttribute="centerY" id="Xpx-oA-XsU"/>
-                            <constraint firstItem="SYO-Jb-xmA" firstAttribute="leading" secondItem="cFH-AN-7qw" secondAttribute="leading" id="ZQZ-c3-sEf"/>
                             <constraint firstItem="SYO-Jb-xmA" firstAttribute="top" secondItem="uPQ-Pa-2Zt" secondAttribute="bottom" constant="43" id="c3p-Y1-74z"/>
                             <constraint firstItem="Vkv-n7-AsQ" firstAttribute="bottom" secondItem="SYO-Jb-xmA" secondAttribute="bottom" constant="179" id="dl7-hs-68B"/>
-                            <constraint firstItem="cFH-AN-7qw" firstAttribute="top" secondItem="Vkv-n7-AsQ" secondAttribute="top" id="ehm-ME-0fk"/>
-                            <constraint firstItem="cFH-AN-7qw" firstAttribute="leading" secondItem="Vkv-n7-AsQ" secondAttribute="leading" constant="16" id="kZe-n0-jwR"/>
                             <constraint firstItem="uPQ-Pa-2Zt" firstAttribute="top" secondItem="Vkv-n7-AsQ" secondAttribute="top" constant="70" id="maJ-SI-iG7"/>
+                            <constraint firstItem="SYO-Jb-xmA" firstAttribute="leading" secondItem="RR3-U4-Rwi" secondAttribute="leadingMargin" id="nua-KK-0XA"/>
+                            <constraint firstItem="hwC-q7-8R3" firstAttribute="centerX" secondItem="RR3-U4-Rwi" secondAttribute="centerX" id="rp8-kc-RRf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vkv-n7-AsQ"/>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="cFH-AN-7qw" id="I6d-iy-HHW"/>
                         <outlet property="imageView" destination="SYO-Jb-xmA" id="PcA-wl-RJ1"/>
                         <outlet property="objectLabel" destination="uPQ-Pa-2Zt" id="qJX-vH-m0z"/>
+                        <outlet property="okButton" destination="hwC-q7-8R3" id="Gbw-Wd-la8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWn-NZ-N7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3769" y="976"/>
+            <point key="canvasLocation" x="3768.75" y="975"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="P90-Jc-Llw">
@@ -1138,6 +1143,7 @@
         <image name="children_learning" width="626" height="626"/>
         <image name="help" width="70" height="70"/>
         <image name="next" width="85" height="85"/>
+        <image name="ok" width="85" height="85"/>
         <image name="scan" width="100" height="100"/>
         <image name="skip" width="70" height="70"/>
         <image name="star_gray" width="170" height="170"/>
