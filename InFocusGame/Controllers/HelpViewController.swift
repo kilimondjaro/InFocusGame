@@ -12,33 +12,30 @@ class HelpViewController: UIViewController {
     weak var delegate: ModalViewControllerDelegate?
     
     var object = ""
+    var playHelp = false
     
-    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var objectLabel: UILabel!
+    @IBOutlet weak var okButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         objectLabel.textColor = UIColor.white
+        
+        okButton.layer.cornerRadius = okButton.frame.size.height / 2
     }
     
     override func viewDidLayoutSubviews() {
         view.backgroundColor = UIColor.clear
         
-        //ensure that the icon embeded in the cancel button fits in nicely
-        cancelButton.imageView?.contentMode = .scaleAspectFit
-        
-        //add a white tint color for the Cancel button image
-        let cancelImage = UIImage(named: "Cancel")
-        
-        let tintedCancelImage = cancelImage?.withRenderingMode(.alwaysTemplate)
-        cancelButton.setImage(tintedCancelImage, for: .normal)
-        cancelButton.tintColor = .white
-        
+
         imageView.image = UIImage(named: object)
         
         objectLabel.text = NSLocalizedString(object, comment: "")
-        VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
+        
+        if playHelp {
+            VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +43,7 @@ class HelpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+    @IBAction func okButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
         delegate?.removeBlurredBackgroundView()
         VoiceAssistant.instance.stop()

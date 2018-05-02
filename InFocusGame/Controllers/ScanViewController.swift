@@ -148,6 +148,7 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
                     viewController.delegate = self
                     viewController.object = self.scannedObject
                     viewController.modalPresentationStyle = .overFullScreen
+                    viewController.playHelp = true
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }
