@@ -57,6 +57,8 @@
 		26CF16D42089EBE800775B7A /* chair_oops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16CF2089EBE700775B7A /* chair_oops.mp3 */; };
 		26E035512085DF4400832BDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E035532085DF4400832BDF /* Localizable.strings */; };
 		26E87728209B42F9006553EB /* title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26E87727209B42F9006553EB /* title.mp3 */; };
+		26E8772A209B6F17006553EB /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E87729209B6F17006553EB /* LibraryViewController.swift */; };
+		26E8772C209B7025006553EB /* LibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8772B209B7025006553EB /* LibraryCollectionViewCell.swift */; };
 		26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723620851AAA004A9CC0 /* AppDelegate.swift */; };
 		26F8723920851AAA004A9CC0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723820851AAA004A9CC0 /* RootViewController.swift */; };
 		26F8723C20851AAA004A9CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F8723A20851AAA004A9CC0 /* Main.storyboard */; };
@@ -137,6 +139,8 @@
 		26E035542085DF4900832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26E035552085DF5A00832BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26E87727209B42F9006553EB /* title.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = title.mp3; sourceTree = "<group>"; };
+		26E87729209B6F17006553EB /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		26E8772B209B7025006553EB /* LibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		26F8723320851AAA004A9CC0 /* InFocusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InFocusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F8723620851AAA004A9CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F8723820851AAA004A9CC0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 				262C30F120909B21008BF588 /* AboutViewController.swift */,
 				262C30F320909E3E008BF588 /* ReadViewController.swift */,
 				262C30F72090AA1E008BF588 /* TestViewController.swift */,
+				26E87729209B6F17006553EB /* LibraryViewController.swift */,
+				26E8772B209B7025006553EB /* LibraryCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -534,6 +540,7 @@
 				2665039020862D2600947473 /* VoiceAssistant.swift in Sources */,
 				26109E3920875DFF00038E4F /* GameSettingsViewController.swift in Sources */,
 				26F8723F20851AAA004A9CC0 /* InFocusGame.xcdatamodeld in Sources */,
+				26E8772A209B6F17006553EB /* LibraryViewController.swift in Sources */,
 				26F8723920851AAA004A9CC0 /* RootViewController.swift in Sources */,
 				26650394208636B100947473 /* LearnProcessor.swift in Sources */,
 				266503832085F13300947473 /* GameTypeViewController.swift in Sources */,
@@ -548,6 +555,7 @@
 				262C30F220909B21008BF588 /* AboutViewController.swift in Sources */,
 				26109E3E208767C700038E4F /* ObjectsListsTableViewCell.swift in Sources */,
 				262C30F420909E3E008BF588 /* ReadViewController.swift in Sources */,
+				26E8772C209B7025006553EB /* LibraryCollectionViewCell.swift in Sources */,
 				26A82C14208B73C7009ACE8C /* ScanProcessor.swift in Sources */,
 				26CF16BE2089325900775B7A /* MatchViewController.swift in Sources */,
 				26109E442087C97800038E4F /* Extensions.swift in Sources */,

@@ -628,6 +628,66 @@
             </objects>
             <point key="canvasLocation" x="3732" y="39.90147783251232"/>
         </scene>
+        <!--Library View Controller-->
+        <scene sceneID="ihI-dE-zcn">
+            <objects>
+                <viewController id="jt8-Q1-e0e" customClass="LibraryViewController" customModule="InFocusGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YIx-bV-ZnA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cwx-xt-iX6">
+                                <rect key="frame" x="16" y="128" width="343" height="650"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0ye-tO-uhI">
+                                    <size key="itemSize" width="76" height="76"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="libraryCell" id="lJK-Gz-mCg" customClass="LibraryCollectionViewCell" customModule="InFocusGame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XpJ-eK-CRG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="XpJ-eK-CRG" secondAttribute="bottom" id="XtW-kb-fBQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="XpJ-eK-CRG" secondAttribute="trailing" id="cIJ-Lg-wRf"/>
+                                            <constraint firstItem="XpJ-eK-CRG" firstAttribute="leading" secondItem="lJK-Gz-mCg" secondAttribute="leading" id="nQL-gt-iZT"/>
+                                            <constraint firstItem="XpJ-eK-CRG" firstAttribute="top" secondItem="lJK-Gz-mCg" secondAttribute="top" id="qO6-CD-S1O"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="XpJ-eK-CRG" id="3Ev-Sz-BZx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cwx-xt-iX6" firstAttribute="bottom" secondItem="dNf-43-kFy" secondAttribute="bottom" id="LAr-5X-CVM"/>
+                            <constraint firstItem="cwx-xt-iX6" firstAttribute="leading" secondItem="YIx-bV-ZnA" secondAttribute="leadingMargin" id="hSp-F7-Px7"/>
+                            <constraint firstItem="cwx-xt-iX6" firstAttribute="top" secondItem="dNf-43-kFy" secondAttribute="top" constant="84" id="iMR-DM-JKx"/>
+                            <constraint firstItem="cwx-xt-iX6" firstAttribute="trailing" secondItem="YIx-bV-ZnA" secondAttribute="trailingMargin" id="vzw-BV-TQo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dNf-43-kFy"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="cwx-xt-iX6" id="d6H-YQ-kH4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TxK-KL-40K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3394" y="2083"/>
+        </scene>
         <!--Help View Controller-->
         <scene sceneID="iXk-Jo-n6U">
             <objects>
@@ -787,7 +847,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bjx-mj-Z6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2943" y="2185"/>
+            <point key="canvasLocation" x="1718" y="2579"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="S10-8h-Hvl">
@@ -973,7 +1033,7 @@
                                 <rect key="frame" x="0.0" y="680" width="375" height="132"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4K-Ch-r3p">
-                                        <rect key="frame" x="137" y="12" width="100" height="100"/>
+                                        <rect key="frame" x="137.66666666666666" y="12" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="jDN-Fd-xdB"/>
                                             <constraint firstAttribute="height" constant="100" id="m7n-UU-sr8"/>
@@ -994,12 +1054,21 @@
                                             <segue destination="oal-s2-6ab" kind="presentation" modalTransitionStyle="crossDissolve" id="2yh-fD-PxE"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyY-6S-Q72">
+                                        <rect key="frame" x="286.66666666666669" y="51" width="48" height="30"/>
+                                        <state key="normal" title="Library"/>
+                                        <connections>
+                                            <segue destination="jt8-Q1-e0e" kind="presentation" modalTransitionStyle="crossDissolve" id="Sdu-he-cW7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87991751269999996" green="0.87991751269999996" blue="0.87991751269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="w4K-Ch-r3p" firstAttribute="centerX" secondItem="tX1-6i-h3P" secondAttribute="centerX" id="3VY-zw-VTT"/>
+                                    <constraint firstItem="eyY-6S-Q72" firstAttribute="centerY" secondItem="W1z-Vo-Rc7" secondAttribute="centerY" id="8LV-c3-Xh2"/>
                                     <constraint firstItem="W1z-Vo-Rc7" firstAttribute="top" secondItem="tX1-6i-h3P" secondAttribute="top" constant="45" id="Atb-mL-bhI"/>
                                     <constraint firstAttribute="height" constant="132" id="LW3-Pr-MWv"/>
+                                    <constraint firstItem="eyY-6S-Q72" firstAttribute="leading" secondItem="w4K-Ch-r3p" secondAttribute="trailing" constant="49" id="OGC-zU-hWt"/>
                                     <constraint firstItem="W1z-Vo-Rc7" firstAttribute="leading" secondItem="tX1-6i-h3P" secondAttribute="leading" constant="8" id="Uad-hP-g8o"/>
                                     <constraint firstItem="w4K-Ch-r3p" firstAttribute="centerY" secondItem="tX1-6i-h3P" secondAttribute="centerY" constant="-4" id="mVZ-nK-T4g"/>
                                 </constraints>
@@ -1122,10 +1191,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FAS-bm-1j6"/>
-        <segue reference="rpO-sk-GiI"/>
+        <segue reference="HPF-aJ-dJj"/>
         <segue reference="JUa-om-3vp"/>
         <segue reference="rf1-CB-dju"/>
-        <segue reference="zb4-Y4-Pzh"/>
+        <segue reference="2yh-fD-PxE"/>
         <segue reference="PlT-gK-Wfr"/>
     </inferredMetricsTieBreakers>
 </document>
