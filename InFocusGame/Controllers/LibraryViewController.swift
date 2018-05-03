@@ -8,10 +8,11 @@
 
 import UIKit
 
-class LibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class LibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ModalViewControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     let objects = Constants.flatObjects
+    var pressedObject = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,46 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pressedObject = objects[indexPath.row]
+        self.overlayBlurredBackgroundView(style: .dark)
+        self.performSegue(withIdentifier: "showInfo", sender: self)
+    }
+    
+    func removeBlurredBackgroundView() {
+        for subview in view.subviews {
+            if subview.isKind(of: UIVisualEffectView.self) {
+                subview.removeFromSuperview()
+            }
+        }
+    }
+    
+    func continueProcess(from: String?) {
         //
+    }
+    
+    func overlayBlurredBackgroundView(style: UIBlurEffectStyle) {
+        self.definesPresentationContext = true
+        self.providesPresentationContextTransitionStyle = true
+        
+        let blurredBackgroundView = UIVisualEffectView()
+        
+        blurredBackgroundView.frame = view.frame
+        blurredBackgroundView.effect = UIBlurEffect(style: style)
+        
+        view.addSubview(blurredBackgroundView)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "showInfo" {
+                if let viewController = segue.destination as? HelpViewController {
+                    viewController.delegate = self
+                    viewController.object = self.pressedObject
+                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.mode = HelpMode.help
+                    VoiceAssistant.instance.stop()
+                }
+            }
+        }
     }
 }
