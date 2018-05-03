@@ -264,7 +264,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                 if let viewController = segue.destination as? MatchViewController {
                     viewController.delegate = self
                     viewController.object = self.currentObject
-                    viewController.lives = self.currentLives
+                    viewController.stars = self.currentLives
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()

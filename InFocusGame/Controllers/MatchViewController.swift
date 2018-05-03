@@ -13,7 +13,7 @@ class MatchViewController: UIViewController {
     weak var delegate: ModalViewControllerDelegate?
     
     var object = ""
-    var lives = 3
+    var stars = 3
         
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var objectLabel: UILabel!
@@ -40,7 +40,7 @@ class MatchViewController: UIViewController {
     
     
     func animateStar(counter: Int) {
-        if (counter == self.lives) {
+        if (counter == self.stars) {
             return
         }
         

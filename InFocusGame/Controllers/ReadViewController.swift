@@ -9,7 +9,11 @@
 import UIKit
 import CoreMedia
 
-class ReadViewController: UIViewController, ScanProcessorDelegate, ModalViewControllerDelegate {
+protocol TestModalViewControllerDelegate: ModalViewControllerDelegate  {
+    var numberOfStars: Int { get set }
+}
+
+class ReadViewController: UIViewController, ScanProcessorDelegate, TestModalViewControllerDelegate {
 
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var scanButton: UIButton!
@@ -23,6 +27,7 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     var scannedObject = ""
     
     var scanProcessor: ScanProcessor?
+    var numberOfStars: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +80,13 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     }
     
     func continueProcess(from: String?) {
-        videoCapture.start()
+        if let f = from, f == "test" {
+            self.overlayBlurredBackgroundView(style: .dark)
+            self.performSegue(withIdentifier: "showMatchView", sender: self)
+        }
+        else {
+            videoCapture.start()
+        }
     }
     
     func objectScanned(object: String?) {
@@ -146,6 +157,16 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
                 if let viewController = segue.destination as? TestViewController {
                     viewController.delegate = self
                     viewController.object = self.scannedObject
+                    viewController.modalPresentationStyle = .overFullScreen
+                    self.videoCapture.stop()
+                    VoiceAssistant.instance.stop()
+                }
+            }
+            if identifier == "showMatchView" {
+                if let viewController = segue.destination as? MatchViewController {
+                    viewController.delegate = self
+                    viewController.object = self.scannedObject
+                    viewController.stars = self.numberOfStars
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()

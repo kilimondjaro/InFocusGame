@@ -708,13 +708,6 @@
                                     <action selector="fourthButtonPressed:" destination="DsW-PU-OVV" eventType="touchUpInside" id="2lG-lL-ynb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiX-6v-JZ3">
-                                <rect key="frame" x="171.66666666666666" y="522" width="32" height="30"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <segue destination="cgV-p7-00Z" kind="presentation" modalTransitionStyle="crossDissolve" id="cbX-Xi-qi2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -724,7 +717,6 @@
                             <constraint firstItem="aZa-DH-23Y" firstAttribute="height" secondItem="1S3-ys-TBU" secondAttribute="height" id="AHc-gL-lnN"/>
                             <constraint firstItem="R1H-4t-qDF" firstAttribute="leading" secondItem="1S3-ys-TBU" secondAttribute="leading" id="BVg-52-FyF"/>
                             <constraint firstItem="aZa-DH-23Y" firstAttribute="leading" secondItem="1S3-ys-TBU" secondAttribute="trailing" constant="8" symbolic="YES" id="D1i-fh-4YZ"/>
-                            <constraint firstItem="QiX-6v-JZ3" firstAttribute="centerX" secondItem="rmd-rR-quW" secondAttribute="centerX" id="DBC-nt-ta9"/>
                             <constraint firstItem="1S3-ys-TBU" firstAttribute="baseline" secondItem="aZa-DH-23Y" secondAttribute="firstBaseline" id="FQx-dG-7DW"/>
                             <constraint firstItem="uDo-sK-jDH" firstAttribute="bottom" secondItem="R1H-4t-qDF" secondAttribute="bottom" id="Glg-DX-7gA"/>
                             <constraint firstItem="aZa-DH-23Y" firstAttribute="leading" secondItem="uDo-sK-jDH" secondAttribute="leading" id="IqQ-c5-OHH"/>
@@ -743,7 +735,6 @@
                             <constraint firstItem="aZa-DH-23Y" firstAttribute="top" secondItem="YJL-56-euz" secondAttribute="bottom" constant="73" id="nVL-YW-Wo0"/>
                             <constraint firstItem="R1H-4t-qDF" firstAttribute="top" secondItem="1S3-ys-TBU" secondAttribute="bottom" constant="8" symbolic="YES" id="nbi-0q-xRK"/>
                             <constraint firstItem="uDo-sK-jDH" firstAttribute="trailing" secondItem="aZa-DH-23Y" secondAttribute="trailing" id="rIk-77-xpL"/>
-                            <constraint firstItem="1S3-ys-TBU" firstAttribute="top" secondItem="QiX-6v-JZ3" secondAttribute="bottom" constant="19" id="yuW-zh-0Gu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vzn-r7-fCC"/>
                     </view>
@@ -751,14 +742,13 @@
                         <outlet property="firstButton" destination="1S3-ys-TBU" id="uzX-u5-Gv7"/>
                         <outlet property="fourthButton" destination="uDo-sK-jDH" id="Y4x-pi-m2C"/>
                         <outlet property="imageView" destination="YJL-56-euz" id="Hle-q8-bou"/>
-                        <outlet property="nextButton" destination="QiX-6v-JZ3" id="9hj-BC-zFm"/>
                         <outlet property="secondButton" destination="aZa-DH-23Y" id="I8L-fb-H8r"/>
                         <outlet property="thirdButton" destination="R1H-4t-qDF" id="mL3-7f-0cQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bjx-mj-Z6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2973.5999999999999" y="1699.7001499250375"/>
+            <point key="canvasLocation" x="2943" y="2185"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="S10-8h-Hvl">
@@ -927,7 +917,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nj2-mz-1QI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6444" y="1036.6995073891626"/>
+            <point key="canvasLocation" x="5618" y="1462"/>
         </scene>
         <!--Scan View Controller-->
         <scene sceneID="6gA-il-Wcz">
@@ -1070,6 +1060,7 @@
                         <outlet property="scanButton" destination="H3b-wg-M2D" id="HGJ-ef-tmT"/>
                         <outlet property="videoPreview" destination="6ui-hm-YQQ" id="PBM-mZ-v9x"/>
                         <segue destination="DsW-PU-OVV" kind="presentation" identifier="showTest" id="BP6-x4-qdG"/>
+                        <segue destination="x96-Sm-poR" kind="presentation" identifier="showMatchView" id="FAS-bm-1j6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKu-IS-Sm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1091,11 +1082,11 @@
         <image name="star_gray" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cbX-Xi-qi2"/>
+        <segue reference="FAS-bm-1j6"/>
         <segue reference="rpO-sk-GiI"/>
         <segue reference="JUa-om-3vp"/>
         <segue reference="twg-gF-fFR"/>
-        <segue reference="NKO-KB-ZAk"/>
+        <segue reference="wGe-vV-XZY"/>
         <segue reference="PlT-gK-Wfr"/>
     </inferredMetricsTieBreakers>
 </document>
