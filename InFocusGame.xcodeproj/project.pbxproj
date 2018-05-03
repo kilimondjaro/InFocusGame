@@ -56,7 +56,7 @@
 		26CF16D32089EBE800775B7A /* cup_oops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16CE2089EBE700775B7A /* cup_oops.mp3 */; };
 		26CF16D42089EBE800775B7A /* chair_oops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CF16CF2089EBE700775B7A /* chair_oops.mp3 */; };
 		26E035512085DF4400832BDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E035532085DF4400832BDF /* Localizable.strings */; };
-		26E87726209B404D006553EB /* title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26E87725209B404C006553EB /* title.mp3 */; };
+		26E87728209B42F9006553EB /* title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26E87727209B42F9006553EB /* title.mp3 */; };
 		26F8723720851AAA004A9CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723620851AAA004A9CC0 /* AppDelegate.swift */; };
 		26F8723920851AAA004A9CC0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8723820851AAA004A9CC0 /* RootViewController.swift */; };
 		26F8723C20851AAA004A9CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F8723A20851AAA004A9CC0 /* Main.storyboard */; };
@@ -136,7 +136,7 @@
 		26E0354D2085DE7100832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		26E035542085DF4900832BDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26E035552085DF5A00832BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		26E87725209B404C006553EB /* title.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = title.mp3; sourceTree = "<group>"; };
+		26E87727209B42F9006553EB /* title.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = title.mp3; sourceTree = "<group>"; };
 		26F8723320851AAA004A9CC0 /* InFocusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InFocusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F8723620851AAA004A9CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F8723820851AAA004A9CC0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -303,8 +303,8 @@
 				26CF16C62089E96F00775B7A /* Info */,
 				26CF16C52089E94800775B7A /* Objects */,
 				26CF16BB20892C2200775B7A /* match.mp3 */,
+				26E87727209B42F9006553EB /* title.mp3 */,
 				26CF16B920891CAF00775B7A /* find.mp3 */,
-				26E87725209B404C006553EB /* title.mp3 */,
 				26109E452087CF9300038E4F /* oops.mp3 */,
 				2665038A20862B0100947473 /* noticed.mp3 */,
 			);
@@ -502,7 +502,7 @@
 				26CF16C02089D17700775B7A /* computer_info_0.mp3 in Resources */,
 				26CF16B82089069600775B7A /* cup.mp3 in Resources */,
 				26CF16B42089069600775B7A /* banana.mp3 in Resources */,
-				26E87726209B404D006553EB /* title.mp3 in Resources */,
+				26E87728209B42F9006553EB /* title.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
