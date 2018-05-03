@@ -12,7 +12,11 @@ class TestViewController: UIViewController {
     weak var delegate: TestModalViewControllerDelegate?
     var object = ""
     
+    var areButtonsActive = true
+    
+    var numberOfStars = 3
     var correct = 0
+    var randomChain: [String] = []
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstButton: UIButton!
@@ -23,6 +27,17 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        firstButton.layer.cornerRadius = firstButton.frame.size.height / 10
+        secondButton.layer.cornerRadius = secondButton.frame.size.height / 10
+        thirdButton.layer.cornerRadius = thirdButton.frame.size.height / 10
+        fourthButton.layer.cornerRadius = fourthButton.frame.size.height / 10
+        
+        let objects = Constants.getAll()
+        let randomNumbers = (0...objects.count-1).shuffled()
+        for i in 0..<5 {
+            randomChain.append(objects[randomNumbers[i]])
+        }
+        
         generateAnswers()
     }
     
@@ -37,24 +52,25 @@ class TestViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getRandomObject() -> String {
-        let num = Int(arc4random_uniform(UInt32(Constants.flatObjects.count)))
-        let obj = Constants.flatObjects[num]
+    func getRandomObject(_ number: Int) -> String {
+        if (correct == number) {
+            return NSLocalizedString(object, comment: "")
+        }
+        let obj = randomChain[number]
         if obj != self.object {
-            return obj
+            return NSLocalizedString(obj, comment: "")
         }
-        if (num == Constants.flatObjects.count - 1) {
-            return Constants.flatObjects[num - 1]
-        }
-        return Constants.flatObjects[num + 1]
+        
+        // 4 is a next value after answers count
+        return NSLocalizedString(randomChain[4], comment: "")
     }
     
     func generateAnswers() {
         correct = Int(arc4random_uniform(4))
-        firstButton.setTitle(correct == 0 ? object : getRandomObject(), for: .normal)
-        secondButton.setTitle(correct == 1 ? object : getRandomObject(), for: .normal)
-        thirdButton.setTitle(correct == 2 ? object : getRandomObject(), for: .normal)
-        fourthButton.setTitle(correct == 3 ? object : getRandomObject(), for: .normal)
+        firstButton.setTitle(getRandomObject(0), for: .normal)
+        secondButton.setTitle(getRandomObject(1), for: .normal)
+        thirdButton.setTitle(getRandomObject(2), for: .normal)
+        fourthButton.setTitle(getRandomObject(3), for: .normal)
     }
     
     func highlightAnswer(number: Int, revert: Bool) {
@@ -63,25 +79,25 @@ class TestViewController: UIViewController {
         switch number {
         case 0:
             if (revert) {
-                firstButton.backgroundColor = UIColor.gray
+                firstButton.backgroundColor = #colorLiteral(red: 0.8799175127, green: 0.8799175127, blue: 0.8799175127, alpha: 1)
                 return
             }
             firstButton.backgroundColor = isCorrect ? UIColor.green : UIColor.red
         case 1:
             if (revert) {
-                secondButton.backgroundColor = UIColor.gray
+                secondButton.backgroundColor = #colorLiteral(red: 0.8799175127, green: 0.8799175127, blue: 0.8799175127, alpha: 1)
                 return
             }
             secondButton.backgroundColor = isCorrect ? UIColor.green : UIColor.red
         case 2:
             if (revert) {
-                thirdButton.backgroundColor = UIColor.gray
+                thirdButton.backgroundColor = #colorLiteral(red: 0.8799175127, green: 0.8799175127, blue: 0.8799175127, alpha: 1)
                 return
             }
             thirdButton.backgroundColor = isCorrect ? UIColor.green : UIColor.red
         case 3:
             if (revert) {
-                fourthButton.backgroundColor = UIColor.gray
+                fourthButton.backgroundColor = #colorLiteral(red: 0.8799175127, green: 0.8799175127, blue: 0.8799175127, alpha: 1)
                 return
             }
             fourthButton.backgroundColor = isCorrect ? UIColor.green : UIColor.red
@@ -94,7 +110,7 @@ class TestViewController: UIViewController {
     func dismissModal() {
         dismiss(animated: true, completion: nil)
         VoiceAssistant.instance.stop()
-        delegate?.numberOfStars = 3
+        delegate?.numberOfStars = numberOfStars
         delegate?.removeBlurredBackgroundView()
         delegate?.continueProcess(from: "test")
     }
@@ -111,7 +127,10 @@ class TestViewController: UIViewController {
                         self.dismissModal()
                     }
                     else {
-                      //
+                        self.numberOfStars -= 1
+                        if (self.numberOfStars == 0) {
+                            self.dismissModal()
+                        }
                         return
                     }
                 }

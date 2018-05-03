@@ -401,7 +401,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="664"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vbt-9Z-JDT" id="zFx-3o-6XW">
@@ -676,7 +676,10 @@
                                     <constraint firstAttribute="height" constant="81" id="FCc-wv-DhX"/>
                                     <constraint firstAttribute="width" constant="166" id="Yg7-mO-ZIe"/>
                                 </constraints>
-                                <state key="normal" title="Apple"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Apple">
+                                    <color key="titleColor" red="0.0" green="0.4823529412" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="firstButtonPressed:" destination="DsW-PU-OVV" eventType="touchUpInside" id="Qfd-N1-TqQ"/>
                                 </connections>
@@ -684,7 +687,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-DH-23Y">
                                 <rect key="frame" x="192" y="571" width="166" height="81"/>
                                 <color key="backgroundColor" red="0.87991751269999996" green="0.87991751269999996" blue="0.87991751269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Banana"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Banana">
+                                    <color key="titleColor" red="0.0" green="0.4823529412" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="secondButtonPressed:" destination="DsW-PU-OVV" eventType="touchUpInside" id="HaP-Ej-nrM"/>
                                 </connections>
@@ -695,7 +701,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="kZt-Sf-uNj"/>
                                 </constraints>
-                                <state key="normal" title="Orange"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Orange">
+                                    <color key="titleColor" red="0.0" green="0.4823529412" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="thirdButtonPressed:" destination="DsW-PU-OVV" eventType="touchUpInside" id="dGD-6b-IM5"/>
                                 </connections>
@@ -703,7 +712,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDo-sK-jDH">
                                 <rect key="frame" x="192" y="660" width="166" height="81"/>
                                 <color key="backgroundColor" red="0.87991751269999996" green="0.87991751269999996" blue="0.87991751269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Grape"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Grape">
+                                    <color key="titleColor" red="0.0" green="0.4823529412" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="fourthButtonPressed:" destination="DsW-PU-OVV" eventType="touchUpInside" id="2lG-lL-ynb"/>
                                 </connections>
@@ -724,8 +736,10 @@
                             <constraint firstItem="Vzn-r7-fCC" firstAttribute="bottom" secondItem="R1H-4t-qDF" secondAttribute="bottom" constant="37" id="Lww-Ft-3tV"/>
                             <constraint firstItem="YJL-56-euz" firstAttribute="trailing" secondItem="rmd-rR-quW" secondAttribute="trailingMargin" id="Sao-Jh-9lN"/>
                             <constraint firstItem="R1H-4t-qDF" firstAttribute="width" secondItem="1S3-ys-TBU" secondAttribute="width" id="UEi-ql-17r"/>
+                            <constraint firstItem="Vzn-r7-fCC" firstAttribute="trailing" secondItem="YJL-56-euz" secondAttribute="trailing" constant="16" id="Vve-rs-hay"/>
                             <constraint firstItem="uDo-sK-jDH" firstAttribute="baseline" secondItem="R1H-4t-qDF" secondAttribute="firstBaseline" id="WnJ-XU-1pg"/>
                             <constraint firstItem="uDo-sK-jDH" firstAttribute="width" secondItem="1S3-ys-TBU" secondAttribute="width" id="dP4-h3-cyB"/>
+                            <constraint firstItem="YJL-56-euz" firstAttribute="leading" secondItem="Vzn-r7-fCC" secondAttribute="leading" constant="16" id="fng-0R-Jel"/>
                             <constraint firstItem="aZa-DH-23Y" firstAttribute="top" secondItem="1S3-ys-TBU" secondAttribute="top" id="gaF-2s-Eye"/>
                             <constraint firstItem="YJL-56-euz" firstAttribute="leading" secondItem="rmd-rR-quW" secondAttribute="leadingMargin" id="guq-LF-J8I"/>
                             <constraint firstItem="YJL-56-euz" firstAttribute="top" secondItem="Vzn-r7-fCC" secondAttribute="top" constant="24" id="gx8-c3-GNu"/>

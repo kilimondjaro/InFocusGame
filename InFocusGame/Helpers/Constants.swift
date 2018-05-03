@@ -1015,6 +1015,11 @@ let objectsTypes = [
 
 struct Constants {
     
+    // Add categories
+    static func getAll() -> [String] {
+        return CoreDataManager.instance.getAttributes(entity: "FlatObjects")
+    }
+    
     static var flatObjects: [String] {
         let data = CoreDataManager.instance.fetch(entity: "FlatObjects")[0]
         return CoreDataManager.instance.getAttributes(entity: "FlatObjects").filter(({ (data.value(forKey: $0) as? Bool)! }))
