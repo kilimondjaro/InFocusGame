@@ -8,11 +8,15 @@
 
 import UIKit
 
+enum HelpMode {
+    case none, help, fault
+}
+
 class HelpViewController: UIViewController {
     weak var delegate: ModalViewControllerDelegate?
     
     var object = ""
-    var playHelp = false
+    var mode = HelpMode.none
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var objectLabel: UILabel!
@@ -33,8 +37,13 @@ class HelpViewController: UIViewController {
         
         objectLabel.text = NSLocalizedString(object, comment: "")
         
-        if playHelp {
+        switch mode {
+        case HelpMode.help:
             VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
+        case HelpMode.fault:
+            VoiceAssistant.instance.playFile(name: "\(object)_oops", overlap: true)
+        default:
+            return
         }
     }
 

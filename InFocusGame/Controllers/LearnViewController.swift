@@ -234,7 +234,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                 if let viewController = segue.destination as? HelpViewController {
                     viewController.delegate = self
                     viewController.object = self.currentObject
-                    viewController.playHelp = false
+                    viewController.mode = HelpMode.none
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
@@ -244,17 +244,17 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                 if let viewController = segue.destination as? HelpViewController {
                     viewController.delegate = self
                     viewController.object = self.currentObject
-                    viewController.playHelp = true
+                    viewController.mode = HelpMode.help
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }
             }
             if identifier == "showFaultInfo" {
-                if let viewController = segue.destination as? FaultInfoViewController {
+                if let viewController = segue.destination as? HelpViewController {
                     viewController.delegate = self
-                    viewController.correctObject = self.currentObject
-                    viewController.incorrectObject = self.incorrectObject
+                    viewController.object = self.incorrectObject
+                    viewController.mode = HelpMode.fault
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
