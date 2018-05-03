@@ -11,7 +11,7 @@ import UIKit
 class LibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ModalViewControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let objects = Constants.flatObjects
+    let objects = Constants.getFilteredObjects(category: Categories.fruitsAndVegetables)
     var pressedObject = ""
     
     override func viewDidLoad() {

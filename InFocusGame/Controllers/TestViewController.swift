@@ -32,7 +32,7 @@ class TestViewController: UIViewController {
         thirdButton.layer.cornerRadius = thirdButton.frame.size.height / 10
         fourthButton.layer.cornerRadius = fourthButton.frame.size.height / 10
         
-        let objects = Constants.getAll()
+        let objects = Constants.getObjects(category: Categories.fruitsAndVegetables)
         let randomNumbers = (0...objects.count-1).shuffled()
         for i in 0..<5 {
             randomChain.append(objects[randomNumbers[i]])

@@ -18,7 +18,7 @@ class ScanProcessor {
     let objectRecognition = ObjectRecognition()
     let semaphore: DispatchSemaphore?
     
-    let objects = Constants.flatObjects
+    let objects = Constants.getFilteredObjects(category: Categories.fruitsAndVegetables)
     
     weak var delegate: ScanProcessorDelegate?
     
@@ -41,11 +41,13 @@ class ScanProcessor {
         if (scanCounter >= 10) {
             isScanning = false
 
+            let objectsIds = Constants.getObjectsIds(category: Categories.fruitsAndVegetables)
+            
             // TODO - move it
             let last = lastScannedObjectsDict.max { a, b in a.value < b.value }
-            if let lastObjectIndex = Constants.objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), Constants.objectsIds[lastObjectIndex] != nil {
-                if (objects.contains(Constants.objectsIds[lastObjectIndex].key)) {
-                    delegate?.objectScanned(object: Constants.objectsIds[lastObjectIndex].key)
+            if let lastObjectIndex = objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), objectsIds[lastObjectIndex] != nil {
+                if (objects.contains(objectsIds[lastObjectIndex].key)) {
+                    delegate?.objectScanned(object: objectsIds[lastObjectIndex].key)
                 }
             }
             
@@ -62,11 +64,13 @@ class ScanProcessor {
     }
     
     func processDetection(values: [(String, Double)]) {
+        let objectsIds = Constants.getObjectsIds(category: Categories.fruitsAndVegetables)
+        
         for object in values {
             let id = object.0.components(separatedBy: " ")[0]
-            if let index = Constants.objectsIds.index(where: { $1.contains(id) }), Constants.objectsIds[index] != nil, object.1 > 0.15 {
-                if (objects.contains(Constants.objectsIds[index].key)) {
-                    delegate?.objectDetected(object: Constants.objectsIds[index].key)
+            if let index = objectsIds.index(where: { $1.contains(id) }), objectsIds[index] != nil, object.1 > 0.15 {
+                if (objects.contains(objectsIds[index].key)) {
+                    delegate?.objectDetected(object: objectsIds[index].key)
                 }
                 else {
                     delegate?.objectDetected(object: nil)

@@ -23,11 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if launchedBefore  {
             // Code
         } else {
-            let entity = NSEntityDescription.entity(forEntityName: "FlatObjects", in: context)
-            let newObj = NSManagedObject(entity: entity!, insertInto: context)
-            
-            for i in CoreDataManager.instance.getAttributes(entity: "FlatObjects") {
-                newObj.setValue(true, forKey: i)
+            for category in Categories.getCategories() {
+                let entity = NSEntityDescription.entity(forEntityName: category.rawValue, in: context)
+                let newObj = NSManagedObject(entity: entity!, insertInto: context)
+                
+                for i in CoreDataManager.instance.getAttributes(entity: category.rawValue) {
+                    newObj.setValue(true, forKey: i)
+                }
             }
             
             do {

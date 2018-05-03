@@ -1013,32 +1013,64 @@ let objectsTypes = [
 ]
 
 
+
+enum Categories: String {
+    case flat = "FlatObjects",
+    fruitsAndVegetables = "FruitsAndVegetables",
+    appliances = "Appliances",
+    clothes = "Clothes",
+    furniture = "Furniture",
+    animals = "Animals"
+    
+    static func getCategories() -> [Categories] {
+        return [Categories.flat, Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.furniture, Categories.animals]
+//            ["FlatObjects", "FruitsAndVegetables", "Appliances", "Clothes", "Furniture", "Animals"]
+    }
+}
+
 struct Constants {
     
     // Add categories
-    static func getAll() -> [String] {
-        return CoreDataManager.instance.getAttributes(entity: "FlatObjects")
+//    static func getAll() -> [String] {
+//        return CoreDataManager.instance.getAttributes(entity: "FlatObjects")
+//    }
+    
+    static func getObjects(category: Categories) -> [String] {
+        return CoreDataManager.instance.getAttributes(entity: category.rawValue)
     }
     
-    static var flatObjects: [String] {
-        let data = CoreDataManager.instance.fetch(entity: "FlatObjects")[0]
-        return CoreDataManager.instance.getAttributes(entity: "FlatObjects").filter(({ (data.value(forKey: $0) as? Bool)! }))
+    static func getFilteredObjects(category: Categories) -> [String] {
+        let data = CoreDataManager.instance.fetch(entity: category.rawValue)[0]
+        return CoreDataManager.instance.getAttributes(entity: category.rawValue).filter(({ (data.value(forKey: $0) as? Bool)! }))
     }
+    
+//    static var flatObjects: [String] {
+//        let data = CoreDataManager.instance.fetch(entity: "FlatObjects")[0]
+//        return CoreDataManager.instance.getAttributes(entity: "FlatObjects").filter(({ (data.value(forKey: $0) as? Bool)! }))
+//    }
     
     static let objectsInfo: [String: Int] = [
         "computer": 2,
         "cup": 1
     ]
     
-    static let objectsIds = objectsDict
+    static func getObjectsIds(category: Categories) -> [String: [String]] {
+        return objectsDict[category]!
+    }
 }
 
 
-let objectsDict = [
-    "apple": ["n07742313", "n07760859"],
-    "banana": ["n07753592"],
-    "chair": ["n02791124", "n03376595", "n04099969"],
-    "cup": ["n03733805", "n07930864", "n03063599", "n04560804"],
-    "table": ["n03201208", "n03179701"],
-    "computer": ["n03832673", "n03642806", "n03085013"]
+private let objectsDict = [
+    Categories.furniture: [
+        "chair": ["n02791124", "n03376595", "n04099969"],
+        "cup": ["n03733805", "n07930864", "n03063599", "n04560804"],
+        "table": ["n03201208", "n03179701"]
+    ],
+    Categories.fruitsAndVegetables: [
+        "apple": ["n07742313", "n07760859"],
+        "banana": ["n07753592"],
+    ],
+    Categories.appliances: [
+        "computer": ["n03832673", "n03642806", "n03085013"]
+    ]
 ]

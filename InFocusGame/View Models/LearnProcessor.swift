@@ -25,7 +25,7 @@ class LearnProcessor {
     private var randomObjectSequence: [Int] = []
     private var objectIsNoticed = false
     private var lastCheckedObjectsDict: [String: Int] = [:]
-    let objects = Constants.flatObjects
+    let objects = Constants.getFilteredObjects(category: Categories.fruitsAndVegetables)
     
     init(semaphore: DispatchSemaphore) {
         self.semaphore = semaphore
@@ -60,7 +60,7 @@ class LearnProcessor {
             }
             
             let id = pred.0.components(separatedBy: " ")[0]
-            if ((Constants.objectsIds[currentObject]?.contains(id))! && pred.1 > 0.15) {
+            if ((Constants.getObjectsIds(category: Categories.fruitsAndVegetables)[currentObject]?.contains(id))! && pred.1 > 0.15) {
                 print("\(i) - \(pred.0) - \(pred.1)")
                 return true
             }
@@ -93,9 +93,11 @@ class LearnProcessor {
             }
             else {
                 // TODO - move it
+                let objectsIds = Constants.getObjectsIds(category: Categories.fruitsAndVegetables)
+                
                 let last = lastCheckedObjectsDict.max { a, b in a.value < b.value }
-                if let lastObjectIndex = Constants.objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), Constants.objectsIds[lastObjectIndex] != nil {
-                    delegate?.objectChecked(correct: false, incorrectObject: Constants.objectsIds[lastObjectIndex].key)
+                if let lastObjectIndex = objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), objectsIds[lastObjectIndex] != nil {
+                    delegate?.objectChecked(correct: false, incorrectObject: objectsIds[lastObjectIndex].key)
                 }
                 else {                    
                     delegate?.objectChecked(correct: false, incorrectObject: nil)
