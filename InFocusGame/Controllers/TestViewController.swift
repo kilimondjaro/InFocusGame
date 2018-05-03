@@ -115,7 +115,7 @@ class TestViewController: UIViewController {
         delegate?.continueProcess(from: "test")
     }
     
-    func animateAnswer(number: Int, counter: Int) {
+    func animation(number: Int, counter: Int) {
         UIView.animate(withDuration: 0.5, animations: {
             self.highlightAnswer(number: number, revert: false)
         }){ (succeed) -> Void in
@@ -131,12 +131,22 @@ class TestViewController: UIViewController {
                         if (self.numberOfStars == 0) {
                             self.dismissModal()
                         }
+                        self.areButtonsActive = true
                         return
                     }
                 }
-                self.animateAnswer(number: number, counter: counter + 1)
+                self.animation(number: number, counter: counter + 1)
             }
         }
+    }
+    
+    func animateAnswer(number: Int, counter: Int) {
+        if (!areButtonsActive) {
+            return
+        }
+        animation(number: number, counter: counter)
+        areButtonsActive = false
+        
     }
     
     @IBAction func firstButtonPressed(_ sender: UIButton) {
