@@ -44,7 +44,7 @@ class TestViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         view.backgroundColor = UIColor.clear
         imageView.image = UIImage(named: object)
-//        VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
+        VoiceAssistant.instance.playSequence(names: ["title", object], overlap: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -143,6 +143,9 @@ class TestViewController: UIViewController {
     func animateAnswer(number: Int, counter: Int) {
         if (!areButtonsActive) {
             return
+        }
+        if (number != self.correct) {
+            VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
         }
         animation(number: number, counter: counter)
         areButtonsActive = false

@@ -398,7 +398,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Px-i9-3Ze">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="664"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="620"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
@@ -454,7 +454,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OGD-Sw-HVO" firstAttribute="top" secondItem="1Px-i9-3Ze" secondAttribute="bottom" id="AB7-Mi-7Wf"/>
-                            <constraint firstItem="1Px-i9-3Ze" firstAttribute="top" secondItem="O8d-oe-wSE" secondAttribute="top" id="UAA-Pw-Qal"/>
+                            <constraint firstItem="1Px-i9-3Ze" firstAttribute="top" secondItem="Jzb-G5-18w" secondAttribute="top" id="Afc-ac-hE7"/>
                             <constraint firstItem="OGD-Sw-HVO" firstAttribute="trailing" secondItem="Jzb-G5-18w" secondAttribute="trailing" id="WJU-Ey-cjW"/>
                             <constraint firstItem="OGD-Sw-HVO" firstAttribute="leading" secondItem="Jzb-G5-18w" secondAttribute="leading" id="Wo1-Tb-ubd"/>
                             <constraint firstItem="Jzb-G5-18w" firstAttribute="bottom" secondItem="1Px-i9-3Ze" secondAttribute="bottom" constant="114" id="gy8-SP-zWU"/>
@@ -470,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSf-Em-Y4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199.19999999999999" y="1075.1231527093596"/>
+            <point key="canvasLocation" x="198.75" y="1074.2957746478874"/>
         </scene>
         <!--Learn View Controller-->
         <scene sceneID="dxw-Ii-pgv">
@@ -1099,7 +1099,7 @@
         <segue reference="FAS-bm-1j6"/>
         <segue reference="rpO-sk-GiI"/>
         <segue reference="JUa-om-3vp"/>
-        <segue reference="twg-gF-fFR"/>
+        <segue reference="wFM-1Q-KM8"/>
         <segue reference="wGe-vV-XZY"/>
         <segue reference="PlT-gK-Wfr"/>
     </inferredMetricsTieBreakers>
