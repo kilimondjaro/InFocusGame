@@ -36,36 +36,60 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         readButton.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
         
         backButton.layer.cornerRadius = backButton.frame.size.height / 2
-        
-        highlightMode()
     }
     
-    func highlightMode() {
+    override func viewDidLayoutSubviews() {
+       modeOn()
+    }
+    
+    func getButton() -> UIButton? {
         let mode = GameMode(rawValue: UserDefaults.standard.string(forKey: "gameType")!)!
         
         switch mode {
         case GameMode.read:
-            readButton.layer.borderColor = UIColor.red.cgColor
+           return readButton
         case GameMode.scan:
-            scanButton.layer.borderColor = UIColor.red.cgColor
+            return scanButton
         case GameMode.search:
-            searchButton.layer.borderColor = UIColor.red.cgColor
+            return searchButton
         default:
-            return
+            return nil
         }
     }
     
-    func clearBorder() {
-        readButton.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
-        searchButton.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
-        scanButton.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
+    func animateOn(button: UIButton) {
+        UIView.animate(withDuration: 0.7, animations: {
+            button.frame =  button.frame.insetBy(dx: -10, dy: -10)
+        }){ (succeed) -> Void in
+           //
+        }
+    }
+    
+    func animateOff(button: UIButton) {
+        UIView.animate(withDuration: 0.7, animations: {            
+            button.frame =  button.frame.insetBy(dx: 10, dy: 10)
+        }){ (succeed) -> Void in
+            //
+        }
+    }
+    
+    func modeOn() {
+        if let button = getButton() {
+            animateOn(button: button)
+        }
+    }
+    
+    func modeOff() {
+        if let button = getButton() {
+            animateOff(button: button)
+        }
     }
     
     
     func changeGameMode(_ mode: GameMode) {
+        modeOff()
         UserDefaults.standard.set(mode.rawValue, forKey: "gameType")
-        clearBorder()
-        highlightMode()
+        modeOn()
     }
 
     override func didReceiveMemoryWarning() {
