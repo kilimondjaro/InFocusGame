@@ -11,6 +11,12 @@
 "inFocus" = "In Focus";
 "parentGuard" = "Чтобы продолжить, смахните двумя пальцами вверх";
 
+"Animals" = "Животные";
+"Furniture" = "Мебель";
+"Clothes" = "Одежда";
+"Appliance" = "Бытовые приборы";
+"FruitsAndVegetables" = "Фрукты и овощи";
+
 
 "apple" = "Яблоко";
 "banana" = "Банан";

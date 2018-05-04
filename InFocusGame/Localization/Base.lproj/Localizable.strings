@@ -11,6 +11,11 @@
 "inFocus" = "In Focus";
 "parentGuard" = "To continue, slide two fingers upward";
 
+"Animals" = "Animals";
+"Furniture" = "Furniture";
+"Clothes" = "Clothes";
+"Appliance" = "Appliance";
+"FruitsAndVegetables" = "Fruits/Vegetables";
 
 "apple" = "Apple";
 "banana" = "Banana";

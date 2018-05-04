@@ -92,7 +92,13 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoriesCell", for: indexPath) as! LibraryCollectionViewCell
 
-        cell.imageView.image = UIImage(named: Categories.getCategories()[indexPath.row].rawValue)
+        let category = Categories.getCategories()[indexPath.row].rawValue
+        
+        cell.imageView.image = UIImage(named: category)
+        cell.layer.borderWidth = 3
+        cell.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
+        cell.layer.cornerRadius =  cell.frame.size.height / 10
+        cell.label.text = NSLocalizedString(category, comment: "")
         
         return cell
     }
