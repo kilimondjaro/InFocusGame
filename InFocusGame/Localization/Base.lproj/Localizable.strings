@@ -10,6 +10,8 @@
 "settings" = "Settings";
 "inFocus" = "In Focus";
 "parentGuard" = "To continue, slide two fingers upward";
+"activate" = "Activate at least one object of this category";
+"fullVersion" = "Buy a full version of the game to unlock this content";
 
 "Animals" = "Animals";
 "Furniture" = "Furniture";

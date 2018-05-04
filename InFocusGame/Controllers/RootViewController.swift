@@ -22,6 +22,8 @@ class RootViewController: UIViewController {
         
         playButton.layer.cornerRadius = playButton.frame.size.height / 2
         parentView.layer.cornerRadius = parentView.frame.size.height / 10
+        parentView.layer.borderColor = UIColor.gray.cgColor
+        parentView.layer.borderWidth = 4
     }
 
     override func didReceiveMemoryWarning() {

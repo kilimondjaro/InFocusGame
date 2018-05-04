@@ -1026,14 +1026,21 @@ enum Categories: String {
         return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.furniture, Categories.animals]
 //            ["FlatObjects", "FruitsAndVegetables", "Appliances", "Clothes", "Furniture", "Animals"]
     }
+    static func getTrialCategories() -> [Categories] {
+        return [Categories.fruitsAndVegetables, Categories.appliances]
+    }
 }
 
 struct Constants {
     
     // Add categories
-//    static func getAll() -> [String] {
-//        return CoreDataManager.instance.getAttributes(entity: "FlatObjects")
-//    }
+    static func getAll() -> [String] {
+        var objects = [String]()
+        for category in Categories.getCategories() {
+            objects.append(contentsOf: getObjects(category: category))
+        }
+        return objects
+    }
     
     static func getObjects(category: Categories) -> [String] {
         return CoreDataManager.instance.getAttributes(entity: category.rawValue)
@@ -1043,11 +1050,6 @@ struct Constants {
         let data = CoreDataManager.instance.fetch(entity: category.rawValue)[0]
         return CoreDataManager.instance.getAttributes(entity: category.rawValue).filter(({ (data.value(forKey: $0) as? Bool)! }))
     }
-    
-//    static var flatObjects: [String] {
-//        let data = CoreDataManager.instance.fetch(entity: "FlatObjects")[0]
-//        return CoreDataManager.instance.getAttributes(entity: "FlatObjects").filter(({ (data.value(forKey: $0) as? Bool)! }))
-//    }
     
     static let objectsInfo: [String: Int] = [
         "computer": 2,
@@ -1072,7 +1074,9 @@ private let objectsDict = [
     ],
     Categories.appliances: [
         "computer": ["n03832673", "n03642806", "n03085013"]
-    ]
+    ],
+    Categories.animals: [:],
+    Categories.clothes: [:]
 ]
 
 enum GameMode: String {

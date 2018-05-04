@@ -10,13 +10,14 @@ import UIKit
 
 class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var backButton: UIButton!
     private var objectsData: [String: [String: Bool]] = [:]
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        backButton.layer.cornerRadius = backButton.frame.height / 2
         for category in Categories.getCategories() {
             let result = CoreDataManager.instance.fetch(entity: category.rawValue)
             

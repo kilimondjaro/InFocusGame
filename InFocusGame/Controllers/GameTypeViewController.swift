@@ -13,13 +13,22 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var readButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!        
+    @IBOutlet weak var fullVersionButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var chosenCategory = Categories.animals
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addGestures()
+        
+        if (UserDefaults.standard.bool(forKey: "trial")) {
+            fullVersionButton.isHidden = false
+        }
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -35,7 +44,11 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         readButton.layer.borderWidth = 3
         readButton.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
         
-        backButton.layer.cornerRadius = backButton.frame.size.height / 2
+        fullVersionButton.layer.cornerRadius = fullVersionButton.frame.size.height / 2
+        
+        infoView.layer.cornerRadius = infoView.frame.size.height / 10
+        infoView.layer.borderColor = UIColor.gray.cgColor
+        infoView.layer.borderWidth = 4
     }
     
     override func viewDidLayoutSubviews() {
@@ -109,6 +122,11 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         changeGameMode(GameMode.scan)
     }
     
+    @IBAction func fullVersionButtonPressed(_ sender: UIButton) {
+        // Buying full version
+        UserDefaults.standard.set(false, forKey: "trial")
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -116,13 +134,17 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoriesCell", for: indexPath) as! LibraryCollectionViewCell
 
-        let category = Categories.getCategories()[indexPath.row].rawValue
+        let category = Categories.getCategories()[indexPath.row]
         
-        cell.imageView.image = UIImage(named: category)
+        cell.imageView.image = UIImage(named: category.rawValue)
         cell.layer.borderWidth = 3
         cell.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
         cell.layer.cornerRadius =  cell.frame.size.height / 10
-        cell.label.text = NSLocalizedString(category, comment: "")
+        cell.label.text = NSLocalizedString(category.rawValue, comment: "")
+        
+        if (UserDefaults.standard.bool(forKey: "trial") && !Categories.getTrialCategories().contains(category)) {
+            cell.alpha = 0.5
+        }
         
         return cell
     }
@@ -133,6 +155,19 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         chosenCategory = Categories.getCategories()[indexPath.row]
+        
+        if (UserDefaults.standard.bool(forKey: "trial") && !Categories.getTrialCategories().contains(chosenCategory)) {
+            infoLabel.text = NSLocalizedString("fullVersion", comment: "")
+            infoView.isHidden = false
+            return
+        }
+        
+        if (Constants.getFilteredObjects(category: chosenCategory).count < 1) {
+            infoLabel.text = NSLocalizedString("activate", comment: "")
+            infoView.isHidden = false            
+            return
+        }
+        
         
         let mode = GameMode(rawValue: UserDefaults.standard.string(forKey: "gameType")!)!
         
@@ -145,6 +180,18 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
             self.performSegue(withIdentifier: "startSearch", sender: self)
         default:
             return
+        }
+    }
+    
+    func addGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideInfoView))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func hideInfoView() {
+        if (!infoView.isHidden) {
+            infoView.isHidden = true
         }
     }
     

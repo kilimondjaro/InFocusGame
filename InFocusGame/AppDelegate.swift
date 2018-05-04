@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } catch {
                 print("Failed saving")
             }
+            UserDefaults.standard.set(true, forKey: "trial")
             UserDefaults.standard.set(true, forKey: "voiceAssistant")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
             UserDefaults.standard.set(GameMode.scan.rawValue, forKey: "gameType")
