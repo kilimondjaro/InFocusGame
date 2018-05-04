@@ -15,6 +15,8 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     @IBOutlet weak var scanButton: UIButton!    
     @IBOutlet weak var bottomView: UIView!
     
+    var category = Categories.animals
+    
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
     var framesDone = 0
@@ -71,7 +73,7 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     }
     
     func initScanProcessor() {
-        scanProcessor = ScanProcessor(semaphore: semaphore)
+        scanProcessor = ScanProcessor(semaphore: semaphore, category: category)
         scanProcessor?.delegate = self
     }
     
@@ -149,6 +151,13 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
                     viewController.object = self.scannedObject
                     viewController.modalPresentationStyle = .overFullScreen
                     viewController.mode = HelpMode.help
+                    self.videoCapture.stop()
+                    VoiceAssistant.instance.stop()
+                }
+            }
+            if identifier == "showLibrary" {
+                if let viewController = segue.destination as? LibraryViewController {
+                    viewController.category = self.category
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }

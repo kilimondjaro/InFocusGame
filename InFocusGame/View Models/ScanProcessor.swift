@@ -18,17 +18,21 @@ class ScanProcessor {
     let objectRecognition = ObjectRecognition()
     let semaphore: DispatchSemaphore?
     
-    let objects = Constants.getFilteredObjects(category: Categories.fruitsAndVegetables)
+    let objects: [String]
     
     weak var delegate: ScanProcessorDelegate?
+    
+    private var  category = Categories.fruitsAndVegetables
     
     private var scanCounter = 0
     private var isScanning = false
     
     private var lastScannedObjectsDict: [String: Int] = [:]
     
-    init(semaphore: DispatchSemaphore) {
+    init(semaphore: DispatchSemaphore, category: Categories) {
         self.semaphore = semaphore
+        self.category = category
+        self.objects = Constants.getFilteredObjects(category: category)
         objectRecognition.setUpVision(completionHandler: requestDidComplete)
     }
     
@@ -41,7 +45,7 @@ class ScanProcessor {
         if (scanCounter >= 10) {
             isScanning = false
 
-            let objectsIds = Constants.getObjectsIds(category: Categories.fruitsAndVegetables)
+            let objectsIds = Constants.getObjectsIds(category: category)
             
             // TODO - move it
             let last = lastScannedObjectsDict.max { a, b in a.value < b.value }
@@ -64,7 +68,7 @@ class ScanProcessor {
     }
     
     func processDetection(values: [(String, Double)]) {
-        let objectsIds = Constants.getObjectsIds(category: Categories.fruitsAndVegetables)
+        let objectsIds = Constants.getObjectsIds(category: category)
         
         for object in values {
             let id = object.0.components(separatedBy: " ")[0]

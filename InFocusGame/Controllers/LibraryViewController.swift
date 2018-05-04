@@ -13,6 +13,8 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     let objects = Constants.getFilteredObjects(category: Categories.fruitsAndVegetables)
     var pressedObject = ""
+    var category = Categories.animals
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +86,11 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
                     VoiceAssistant.instance.stop()
                 }
             }
-        }
+            if identifier == "showScan" {
+                if let viewController = segue.destination as? ScanViewController {
+                    viewController.category = self.category
+                }
+            }
+        }      
     }
 }

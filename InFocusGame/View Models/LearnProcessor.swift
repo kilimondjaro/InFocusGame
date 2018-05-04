@@ -14,6 +14,7 @@ protocol LearnProcessorDelegate: class {
 }
 
 class LearnProcessor {
+    var category = Categories.fruitsAndVegetables
     let objectRecognition: ObjectRecognition?
     let semaphore: DispatchSemaphore?    
     private var isChecking = false
@@ -25,13 +26,15 @@ class LearnProcessor {
     private var randomObjectSequence: [Int] = []
     private var objectIsNoticed = false
     private var lastCheckedObjectsDict: [String: Int] = [:]
-    let objects = Constants.getFilteredObjects(category: Categories.fruitsAndVegetables)
+    let objects: [String]
     
-    init(semaphore: DispatchSemaphore) {
+    init(semaphore: DispatchSemaphore, category: Categories) {
         self.semaphore = semaphore
+        self.category = category
+        self.objects = Constants.getFilteredObjects(category: category)
         objectRecognition = ObjectRecognition()
         objectRecognition?.setUpVision(completionHandler: requestDidComplete)
-        
+                
         randomObjectSequence = (0...objects.count-1).shuffled()
     }
     
@@ -60,7 +63,7 @@ class LearnProcessor {
             }
             
             let id = pred.0.components(separatedBy: " ")[0]
-            if ((Constants.getObjectsIds(category: Categories.fruitsAndVegetables)[currentObject]?.contains(id))! && pred.1 > 0.15) {
+            if ((Constants.getObjectsIds(category: category)[currentObject]?.contains(id))! && pred.1 > 0.15) {
                 print("\(i) - \(pred.0) - \(pred.1)")
                 return true
             }
@@ -93,7 +96,7 @@ class LearnProcessor {
             }
             else {
                 // TODO - move it
-                let objectsIds = Constants.getObjectsIds(category: Categories.fruitsAndVegetables)
+                let objectsIds = Constants.getObjectsIds(category: category)
                 
                 let last = lastCheckedObjectsDict.max { a, b in a.value < b.value }
                 if let lastObjectIndex = objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), objectsIds[lastObjectIndex] != nil {

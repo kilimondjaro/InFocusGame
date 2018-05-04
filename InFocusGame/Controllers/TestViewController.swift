@@ -13,6 +13,7 @@ class TestViewController: UIViewController {
     var object = ""
     
     var areButtonsActive = true
+    var category = Categories.animals
     
     var numberOfStars = 3
     var correct = 0
@@ -32,7 +33,7 @@ class TestViewController: UIViewController {
         thirdButton.layer.cornerRadius = thirdButton.frame.size.height / 10
         fourthButton.layer.cornerRadius = fourthButton.frame.size.height / 10
         
-        let objects = Constants.getObjects(category: Categories.fruitsAndVegetables)
+        let objects = Constants.getObjects(category: category)
         let randomNumbers = (0...objects.count-1).shuffled()
         for i in 0..<5 {
             randomChain.append(objects[randomNumbers[i]])

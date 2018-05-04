@@ -1015,15 +1015,15 @@ let objectsTypes = [
 
 
 enum Categories: String {
-    case flat = "FlatObjects",
-    fruitsAndVegetables = "FruitsAndVegetables",
+//    case flat = "FlatObjects",
+    case fruitsAndVegetables = "FruitsAndVegetables",
     appliances = "Appliances",
     clothes = "Clothes",
     furniture = "Furniture",
     animals = "Animals"
     
     static func getCategories() -> [Categories] {
-        return [Categories.flat, Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.furniture, Categories.animals]
+        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.furniture, Categories.animals]
 //            ["FlatObjects", "FruitsAndVegetables", "Appliances", "Clothes", "Furniture", "Animals"]
     }
 }
@@ -1074,3 +1074,7 @@ private let objectsDict = [
         "computer": ["n03832673", "n03642806", "n03085013"]
     ]
 ]
+
+enum GameMode: String {
+    case scan = "scan", search = "search", read = "read"
+}

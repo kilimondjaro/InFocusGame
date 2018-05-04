@@ -14,7 +14,7 @@ class ObjectsListsTableViewCell: UITableViewCell {
     @IBOutlet weak var objectLabel: UILabel!
     @IBOutlet weak var objectSwitch: UISwitch!
     var objectName = ""
-    var category = Categories.flat
+    var category = Categories.fruitsAndVegetables
     
     
     override func awakeFromNib() {
