@@ -740,7 +740,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XpJ-eK-CRG">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XpJ-eK-CRG">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 </imageView>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok" translatesAutoresizingMaskIntoConstraints="NO" id="zSh-kh-n6s">
@@ -1298,9 +1298,9 @@
         <image name="star_gray" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dK5-Nm-l9z"/>
+        <segue reference="mcc-H5-uS2"/>
         <segue reference="7sL-kT-BIC"/>
-        <segue reference="HPF-aJ-dJj"/>
+        <segue reference="DTP-wW-sp6"/>
         <segue reference="rf1-CB-dju"/>
         <segue reference="zb4-Y4-Pzh"/>
         <segue reference="eCC-V4-cyZ"/>

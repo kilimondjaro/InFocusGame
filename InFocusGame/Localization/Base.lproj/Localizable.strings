@@ -27,6 +27,12 @@
 "broccoli" = "Broccoli";
 "cabbage" = "Cabbage";
 "cucumber" = "Cucumber";
+"bellPepper" = "Bell Pepper";
+"strawberry" = "Strawberry";
+"lemon" = "Lemon";
+"pineapple" = "Pineapple";
+"pomegranate" = "Pomegranate";
+"cauliflower" = "Cauliflower";
 
 // Furniture
 "chair" = "Chair";

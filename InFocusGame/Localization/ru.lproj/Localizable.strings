@@ -27,6 +27,12 @@
 "broccoli" = "Брокколи";
 "cabbage" = "Капуста";
 "cucumber" = "Огурец";
+"bellPepper" = "Сладкий перец";
+"strawberry" = "Клубника";
+"lemon" = "Лимон";
+"pineapple" = "Ананас";
+"pomegranate" = "Гранат";
+"cauliflower" = "Цветная капуста";
 
 // Furniture
 "chair" = "Стул";
