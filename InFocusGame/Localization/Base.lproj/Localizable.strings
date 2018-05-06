@@ -24,6 +24,9 @@
 "apple" = "Apple";
 "banana" = "Banana";
 "orange" = "Orange";
+"broccoli" = "Broccoli";
+"cabbage" = "Cabbage";
+"cucumber" = "Cucumber";
 
 // Furniture
 "chair" = "Chair";

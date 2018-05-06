@@ -1072,7 +1072,9 @@ private let objectsDict = [
         "apple": ["n07742313", "n07760859"],
         "banana": ["n07753592"],
         "orange": ["n07747607"],
-        
+        "broccoli": ["n07714990"],
+        "cabbage": ["n07714571"],
+        "cucumber": ["n07718472"]
     ],
     Categories.appliances: [
         "computer": ["n03832673", "n03642806", "n03085013"]

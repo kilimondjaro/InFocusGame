@@ -24,6 +24,9 @@
 "apple" = "Яблоко";
 "banana" = "Банан";
 "orange" = "Апельсин";
+"broccoli" = "Брокколи";
+"cabbage" = "Капуста";
+"cucumber" = "Огурец";
 
 // Furniture
 "chair" = "Стул";
