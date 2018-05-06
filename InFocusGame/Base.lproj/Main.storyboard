@@ -104,10 +104,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAT-lf-ZfC">
-                                <rect key="frame" x="125" y="722" width="125.33333333333331" height="101"/>
+                                <rect key="frame" x="121.00000000000001" y="722" width="135.33333333333337" height="101"/>
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.44705882349999998" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="107" id="qXP-e6-HlA"/>
                                     <constraint firstAttribute="height" constant="101" id="s6m-DK-iFN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -119,11 +118,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xua-Y7-aD3">
-                                <rect key="frame" x="0.0" y="722" width="125" height="101"/>
+                                <rect key="frame" x="0.0" y="722" width="125.33333333333333" height="101"/>
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.44705882349999998" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="AUP-K2-je5"/>
-                                    <constraint firstAttribute="width" constant="106.5" id="T5K-Jd-rZu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Scan">
@@ -138,7 +136,6 @@
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.44705882349999998" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="TTF-ra-3BV"/>
-                                    <constraint firstAttribute="width" constant="106.5" id="Taz-Zj-ojU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Read">
@@ -203,7 +200,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX4-3s-kR7">
-                                <rect key="frame" x="101" y="677" width="172" height="30"/>
+                                <rect key="frame" x="100.99999999999999" y="677" width="172.66666666666663" height="30"/>
                                 <color key="backgroundColor" red="0.86274509803921573" green="0.44705882352941179" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Full Version">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -237,13 +234,14 @@
                         <constraints>
                             <constraint firstItem="SAT-lf-ZfC" firstAttribute="height" secondItem="Xua-Y7-aD3" secondAttribute="height" id="0eL-j1-xGW"/>
                             <constraint firstItem="iac-aC-tG0" firstAttribute="top" secondItem="Ds5-dU-AvN" secondAttribute="top" constant="41" id="2VT-34-Gps"/>
-                            <constraint firstItem="SAT-lf-ZfC" firstAttribute="width" secondItem="Xua-Y7-aD3" secondAttribute="width" id="4qF-ds-MzO"/>
+                            <constraint firstItem="SAT-lf-ZfC" firstAttribute="width" secondItem="Xua-Y7-aD3" secondAttribute="width" constant="9.6666666666666714" id="4qF-ds-MzO"/>
+                            <constraint firstItem="Ds5-dU-AvN" firstAttribute="trailing" secondItem="982-7E-rbK" secondAttribute="trailing" id="CRK-d4-aug"/>
                             <constraint firstItem="SAT-lf-ZfC" firstAttribute="top" secondItem="BX4-3s-kR7" secondAttribute="bottom" constant="15" id="CZh-y6-aKA"/>
                             <constraint firstItem="9xi-Si-lTg" firstAttribute="leading" secondItem="Ds5-dU-AvN" secondAttribute="leading" constant="16" id="Cb9-X3-m1G"/>
                             <constraint firstItem="Xua-Y7-aD3" firstAttribute="leading" secondItem="Ds5-dU-AvN" secondAttribute="leading" id="DT6-WK-e8F"/>
                             <constraint firstItem="iac-aC-tG0" firstAttribute="centerX" secondItem="BX4-3s-kR7" secondAttribute="centerX" id="Gm9-Hw-ADi"/>
-                            <constraint firstItem="SAT-lf-ZfC" firstAttribute="leading" secondItem="Xua-Y7-aD3" secondAttribute="trailing" id="L8B-t7-zuz"/>
-                            <constraint firstItem="982-7E-rbK" firstAttribute="leading" secondItem="SAT-lf-ZfC" secondAttribute="trailing" id="Ork-Ip-aTb"/>
+                            <constraint firstItem="SAT-lf-ZfC" firstAttribute="leading" secondItem="Xua-Y7-aD3" secondAttribute="trailing" constant="-4.3333333333333286" id="L8B-t7-zuz"/>
+                            <constraint firstItem="982-7E-rbK" firstAttribute="leading" secondItem="SAT-lf-ZfC" secondAttribute="trailing" constant="-5.6666666666666572" id="Ork-Ip-aTb"/>
                             <constraint firstAttribute="bottom" secondItem="Xua-Y7-aD3" secondAttribute="bottom" constant="-11" id="TBj-4f-89X"/>
                             <constraint firstItem="982-7E-rbK" firstAttribute="width" secondItem="Xua-Y7-aD3" secondAttribute="width" id="WEN-so-2zQ"/>
                             <constraint firstItem="udF-cP-tGy" firstAttribute="centerX" secondItem="KyA-it-qY2" secondAttribute="centerX" id="Wil-bd-sP0"/>
@@ -252,11 +250,11 @@
                             <constraint firstAttribute="bottom" secondItem="982-7E-rbK" secondAttribute="bottom" constant="-11" id="bTX-28-VaL"/>
                             <constraint firstItem="982-7E-rbK" firstAttribute="height" secondItem="Xua-Y7-aD3" secondAttribute="height" id="dfq-I5-Pv8"/>
                             <constraint firstItem="BX4-3s-kR7" firstAttribute="top" secondItem="iac-aC-tG0" secondAttribute="bottom" constant="8" symbolic="YES" id="ehD-NG-SSg"/>
-                            <constraint firstItem="BX4-3s-kR7" firstAttribute="centerX" secondItem="SAT-lf-ZfC" secondAttribute="centerX" id="fEi-ul-3BC"/>
+                            <constraint firstItem="BX4-3s-kR7" firstAttribute="centerX" secondItem="SAT-lf-ZfC" secondAttribute="centerX" constant="-1.3333333333333144" id="fEi-ul-3BC"/>
                             <constraint firstItem="iac-aC-tG0" firstAttribute="leading" secondItem="9xi-Si-lTg" secondAttribute="leading" id="lLf-zS-xNv"/>
+                            <constraint firstItem="Ds5-dU-AvN" firstAttribute="trailing" secondItem="iac-aC-tG0" secondAttribute="trailing" constant="18" id="pfC-dh-PyI"/>
                             <constraint firstItem="BX4-3s-kR7" firstAttribute="leading" secondItem="Ds5-dU-AvN" secondAttribute="leading" constant="101" id="pwe-zR-QdX"/>
                             <constraint firstAttribute="bottom" secondItem="SAT-lf-ZfC" secondAttribute="bottom" constant="-11" id="rFE-qo-lAd"/>
-                            <constraint firstItem="982-7E-rbK" firstAttribute="trailing" secondItem="Ds5-dU-AvN" secondAttribute="trailing" id="ryo-bZ-fvf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ds5-dU-AvN"/>
                     </view>
@@ -275,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dg9-EG-Mon" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036.875" y="113.02816901408451"/>
+            <point key="canvasLocation" x="1036" y="112.3152709359606"/>
         </scene>
         <!--Settings-->
         <scene sceneID="gqg-gG-Szc">

@@ -20,9 +20,15 @@
 "FruitsAndVegetables" = "Фрукты и овощи";
 
 
+// Fruits and vegetables
 "apple" = "Яблоко";
 "banana" = "Банан";
+"orange" = "Апельсин";
+
+// Furniture
 "chair" = "Стул";
 "table" = "Стол";
-"computer" = "Компьютер";
 "cup" = "Чашка";
+
+// Appliances
+"computer" = "Компьютер";

@@ -16,6 +16,7 @@
     <entity name="FruitsAndVegetables" representedClassName="FruitsAndVegetables" syncable="YES" codeGenerationType="class">
         <attribute name="apple" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="banana" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="orange" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Furniture" representedClassName="Furniture" syncable="YES" codeGenerationType="class">
         <attribute name="chair" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -30,7 +31,7 @@
         <element name="Appliances" positionX="-171" positionY="63" width="128" height="60"/>
         <element name="Clothes" positionX="-180" positionY="54" width="128" height="45"/>
         <element name="FlatObjects" positionX="-54" positionY="0" width="128" height="133"/>
-        <element name="FruitsAndVegetables" positionX="-189" positionY="45" width="128" height="75"/>
+        <element name="FruitsAndVegetables" positionX="-189" positionY="45" width="128" height="90"/>
         <element name="Furniture" positionX="-153" positionY="81" width="128" height="90"/>
         <element name="Settings" positionX="-326" positionY="9" width="128" height="58"/>
     </elements>

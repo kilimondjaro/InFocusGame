@@ -19,9 +19,16 @@
 "Appliance" = "Appliance";
 "FruitsAndVegetables" = "Fruits/Vegetables";
 
+
+// Fruits and vegetables
 "apple" = "Apple";
 "banana" = "Banana";
+"orange" = "Orange";
+
+// Furniture
 "chair" = "Chair";
 "table" = "Table";
-"computer" = "Computer";
 "cup" = "Cup";
+
+// Furniture
+"computer" = "Computer";
