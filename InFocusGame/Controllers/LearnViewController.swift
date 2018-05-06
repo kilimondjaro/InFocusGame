@@ -25,6 +25,8 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var upperView: UIView!
     
+    var category = Categories.animals
+    
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
     var learnProcessor: LearnProcessor?
@@ -76,8 +78,8 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     // MARK: - Initialization
     
     func initLearnProcessor() {
-        learnProcessor = LearnProcessor(semaphore: semaphore)
-        learnProcessor?.delegate = self
+        learnProcessor = LearnProcessor(semaphore: semaphore, category: category)
+        learnProcessor?.delegate = self        
         pickUpNewObject()
     }
     

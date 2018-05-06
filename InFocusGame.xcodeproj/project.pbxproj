@@ -25,6 +25,7 @@
 		262C30F220909B21008BF588 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C30F120909B21008BF588 /* AboutViewController.swift */; };
 		262C30F420909E3E008BF588 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C30F320909E3E008BF588 /* ReadViewController.swift */; };
 		262C30F82090AA1E008BF588 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C30F72090AA1E008BF588 /* TestViewController.swift */; };
+		263602ED209C96FD00A7E3ED /* music_menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 263602EC209C96FD00A7E3ED /* music_menu.mp3 */; };
 		266503832085F13300947473 /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266503822085F13300947473 /* GameTypeViewController.swift */; };
 		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
 		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
@@ -105,6 +106,7 @@
 		262C30F120909B21008BF588 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		262C30F320909E3E008BF588 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		262C30F72090AA1E008BF588 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		263602EC209C96FD00A7E3ED /* music_menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_menu.mp3; sourceTree = "<group>"; };
 		266503822085F13300947473 /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
 		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -182,6 +184,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		263602EB209C96EB00A7E3ED /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				263602EC209C96FD00A7E3ED /* music_menu.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		2665038E20862CE800947473 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +306,7 @@
 		26E035592085E57100832BDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				263602EB209C96EB00A7E3ED /* Music */,
 				26E0355A2085E57900832BDF /* Voice */,
 			);
 			path = Assets;
@@ -500,6 +511,7 @@
 				26F8724120851AAC004A9CC0 /* Assets.xcassets in Resources */,
 				26CF16B72089069600775B7A /* apple.mp3 in Resources */,
 				26CF16D42089EBE800775B7A /* chair_oops.mp3 in Resources */,
+				263602ED209C96FD00A7E3ED /* music_menu.mp3 in Resources */,
 				26109E56208892E200038E4F /* cup_desc.mp3 in Resources */,
 				26CF16D22089EBE800775B7A /* apple_oops.mp3 in Resources */,
 				26CF16C22089DEC000775B7A /* computer_info_1.mp3 in Resources */,

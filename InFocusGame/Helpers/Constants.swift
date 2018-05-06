@@ -1013,16 +1013,42 @@ let objectsTypes = [
 ]
 
 
+
+enum Categories: String {
+//    case flat = "FlatObjects",
+    case fruitsAndVegetables = "FruitsAndVegetables",
+    appliances = "Appliances",
+    clothes = "Clothes",
+    furniture = "Furniture",
+    animals = "Animals"
+    
+    static func getCategories() -> [Categories] {
+        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.furniture, Categories.animals]
+//            ["FlatObjects", "FruitsAndVegetables", "Appliances", "Clothes", "Furniture", "Animals"]
+    }
+    static func getTrialCategories() -> [Categories] {
+        return [Categories.fruitsAndVegetables, Categories.appliances]
+    }
+}
+
 struct Constants {
     
     // Add categories
     static func getAll() -> [String] {
-        return CoreDataManager.instance.getAttributes(entity: "FlatObjects")
+        var objects = [String]()
+        for category in Categories.getCategories() {
+            objects.append(contentsOf: getObjects(category: category))
+        }
+        return objects
     }
     
-    static var flatObjects: [String] {
-        let data = CoreDataManager.instance.fetch(entity: "FlatObjects")[0]
-        return CoreDataManager.instance.getAttributes(entity: "FlatObjects").filter(({ (data.value(forKey: $0) as? Bool)! }))
+    static func getObjects(category: Categories) -> [String] {
+        return CoreDataManager.instance.getAttributes(entity: category.rawValue)
+    }
+    
+    static func getFilteredObjects(category: Categories) -> [String] {
+        let data = CoreDataManager.instance.fetch(entity: category.rawValue)[0]
+        return CoreDataManager.instance.getAttributes(entity: category.rawValue).filter(({ (data.value(forKey: $0) as? Bool)! }))
     }
     
     static let objectsInfo: [String: Int] = [
@@ -1030,15 +1056,39 @@ struct Constants {
         "cup": 1
     ]
     
-    static let objectsIds = objectsDict
+    static func getObjectsIds(category: Categories) -> [String: [String]] {
+        return objectsDict[category]!
+    }
 }
 
 
-let objectsDict = [
-    "apple": ["n07742313", "n07760859"],
-    "banana": ["n07753592"],
-    "chair": ["n02791124", "n03376595", "n04099969"],
-    "cup": ["n03733805", "n07930864", "n03063599", "n04560804"],
-    "table": ["n03201208", "n03179701"],
-    "computer": ["n03832673", "n03642806", "n03085013"]
+private let objectsDict = [
+    Categories.furniture: [
+        "chair": ["n02791124", "n03376595", "n04099969"],
+        "cup": ["n03733805", "n07930864", "n03063599", "n04560804"],
+        "table": ["n03201208", "n03179701"]
+    ],
+    Categories.fruitsAndVegetables: [
+        "apple": ["n07742313", "n07760859"],
+        "banana": ["n07753592"],
+        "orange": ["n07747607"],
+        "broccoli": ["n07714990"],
+        "cabbage": ["n07714571"],
+        "cucumber": ["n07718472"],
+        "bellPepper": ["n07720875"],
+        "strawberry": ["n07745940"],
+        "lemon": ["n07749582"],
+        "pineapple": ["n07753275"],
+        "pomegranate": ["n07768694"],
+        "cauliflower": ["n07715103"]
+    ],
+    Categories.appliances: [
+        "computer": ["n03832673", "n03642806", "n03085013"]
+    ],
+    Categories.animals: [:],
+    Categories.clothes: [:]
 ]
+
+enum GameMode: String {
+    case scan = "scan", search = "search", read = "read"
+}

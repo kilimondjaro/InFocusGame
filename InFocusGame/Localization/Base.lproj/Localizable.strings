@@ -10,11 +10,34 @@
 "settings" = "Settings";
 "inFocus" = "In Focus";
 "parentGuard" = "To continue, slide two fingers upward";
+"activate" = "Activate at least one object of this category";
+"fullVersion" = "Buy a full version of the game to unlock this content";
+
+"Animals" = "Animals";
+"Furniture" = "Furniture";
+"Clothes" = "Clothes";
+"Appliance" = "Appliance";
+"FruitsAndVegetables" = "Fruits/Vegetables";
 
 
+// Fruits and vegetables
 "apple" = "Apple";
 "banana" = "Banana";
+"orange" = "Orange";
+"broccoli" = "Broccoli";
+"cabbage" = "Cabbage";
+"cucumber" = "Cucumber";
+"bellPepper" = "Bell Pepper";
+"strawberry" = "Strawberry";
+"lemon" = "Lemon";
+"pineapple" = "Pineapple";
+"pomegranate" = "Pomegranate";
+"cauliflower" = "Cauliflower";
+
+// Furniture
 "chair" = "Chair";
 "table" = "Table";
-"computer" = "Computer";
 "cup" = "Cup";
+
+// Furniture
+"computer" = "Computer";

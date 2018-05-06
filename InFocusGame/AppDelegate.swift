@@ -17,17 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+//        VoiceAssistant.instance.playFile(name: "music_menu", overlap: false, loop: true)
+        
         let context = CoreDataManager.instance.persistentContainer.viewContext
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
             // Code
         } else {
-            let entity = NSEntityDescription.entity(forEntityName: "FlatObjects", in: context)
-            let newObj = NSManagedObject(entity: entity!, insertInto: context)
-            
-            for i in CoreDataManager.instance.getAttributes(entity: "FlatObjects") {
-                newObj.setValue(true, forKey: i)
+            for category in Categories.getCategories() {
+                let entity = NSEntityDescription.entity(forEntityName: category.rawValue, in: context)
+                let newObj = NSManagedObject(entity: entity!, insertInto: context)
+                
+                for i in CoreDataManager.instance.getAttributes(entity: category.rawValue) {
+                    newObj.setValue(true, forKey: i)
+                }
             }
             
             do {
@@ -35,8 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } catch {
                 print("Failed saving")
             }
+            UserDefaults.standard.set(true, forKey: "trial")
             UserDefaults.standard.set(true, forKey: "voiceAssistant")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
+            UserDefaults.standard.set(GameMode.scan.rawValue, forKey: "gameType")
         }
         
         return true
@@ -57,6 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        
+//        VoiceAssistant.instance.playFile(name: "music_menu", overlap: false, loop: true)
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

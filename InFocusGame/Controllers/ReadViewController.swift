@@ -18,6 +18,8 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, TestModalView
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var scanButton: UIButton!
     
+    var category = Categories.animals
+    
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []
     var framesDone = 0
@@ -75,7 +77,7 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, TestModalView
     }
     
     func initScanProcessor() {
-        scanProcessor = ScanProcessor(semaphore: semaphore)
+        scanProcessor = ScanProcessor(semaphore: semaphore, category: category)
         scanProcessor?.delegate = self
     }
     
@@ -157,6 +159,7 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, TestModalView
                 if let viewController = segue.destination as? TestViewController {
                     viewController.delegate = self
                     viewController.object = self.scannedObject
+                    viewController.category = category
                     viewController.modalPresentationStyle = .overFullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()

@@ -10,11 +10,34 @@
 "settings" = "Настройки";
 "inFocus" = "In Focus";
 "parentGuard" = "Чтобы продолжить, смахните двумя пальцами вверх";
+"activate" = "Активируйте хотя бы один объект для данной категории";
+"fullVersion" = "Купите полную версию игры, чтобы разблокировать данный контент";
+
+"Animals" = "Животные";
+"Furniture" = "Мебель";
+"Clothes" = "Одежда";
+"Appliance" = "Бытовые приборы";
+"FruitsAndVegetables" = "Фрукты и овощи";
 
 
+// Fruits and vegetables
 "apple" = "Яблоко";
 "banana" = "Банан";
+"orange" = "Апельсин";
+"broccoli" = "Брокколи";
+"cabbage" = "Капуста";
+"cucumber" = "Огурец";
+"bellPepper" = "Сладкий перец";
+"strawberry" = "Клубника";
+"lemon" = "Лимон";
+"pineapple" = "Ананас";
+"pomegranate" = "Гранат";
+"cauliflower" = "Цветная капуста";
+
+// Furniture
 "chair" = "Стул";
 "table" = "Стол";
-"computer" = "Компьютер";
 "cup" = "Чашка";
+
+// Appliances
+"computer" = "Компьютер";

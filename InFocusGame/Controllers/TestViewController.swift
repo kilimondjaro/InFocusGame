@@ -13,6 +13,7 @@ class TestViewController: UIViewController {
     var object = ""
     
     var areButtonsActive = true
+    var category = Categories.animals
     
     var numberOfStars = 3
     var correct = 0

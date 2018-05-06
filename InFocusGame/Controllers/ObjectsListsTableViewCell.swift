@@ -14,6 +14,8 @@ class ObjectsListsTableViewCell: UITableViewCell {
     @IBOutlet weak var objectLabel: UILabel!
     @IBOutlet weak var objectSwitch: UISwitch!
     var objectName = ""
+    var category = Categories.fruitsAndVegetables
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +30,7 @@ class ObjectsListsTableViewCell: UITableViewCell {
     
     @IBAction func switchObject(_ sender: UISwitch) {
         // TODO - change for many sections
-        CoreDataManager.instance.setValue(entity: "FlatObjects", key: objectName, value: objectSwitch.isOn)
+        CoreDataManager.instance.setValue(entity: category.rawValue, key: objectName, value: objectSwitch.isOn)
     }
     
 }
