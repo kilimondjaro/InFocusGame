@@ -1086,7 +1086,22 @@ private let objectsDict = [
         "computer": ["n03832673", "n03642806", "n03085013"]
     ],
     Categories.animals: [:],
-    Categories.clothes: [:]
+    Categories.clothes: [
+        "tShirt": ["n03595614"],
+        "jean": ["n03594734"],
+        "hat": ["n03124170"],
+        "shoe": ["n04120489"],
+        "sweatshirt": ["n04370456"],
+        "sock": ["n04254777"],
+        "bra": ["n02892767"],
+        "coat": ["n04479046", "n03404251"],
+        "kimono": ["n03617480"],
+        "laboratoryCoat": ["n03630383"],
+        "overskirt": ["n03866082"],
+        "mini": ["n03770439"],
+        "suit": ["n04350905"],
+        "sandal": ["n04133789"]
+    ]
 ]
 
 enum GameMode: String {

@@ -4,7 +4,22 @@
     <entity name="Appliances" representedClassName="Appliances" syncable="YES" codeGenerationType="class">
         <attribute name="computer" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Clothes" representedClassName="Clothes" syncable="YES" codeGenerationType="class"/>
+    <entity name="Clothes" representedClassName="Clothes" syncable="YES" codeGenerationType="class">
+        <attribute name="bra" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="coat" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hat" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="jean" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="kimono" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="laboratoryCoat" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mini" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="overskirt" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sandal" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="shoe" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sock" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="suit" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sweatshirt" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tShirt" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="FlatObjects" representedClassName="FlatObjects" syncable="YES" codeGenerationType="class">
         <attribute name="apple" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="banana" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -38,7 +53,7 @@
     <elements>
         <element name="Animals" positionX="-162" positionY="72" width="128" height="45"/>
         <element name="Appliances" positionX="-171" positionY="63" width="128" height="60"/>
-        <element name="Clothes" positionX="-180" positionY="54" width="128" height="45"/>
+        <element name="Clothes" positionX="-180" positionY="54" width="128" height="255"/>
         <element name="FlatObjects" positionX="-54" positionY="0" width="128" height="133"/>
         <element name="FruitsAndVegetables" positionX="-189" positionY="45" width="128" height="225"/>
         <element name="Furniture" positionX="-153" positionY="81" width="128" height="90"/>

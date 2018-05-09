@@ -742,7 +742,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XpJ-eK-CRG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="88" height="90"/>
                                                 </imageView>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok" translatesAutoresizingMaskIntoConstraints="NO" id="zSh-kh-n6s">
                                                     <rect key="frame" x="57" y="59" width="26" height="25"/>
@@ -756,7 +756,7 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="zSh-kh-n6s" secondAttribute="bottom" constant="4" id="C9Q-TK-lR5"/>
                                             <constraint firstAttribute="bottom" secondItem="XpJ-eK-CRG" secondAttribute="bottom" constant="-2" id="XtW-kb-fBQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="XpJ-eK-CRG" secondAttribute="trailing" constant="-2" id="cIJ-Lg-wRf"/>
+                                            <constraint firstAttribute="trailing" secondItem="XpJ-eK-CRG" secondAttribute="trailing" id="cIJ-Lg-wRf"/>
                                             <constraint firstItem="XpJ-eK-CRG" firstAttribute="leading" secondItem="lJK-Gz-mCg" secondAttribute="leading" id="nQL-gt-iZT"/>
                                             <constraint firstItem="XpJ-eK-CRG" firstAttribute="top" secondItem="lJK-Gz-mCg" secondAttribute="top" id="qO6-CD-S1O"/>
                                             <constraint firstAttribute="trailing" secondItem="zSh-kh-n6s" secondAttribute="trailing" constant="5" id="tTk-ph-gdC"/>
@@ -794,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TxK-KL-40K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2606" y="822"/>
+            <point key="canvasLocation" x="2605.5999999999999" y="821.67487684729065"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="iXk-Jo-n6U">
@@ -1311,9 +1311,9 @@
         <image name="star_gray" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dK5-Nm-l9z"/>
+        <segue reference="mcc-H5-uS2"/>
         <segue reference="7sL-kT-BIC"/>
-        <segue reference="q55-5a-T5C"/>
+        <segue reference="DTP-wW-sp6"/>
         <segue reference="oJT-uh-g7H"/>
         <segue reference="Yvh-84-rLi"/>
         <segue reference="ero-dA-qzj"/>

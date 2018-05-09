@@ -14,6 +14,7 @@
 "fullVersion" = "Buy a full version of the game to unlock this content";
 "greatJob" = "Great Job!";
 
+// Categories
 "Animals" = "Animals";
 "Furniture" = "Furniture";
 "Clothes" = "Clothes";
@@ -42,3 +43,19 @@
 
 // Furniture
 "computer" = "Computer";
+
+// Clothes
+"tShirt" = "T-Shirt";
+"jean" = "Jeans";
+"hat" = "Hat";
+"shoe" = "Shoes";
+"sweatshirt" = "Sweatshirt";
+"sock" = "Sock";
+"bra" = "Bra";
+"coat" = "Coat";
+"kimono" = "Kimono";
+"laboratoryCoat" = "Laboratory Coat";
+"overskirt" = "Overskirt";
+"mini" = "Mini";
+"suit" = "Suit";
+"sandal" = "Sandal";
