@@ -41,9 +41,6 @@
 "table" = "Стол";
 "cup" = "Чашка";
 
-// Appliances
-"computer" = "Компьютер";
-
 // Clothes
 "tShirt" = "Футболка";
 "jean" = "Джинсы";
@@ -70,4 +67,19 @@
 "stove" = "Плита";
 "jug" = "Кувшин";
 "microwave" = "Микроволновая печь";
+
+//Appliances
+"computer" = "Компьютер";
+"microwave" = "Микроволновая печь";
+"cellphone" = "Телефон";
+"tv" = "Телевизор";
+"homeTheatre" = "Домашний кинотеатр";
+"toaster" = "Тостер";
+"lamp" = "Лампа";
+"refrigerator" = "Холодильник";
+"hairDrier" = "Фен";
+"fan" = "Вентилятор";
+"iron" = "Утюг";
+"vacuum" = "Пылесос";
+"washingMachine" = "Стиральная машина";
 

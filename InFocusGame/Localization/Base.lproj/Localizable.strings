@@ -39,10 +39,6 @@
 // Furniture
 "chair" = "Chair";
 "table" = "Table";
-"cup" = "Cup";
-
-// Furniture
-"computer" = "Computer";
 
 // Clothes
 "tShirt" = "T-Shirt";
@@ -70,3 +66,18 @@
 "stove" = "Stove";
 "jug" = "Jug";
 "microwave" = "Microwave Oven";
+
+//Appliances
+"computer" = "Computer";
+"microwave" = "Microwave Oven";
+"cellphone" = "Cellphone";
+"tv" = "TV";
+"homeTheatre" = "Home Theater";
+"toaster" = "Toaster";
+"lamp" = "Lamp";
+"refrigerator" = "Refrigerator";
+"hairDrier" = "Hair Drier";
+"fan" = "Fan";
+"iron" = "Iron";
+"vacuum" = "Vacuum";
+"washingMachine" = "Washing Machine";

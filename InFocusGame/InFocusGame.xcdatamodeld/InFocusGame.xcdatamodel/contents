@@ -2,7 +2,19 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Animals" representedClassName="Animals" syncable="YES" codeGenerationType="class"/>
     <entity name="Appliances" representedClassName="Appliances" syncable="YES" codeGenerationType="class">
+        <attribute name="cellphone" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="computer" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fan" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hairDrier" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="homeTheater" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="iron" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lamp" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="microwave" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="refrigerator" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="toaster" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tv" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="vacuum" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="washingMachine" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Clothes" representedClassName="Clothes" syncable="YES" codeGenerationType="class">
         <attribute name="bra" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -44,7 +56,6 @@
     </entity>
     <entity name="Furniture" representedClassName="Furniture" syncable="YES" codeGenerationType="class">
         <attribute name="chair" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="cup" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="table" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Kitchen" representedClassName="Kitchen" syncable="YES" codeGenerationType="class">
@@ -63,11 +74,11 @@
     </entity>
     <elements>
         <element name="Animals" positionX="-162" positionY="72" width="128" height="45"/>
-        <element name="Appliances" positionX="-171" positionY="63" width="128" height="60"/>
+        <element name="Appliances" positionX="-171" positionY="63" width="128" height="240"/>
         <element name="Clothes" positionX="-180" positionY="54" width="128" height="255"/>
         <element name="FlatObjects" positionX="-54" positionY="0" width="128" height="133"/>
         <element name="FruitsAndVegetables" positionX="-189" positionY="45" width="128" height="225"/>
-        <element name="Furniture" positionX="-153" positionY="81" width="128" height="90"/>
+        <element name="Furniture" positionX="-153" positionY="81" width="128" height="75"/>
         <element name="Settings" positionX="-326" positionY="9" width="128" height="58"/>
         <element name="Kitchen" positionX="-189" positionY="135" width="128" height="180"/>
     </elements>

@@ -1015,17 +1015,15 @@ let objectsTypes = [
 
 
 enum Categories: String {
-//    case flat = "FlatObjects",
     case fruitsAndVegetables = "FruitsAndVegetables",
     appliances = "Appliances",
     clothes = "Clothes",
-    furniture = "Furniture",
+//    furniture = "Furniture",
     animals = "Animals",
     kitchen = "Kitchen"
     
     static func getCategories() -> [Categories] {
-        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.furniture, Categories.animals, Categories.kitchen]
-//            ["FlatObjects", "FruitsAndVegetables", "Appliances", "Clothes", "Furniture", "Animals"]
+        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.animals, Categories.kitchen]
     }
     static func getTrialCategories() -> [Categories] {
         return [Categories.fruitsAndVegetables, Categories.appliances]
@@ -1064,11 +1062,13 @@ struct Constants {
 
 
 private let objectsDict = [
-    Categories.furniture: [
-        "chair": ["n02791124", "n03376595", "n04099969"],
-        "cup": ["n03733805", "n07930864", "n03063599", "n04560804"],
-        "table": ["n03201208", "n03179701"]
-    ],
+//    Categories.furniture: [
+//        "chair": ["n02791124", "n03376595", "n04099969"],
+//        "table": ["n03201208", "n03179701"],
+//        "couch": ["n04344873"],
+//        "wardrobe": ["n04550184"],
+//
+//    ],
     Categories.fruitsAndVegetables: [
         "apple": ["n07742313", "n07760859"],
         "banana": ["n07753592"],
@@ -1084,7 +1084,19 @@ private let objectsDict = [
         "cauliflower": ["n07715103"]
     ],
     Categories.appliances: [
-        "computer": ["n03832673", "n03642806", "n03085013"]
+        "computer": ["n03832673", "n03642806", "n03085013"],
+        "microwave": ["n03761084"],
+        "cellphone": ["n02992529"],
+        "tv": ["n04404412"],
+        "homeTheater": ["n03529860"],
+        "toaster": ["n04442312"],
+        "lamp": ["n04380533"],
+        "refrigerator": ["n04070727"],
+        "hairDrier": ["n03483316"],
+        "fan": ["n03271574"],
+        "iron": ["n03584829"],
+        "vacuum": ["n04517823"],
+        "washingMachine": ["n04554684"]
     ],
     Categories.animals: [:],
     Categories.clothes: [
