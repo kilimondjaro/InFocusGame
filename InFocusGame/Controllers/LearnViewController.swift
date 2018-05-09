@@ -274,7 +274,8 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
             }
             if identifier == "gameOver" {
                 if let viewController = segue.destination as? GameOverViewController {
-                    viewController.win = self.win
+//                    viewController.win = self.win
+                    viewController.category = category
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }

@@ -10,16 +10,18 @@ import UIKit
 
 class GameOverViewController: UIViewController {
     var win = false
+    var category = Categories.animals
     
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var rightAnswersLabel: UILabel!
-    @IBOutlet weak var objectsDetectedLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var againButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        statusLabel.text = win ? "You Win!" : "Game Over"        
+        againButton.layer.cornerRadius = againButton.frame.height / 2
+        menuButton.layer.cornerRadius = menuButton.frame.height / 2
+        statusLabel.text = NSLocalizedString("greatJob", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +29,13 @@ class GameOverViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            if identifier == "startSearch" {
+                if let viewController = segue.destination as? LearnViewController {
+                    viewController.category = category
+                }
+            }
+        }
     }
-    */
-
 }
