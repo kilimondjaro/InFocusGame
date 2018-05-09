@@ -477,6 +477,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j3X-GQ-6ss">
                                 <rect key="frame" x="312" y="106" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="musicChanged:" destination="rjI-31-xiC" eventType="valueChanged" id="TVL-PO-ceh"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.9137254901960784" green="0.91764705882352937" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -492,6 +495,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="LJM-TW-3EZ" id="0hB-5J-cm3"/>
+                        <outlet property="musicSwitch" destination="j3X-GQ-6ss" id="SYU-7v-zby"/>
                         <outlet property="voiceAssistantSwitch" destination="x8A-Ns-ap3" id="dxf-ri-ve3"/>
                     </connections>
                 </viewController>
@@ -1311,7 +1315,7 @@
         <segue reference="7sL-kT-BIC"/>
         <segue reference="q55-5a-T5C"/>
         <segue reference="oJT-uh-g7H"/>
-        <segue reference="rf1-CB-dju"/>
+        <segue reference="Yvh-84-rLi"/>
         <segue reference="ero-dA-qzj"/>
         <segue reference="eCC-V4-cyZ"/>
     </inferredMetricsTieBreakers>

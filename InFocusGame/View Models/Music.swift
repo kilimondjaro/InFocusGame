@@ -33,7 +33,7 @@ class Music {
     
     
     func playMusic(name: MusicTypes) {
-        if ((player != nil && (player?.isPlaying)!)) {
+        if ((player != nil && (player?.isPlaying)!) || !UserDefaults.standard.bool(forKey: "music")) {
             return
         }
         loadFile(name: name)
