@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        VoiceAssistant.instance.playFile(name: "music_menu", overlap: false, loop: true)
+        Music.instance.playMusic(name: MusicTypes.mainTheme)
         
         let context = CoreDataManager.instance.persistentContainer.viewContext
         
@@ -63,8 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
-//        VoiceAssistant.instance.playFile(name: "music_menu", overlap: false, loop: true)
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

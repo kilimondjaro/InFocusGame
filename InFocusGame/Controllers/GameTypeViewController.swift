@@ -23,6 +23,8 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Music.instance.playMusic(name: MusicTypes.mainTheme)
+        
         addGestures()
         
         if (UserDefaults.standard.bool(forKey: "trial")) {
@@ -197,6 +199,7 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
+            Music.instance.stop()
             if identifier == "startScan" {
                 if let viewController = segue.destination as? ScanViewController {
                     viewController.category = chosenCategory
