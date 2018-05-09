@@ -1020,10 +1020,11 @@ enum Categories: String {
     appliances = "Appliances",
     clothes = "Clothes",
     furniture = "Furniture",
-    animals = "Animals"
+    animals = "Animals",
+    kitchen = "Kitchen"
     
     static func getCategories() -> [Categories] {
-        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.furniture, Categories.animals]
+        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.furniture, Categories.animals, Categories.kitchen]
 //            ["FlatObjects", "FruitsAndVegetables", "Appliances", "Clothes", "Furniture", "Animals"]
     }
     static func getTrialCategories() -> [Categories] {
@@ -1101,6 +1102,17 @@ private let objectsDict = [
         "mini": ["n03770439"],
         "suit": ["n04350905"],
         "sandal": ["n04133789"]
+    ],
+    Categories.kitchen: [
+        "plate": ["n07579787"],
+        "cup": ["n03733805", "n07930864", "n03063599"],
+        "glass": ["n02823750"],
+        "fryingPan": ["n03400231"],
+        "corkscrew": ["n03109150"],
+        "ladle": ["n03633091"],
+        "stove": ["n04330267"],
+        "jug": ["n04560804", "n04579145"],
+        "microwave": ["n03761084"]
     ]
 ]
 

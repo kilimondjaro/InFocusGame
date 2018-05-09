@@ -47,6 +47,17 @@
         <attribute name="cup" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="table" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="Kitchen" representedClassName="Kitchen" syncable="YES" codeGenerationType="class">
+        <attribute name="corkscrew" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cup" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fryingPan" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="glass" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="jug" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ladle" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="microwave" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="plate" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="stove" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
         <relationship name="flatObjects" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlatObjects" syncable="YES"/>
     </entity>
@@ -58,5 +69,6 @@
         <element name="FruitsAndVegetables" positionX="-189" positionY="45" width="128" height="225"/>
         <element name="Furniture" positionX="-153" positionY="81" width="128" height="90"/>
         <element name="Settings" positionX="-326" positionY="9" width="128" height="58"/>
+        <element name="Kitchen" positionX="-189" positionY="135" width="128" height="180"/>
     </elements>
 </model>

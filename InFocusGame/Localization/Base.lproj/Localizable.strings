@@ -59,3 +59,14 @@
 "mini" = "Mini";
 "suit" = "Suit";
 "sandal" = "Sandal";
+
+// Kitchen
+"plate" = "Plate";
+"cup" = "Cup";
+"glass" = "Glass";
+"fryingPan" = "Frying Pan";
+"corkscrew" = "Corkscrew";
+"ladle" = "Ladle";
+"stove" = "Stove";
+"jug" = "Jug";
+"microwave" = "Microwave Oven";

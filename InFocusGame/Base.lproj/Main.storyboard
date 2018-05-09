@@ -162,7 +162,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="162" height="162"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkq-jt-rpR">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkq-jt-rpR">
                                                     <rect key="frame" x="17" y="8" width="129" height="129"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-Mc-8aB">
@@ -1311,10 +1311,10 @@
         <image name="star_gray" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mcc-H5-uS2"/>
+        <segue reference="dK5-Nm-l9z"/>
         <segue reference="7sL-kT-BIC"/>
         <segue reference="DTP-wW-sp6"/>
-        <segue reference="oJT-uh-g7H"/>
+        <segue reference="bUi-ey-cqu"/>
         <segue reference="Yvh-84-rLi"/>
         <segue reference="ero-dA-qzj"/>
         <segue reference="eCC-V4-cyZ"/>
