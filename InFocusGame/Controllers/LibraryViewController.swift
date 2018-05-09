@@ -9,15 +9,18 @@
 import UIKit
 
 class LibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ModalViewControllerDelegate {
+    
+    var category = Categories.animals
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let objects = Constants.getFilteredObjects(category: Categories.fruitsAndVegetables)
+    var objects: [String] = []
     var pressedObject = ""
-    var category = Categories.animals
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        objects = Constants.getFilteredObjects(category: category)
         
         collectionView.dataSource = self
         collectionView.delegate = self

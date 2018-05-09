@@ -159,6 +159,7 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
                 if let viewController = segue.destination as? LibraryViewController {
                     viewController.category = self.category
                     self.videoCapture.stop()
+                    viewController.category = category
                     VoiceAssistant.instance.stop()
                 }
             }
