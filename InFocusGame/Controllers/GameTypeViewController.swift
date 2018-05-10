@@ -81,7 +81,8 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func animateOn(button: UIButton) {
         UIView.animate(withDuration: 0.7, animations: {
-            button.frame =  button.frame.insetBy(dx: -10, dy: -10)
+            button.frame =  button.frame.insetBy(dx: 0, dy: -10)
+            button.backgroundColor = #colorLiteral(red: 1, green: 0.5220881237, blue: 0.2930291617, alpha: 1)
         }){ (succeed) -> Void in
            //
         }
@@ -89,7 +90,8 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func animateOff(button: UIButton) {
         UIView.animate(withDuration: 0.7, animations: {            
-            button.frame =  button.frame.insetBy(dx: 10, dy: 10)
+            button.frame =  button.frame.insetBy(dx: 0, dy: 10)
+            button.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.4470588235, blue: 0.2431372549, alpha: 1)
         }){ (succeed) -> Void in
             //
         }
