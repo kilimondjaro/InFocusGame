@@ -43,7 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "voiceAssistant")
             UserDefaults.standard.set(true, forKey: "music")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
-            UserDefaults.standard.set(GameMode.scan.rawValue, forKey: "gameType")
+            UserDefaults.standard.set(true, forKey: "firstScan")
+            UserDefaults.standard.set(true, forKey: "firstSearch")
+            UserDefaults.standard.set(true, forKey: "firstRead")
+            UserDefaults.standard.set(GameMode.library.rawValue, forKey: "gameType")
         }
         
         return true

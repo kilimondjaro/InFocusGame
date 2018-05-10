@@ -135,6 +135,10 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBAction func scanButtonPressed(_ sender: UIButton) {
         changeGameMode(GameMode.scan)
+        if UserDefaults.standard.bool(forKey: "firstScan") {
+            UserDefaults.standard.set(false, forKey: "firstScan")
+            performSegue(withIdentifier: "showTutorial", sender: self)
+        }
     }
     
     @IBAction func fullVersionButtonPressed(_ sender: UIButton) {
@@ -235,6 +239,11 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
                 if let viewController = segue.destination as? LibraryViewController {
                     viewController.category = chosenCategory
                     viewController.fromGameType = true
+                }
+            }
+            if identifier == "showTutorial" {
+                if let viewController = segue.destination as? TutorialViewController {
+                    viewController.mode = GameMode(rawValue: UserDefaults.standard.string(forKey: "gameType")!)!
                 }
             }
         }
