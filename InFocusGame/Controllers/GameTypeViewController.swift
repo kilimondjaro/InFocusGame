@@ -10,6 +10,7 @@ import UIKit
 
 class GameTypeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var libraryButton: UIButton!
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var readButton: UIButton!
@@ -46,6 +47,10 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         readButton.layer.borderWidth = 3
         readButton.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
         
+        libraryButton.layer.cornerRadius = readButton.frame.size.height / 10
+        libraryButton.layer.borderWidth = 3
+        libraryButton.layer.borderColor = #colorLiteral(red: 0.4426150219, green: 0.2310840463, blue: 0.1296991088, alpha: 1)
+        
         fullVersionButton.layer.cornerRadius = fullVersionButton.frame.size.height / 2
         
         infoView.layer.cornerRadius = infoView.frame.size.height / 10
@@ -67,6 +72,8 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
             return scanButton
         case GameMode.search:
             return searchButton
+        case GameMode.library:
+            return libraryButton
         default:
             return nil
         }
@@ -112,6 +119,10 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func libraryButtonPressed(_ sender: UIButton) {
+        changeGameMode(GameMode.library)
+    }
+    
     @IBAction func readButtonPressed(_ sender: UIButton) {
         changeGameMode(GameMode.read)
     }
@@ -180,6 +191,8 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
             self.performSegue(withIdentifier: "startScan", sender: self)
         case GameMode.search:
             self.performSegue(withIdentifier: "startSearch", sender: self)
+        case GameMode.library:
+            self.performSegue(withIdentifier: "startLibrary", sender: self)
         default:
             return
         }
@@ -213,6 +226,13 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
             if identifier == "startRead" {
                 if let viewController = segue.destination as? ReadViewController {
                     viewController.category = chosenCategory
+                }
+            }
+            
+            if identifier == "startLibrary" {
+                if let viewController = segue.destination as? LibraryViewController {
+                    viewController.category = chosenCategory
+                    viewController.fromGameType = true
                 }
             }
         }

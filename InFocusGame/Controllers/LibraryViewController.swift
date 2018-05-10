@@ -11,7 +11,8 @@ import UIKit
 class LibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ModalViewControllerDelegate {
     
     var category = Categories.animals
-
+    var fromGameType = false
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var objects: [String] = []
     var pressedObject = ""
@@ -31,6 +32,14 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        if (fromGameType) {
+            self.performSegue(withIdentifier: "showGametype", sender: self)
+        }
+        else {
+            self.performSegue(withIdentifier: "showScan", sender: self)
+        }
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -93,7 +102,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
                 if let viewController = segue.destination as? ScanViewController {
                     viewController.category = self.category
                 }
-            }
+            }            
         }      
     }
 }

@@ -1129,5 +1129,5 @@ private let objectsDict = [
 ]
 
 enum GameMode: String {
-    case scan = "scan", search = "search", read = "read"
+    case scan = "scan", search = "search", read = "read", library = "library"
 }
