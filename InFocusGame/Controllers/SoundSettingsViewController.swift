@@ -11,6 +11,7 @@ import UIKit
 class SoundSettingsViewController: UIViewController {
     @IBOutlet weak var voiceAssistantSwitch: UISwitch!
     
+    @IBOutlet weak var onlyNamesSwitch: UISwitch!
     @IBOutlet weak var musicSwitch: UISwitch!
     @IBOutlet weak var backButton: UIButton!
     override func viewDidLoad() {
@@ -25,6 +26,10 @@ class SoundSettingsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func onlyNamesChange(_ sender: UISwitch) {
+        UserDefaults.standard.set(onlyNamesSwitch.isOn, forKey: "onlyNames")
     }
     
     @IBAction func voiceAssistatChange(_ sender: UISwitch) {        UserDefaults.standard.set(voiceAssistantSwitch.isOn, forKey: "voiceAssistant")

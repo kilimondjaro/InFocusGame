@@ -39,7 +39,11 @@ class HelpViewController: UIViewController {
         
         switch mode {
         case HelpMode.help:
-            VoiceAssistant.instance.playFile(name: "\(object)_desc", overlap: true)
+            if UserDefaults.standard.bool(forKey: "onlyNames") {
+                VoiceAssistant.instance.playFile(name: object, overlap: true)
+            } else {
+                VoiceAssistant.instance.playSequence(names: [object, "\(object)_desc"], overlap: true)
+            }
         case HelpMode.fault:
             VoiceAssistant.instance.playFile(name: "\(object)_oops", overlap: true)
         default:

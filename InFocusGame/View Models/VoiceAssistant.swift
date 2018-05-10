@@ -40,14 +40,17 @@ class VoiceAssistant {
         }
     }
     
-    private func loadFile(name: String) {
+    private func loadFile(name: String) -> Bool {
         do {
             if let url = Bundle.main.url(forResource: name, withExtension: "mp3") {
                 player = try AVAudioPlayer(contentsOf: url)
+                return true
             }
+            return false
         } catch {
             print("Could not load \"\(name)\" audio file")
         }
+        return false
     }
     
     private func loadSequenceFiles(names: [String]) {
@@ -72,8 +75,7 @@ class VoiceAssistant {
             return
         }
         
-        loadFile(type: type)
-        player?.numberOfLoops = 0
+        loadFile(type: type)        
         player?.play()
     }
     
@@ -81,9 +83,10 @@ class VoiceAssistant {
         if ((player != nil && (player?.isPlaying)! && !overlap) || (sequencePlayer?.currentItem != nil && !overlap) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
             return
         }
-        loadFile(name: name)
-        player?.numberOfLoops = 0
-        player?.play()
+        let res = loadFile(name: name)
+        if res {
+            player?.play()
+        }
     }
     
 //    func playFile(name: String, overlap: Bool, loop: Bool) {
@@ -109,6 +112,10 @@ class VoiceAssistant {
     func stop() {
         if (player != nil && (player?.isPlaying)!) {
             player?.stop()
+        }
+        
+        if (sequencePlayer != nil) {
+            sequencePlayer?.removeAllItems()
         }
     }
 }

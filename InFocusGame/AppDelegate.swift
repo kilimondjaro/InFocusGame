@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "trial")
             UserDefaults.standard.set(true, forKey: "voiceAssistant")
             UserDefaults.standard.set(true, forKey: "music")
+            UserDefaults.standard.set(true, forKey: "onlyNames")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
             UserDefaults.standard.set(true, forKey: "firstScan")
             UserDefaults.standard.set(true, forKey: "firstSearch")
