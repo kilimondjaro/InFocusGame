@@ -69,9 +69,6 @@
         <attribute name="plate" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="stove" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
-        <relationship name="flatObjects" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlatObjects" syncable="YES"/>
-    </entity>
     <elements>
         <element name="Animals" positionX="-162" positionY="72" width="128" height="45"/>
         <element name="Appliances" positionX="-171" positionY="63" width="128" height="240"/>
@@ -79,7 +76,6 @@
         <element name="FlatObjects" positionX="-54" positionY="0" width="128" height="133"/>
         <element name="FruitsAndVegetables" positionX="-189" positionY="45" width="128" height="225"/>
         <element name="Furniture" positionX="-153" positionY="81" width="128" height="75"/>
-        <element name="Settings" positionX="-326" positionY="9" width="128" height="58"/>
         <element name="Kitchen" positionX="-189" positionY="135" width="128" height="180"/>
     </elements>
 </model>

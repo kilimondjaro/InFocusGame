@@ -22,9 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let context = CoreDataManager.instance.persistentContainer.viewContext
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        if launchedBefore  {
-            // Code
-        } else {
+        if !launchedBefore  {
             for category in Categories.getCategories() {
                 let entity = NSEntityDescription.entity(forEntityName: category.rawValue, in: context)
                 let newObj = NSManagedObject(entity: entity!, insertInto: context)
