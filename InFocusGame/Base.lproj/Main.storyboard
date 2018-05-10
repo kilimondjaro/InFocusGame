@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_root" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DLm-gB-rij">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_root" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DLm-gB-rij">
                                 <rect key="frame" x="0.0" y="20" width="320" height="364"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xev-nv-SSx">
@@ -1484,8 +1484,8 @@
         <segue reference="DTP-wW-sp6"/>
         <segue reference="QXc-BO-zPx"/>
         <segue reference="bUi-ey-cqu"/>
-        <segue reference="Yvh-84-rLi"/>
-        <segue reference="w1m-AC-V4X"/>
+        <segue reference="rf1-CB-dju"/>
+        <segue reference="zb4-Y4-Pzh"/>
         <segue reference="eCC-V4-cyZ"/>
     </inferredMetricsTieBreakers>
 </document>
