@@ -12,8 +12,8 @@ import CoreData
 class ObjectsListsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var objectLabel: UILabel!
-    @IBOutlet weak var objectSwitch: UISwitch!
-    var objectName = ""
+    @IBOutlet weak var objectSwitch: UISwitch!    
+    var object: ObjectType?
     var category = Categories.fruitsAndVegetables
     
     
@@ -29,8 +29,7 @@ class ObjectsListsTableViewCell: UITableViewCell {
     }
     
     @IBAction func switchObject(_ sender: UISwitch) {
-        // TODO - change for many sections
-        CoreDataManager.instance.setValue(entity: category.rawValue, key: objectName, value: objectSwitch.isOn)
+        object?.active = objectSwitch.isOn
+        CoreDataManager.instance.saveContext()
     }
-    
 }

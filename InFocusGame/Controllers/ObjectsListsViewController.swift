@@ -11,7 +11,7 @@ import UIKit
 class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var backButton: UIButton!
-    private var objectsData: [String: [String: Bool]] = [:]
+    private var objects: [Categories: [ObjectType]] = [:]
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -19,15 +19,7 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
         
         backButton.layer.cornerRadius = backButton.frame.height / 2
         for category in Categories.getCategories() {
-            let result = CoreDataManager.instance.fetch(entity: category.rawValue)
-            
-            let objects = Constants.getObjects(category: category)
-            objectsData[category.rawValue] = [:]
-            for data in result {
-                for name in objects {
-                    objectsData[category.rawValue]![name] = data.value(forKey: name) as? Bool
-                }
-            }
+            objects[category] = fetchObjectsByCategory(category: category)
         }
         
         tableView.dataSource = self
@@ -50,7 +42,7 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Constants.getObjects(category: Categories.getCategories()[section]).count
+        return objects[Categories.getCategories()[section]]!.count
     }
     
     
@@ -59,10 +51,10 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
         // TODO - change for many sections
         // TODO - add localization
         let category = Categories.getCategories()[indexPath.section]
-        let obj = Constants.getObjects(category: category)[indexPath.row]
-        cell.objectSwitch.isOn = objectsData[category.rawValue]![obj]!
-        cell.objectLabel.text =  NSLocalizedString(obj, comment: "")
-        cell.objectName = obj
+        let obj = objects[category]![indexPath.row]
+        cell.objectSwitch.isOn = obj.active
+        cell.objectLabel.text =  NSLocalizedString(obj.name!, comment: "")
+        cell.object = obj
         cell.category = category
         return cell
     }
