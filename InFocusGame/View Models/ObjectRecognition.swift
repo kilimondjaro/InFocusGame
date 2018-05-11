@@ -23,14 +23,6 @@ class ObjectRecognition {
         request.imageCropAndScaleOption = .centerCrop
     }
     
-    
-    func show(results: [Prediction]) {
-        var s: [String] = []
-        for (i, pred) in results.enumerated() {
-            s.append(String(format: "%d: %@ (%3.2f%%)", i + 1, pred.0, pred.1 * 100))
-        }
-    }
-    
     typealias Prediction = (String, Double)
     
     func predict(pixelBuffer: CVPixelBuffer ) {

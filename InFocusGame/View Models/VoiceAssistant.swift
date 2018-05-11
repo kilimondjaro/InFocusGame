@@ -87,18 +87,7 @@ class VoiceAssistant {
         if res {
             player?.play()
         }
-    }
-    
-//    func playFile(name: String, overlap: Bool, loop: Bool) {
-//        if ((player != nil && (player?.isPlaying)! && !overlap) || (sequencePlayer?.currentItem != nil && !overlap) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
-//            return
-//        }
-//        loadFile(name: name)
-//        player?.play()
-//        if (loop) {
-//            player?.numberOfLoops = -1
-//        }
-//    }
+    }    
     
     func playSequence(names: [String], overlap: Bool) {
         if ((player != nil && (player?.isPlaying)! && !overlap) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {

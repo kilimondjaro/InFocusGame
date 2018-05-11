@@ -63,8 +63,7 @@ class LearnProcessor {
             }
             
             let id = pred.0.components(separatedBy: " ")[0]
-            if ((Constants.getObjectsIds(category: category)[currentObject]?.contains(id))! && pred.1 > 0.15) {
-                print("\(i) - \(pred.0) - \(pred.1)")
+            if ((Constants.getObjectsIds(category: category)[currentObject]?.contains(id))! && pred.1 > 0.15) {                
                 return true
             }
         }
@@ -106,7 +105,6 @@ class LearnProcessor {
                     delegate?.objectChecked(correct: false, incorrectObject: nil)
                 }
             }
-            print(3)
             lastCheckedObjectsDict = [:]
             checkCounterValue = 0
             checkCounter = 0
@@ -124,10 +122,7 @@ class LearnProcessor {
     func requestDidComplete(request: VNRequest, error: Error?) {
         if let observations = request.results as? [VNClassificationObservation] {
             
-            // The observations appear to be sorted by confidence already, so we
-            // take the top 5 and map them to an array of (String, Double) tuples.
-            
-            
+            // The observations appear to be sorted by confidence already
             let top5 = observations.prefix(through: 4)
                 .map { ($0.identifier, Double($0.confidence)) }
             

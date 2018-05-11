@@ -17,7 +17,7 @@ public protocol VideoCaptureDelegate: class {
 public class VideoCapture: NSObject {
     public var previewLayer: AVCaptureVideoPreviewLayer?
     public weak var delegate: VideoCaptureDelegate?
-    public var fps = 15
+    public var fps = 115
     
     let captureSession = AVCaptureSession()
     let videoOutput = AVCaptureVideoDataOutput()
@@ -105,7 +105,7 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     public func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        //print("dropped frame")
+//        print("dropped frame")
     }
 }
 

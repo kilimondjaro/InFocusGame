@@ -32,9 +32,7 @@ enum GameMode: String {
 }
 
 
-enum Constants {
-    
-    // Add categories
+enum Constants {        
     static func getAll() -> [String] {
         var objects = [String]()
         for category in Categories.getCategories() {
