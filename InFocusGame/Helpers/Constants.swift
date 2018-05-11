@@ -16,11 +16,11 @@ enum Categories: String {
     appliances = "Appliances",
     clothes = "Clothes",
     //    furniture = "Furniture",
-    animals = "Animals",
+//    animals = "Animals",
     kitchen = "Kitchen"
     
     static func getCategories() -> [Categories] {
-        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.animals, Categories.kitchen]
+        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.kitchen]
     }
     static func getTrialCategories() -> [Categories] {
         return [Categories.fruitsAndVegetables, Categories.appliances]
@@ -97,22 +97,23 @@ enum Constants {
             "vacuum": ["n04517823"],
             "washingMachine": ["n04554684"]
         ],
-        Categories.animals: [:],
+//        Categories.animals: [
+//            "cat": ["n02123045"]
+//        ],
         Categories.clothes: [
             "tShirt": ["n03595614"],
-            "jean": ["n03594734"],
+            "jeans": ["n03594734"],
             "hat": ["n03124170"],
-            "shoe": ["n04120489"],
+            "shoes": ["n04120489"],
             "sweatshirt": ["n04370456"],
             "sock": ["n04254777"],
             "bra": ["n02892767"],
             "coat": ["n04479046", "n03404251"],
             "kimono": ["n03617480"],
-            "laboratoryCoat": ["n03630383"],
-            "overskirt": ["n03866082"],
-            "mini": ["n03770439"],
+            "laboratoryCoat": ["n03630383"],            
+            "skirt": ["n03770439"],
             "suit": ["n04350905"],
-            "sandal": ["n04133789"]
+            "sandals": ["n04133789"]
         ],
         Categories.kitchen: [
             "plate": ["n07579787"],

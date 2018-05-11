@@ -25,7 +25,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var upperView: UIView!
     
-    var category = Categories.animals
+    var category = Categories.fruitsAndVegetables
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []

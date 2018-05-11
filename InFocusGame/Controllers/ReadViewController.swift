@@ -18,7 +18,7 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, TestModalView
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var scanButton: UIButton!
     
-    var category = Categories.animals
+    var category = Categories.fruitsAndVegetables
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []

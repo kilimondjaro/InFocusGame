@@ -42,19 +42,18 @@
 
 // Clothes
 "tShirt" = "T-Shirt";
-"jean" = "Jeans";
+"jeans" = "Jeans";
 "hat" = "Hat";
-"shoe" = "Shoes";
+"shoes" = "Shoes";
 "sweatshirt" = "Sweatshirt";
 "sock" = "Sock";
 "bra" = "Bra";
 "coat" = "Coat";
 "kimono" = "Kimono";
 "laboratoryCoat" = "Laboratory Coat";
-"overskirt" = "Overskirt";
-"mini" = "Mini";
+"skirt" = "Skirt";
 "suit" = "Suit";
-"sandal" = "Sandal";
+"sandals" = "Sandals";
 
 // Kitchen
 "plate" = "Plate";
@@ -79,5 +78,5 @@
 "hairDrier" = "Hair Drier";
 "fan" = "Fan";
 "iron" = "Iron";
-"vacuum" = "Vacuum";
+"vacuum" = "Vacuum Cleaner";
 "washingMachine" = "Washing Machine";

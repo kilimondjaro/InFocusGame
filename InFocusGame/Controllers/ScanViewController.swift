@@ -15,7 +15,7 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
     @IBOutlet weak var scanButton: UIButton!    
     @IBOutlet weak var bottomView: UIView!
     
-    var category = Categories.animals
+    var category = Categories.fruitsAndVegetables
     
     var videoCapture: VideoCapture!
     var startTimes: [CFTimeInterval] = []

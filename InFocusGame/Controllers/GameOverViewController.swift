@@ -10,7 +10,7 @@ import UIKit
 
 class GameOverViewController: UIViewController {
     var win = false
-    var category = Categories.animals
+    var category = Categories.fruitsAndVegetables
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var againButton: UIButton!

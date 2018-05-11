@@ -19,7 +19,7 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
     
-    var chosenCategory = Categories.animals
+    var chosenCategory = Categories.fruitsAndVegetables
     
     override func viewDidLoad() {
         super.viewDidLoad()
