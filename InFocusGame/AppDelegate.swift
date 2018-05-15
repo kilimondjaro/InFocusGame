@@ -23,12 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if !launchedBefore  {
-            for category in Categories.getCategories() {
-                let entity = NSEntityDescription.entity(forEntityName: category.rawValue, in: context)
-                let newObj = NSManagedObject(entity: entity!, insertInto: context)
+            for categoryName in Categories.getCategories() {
+                let category = Category(context: context)
+                category.name = categoryName.rawValue
                 
-                for i in CoreDataManager.instance.getAttributes(entity: category.rawValue) {
-                    newObj.setValue(true, forKey: i)
+                for i in Constants.obejcts[categoryName]! {
+                    let object = ObjectType(context: context)
+                    object.name = i.key
+                    object.active = true
+                    object.desc = ""
+                    category.addToObjects(object)
                 }
             }
             
@@ -46,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "firstSearch")
             UserDefaults.standard.set(true, forKey: "firstRead")
             UserDefaults.standard.set(GameMode.library.rawValue, forKey: "gameType")
-        }
+        }                
         
         return true
     }

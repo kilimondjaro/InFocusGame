@@ -10,7 +10,7 @@ import UIKit
 
 class LibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ModalViewControllerDelegate {
     
-    var category = Categories.animals
+    var category = Categories.fruitsAndVegetables
     var fromGameType = false
     
     @IBOutlet weak var collectionView: UICollectionView!

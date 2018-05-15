@@ -9,6 +9,124 @@
 import Foundation
 import CoreData
 
+
+
+enum Categories: String {
+    case fruitsAndVegetables = "FruitsAndVegetables",
+    appliances = "Appliances",
+    clothes = "Clothes",
+    //    furniture = "Furniture",
+//    animals = "Animals",
+    kitchen = "Kitchen"
+    
+    static func getCategories() -> [Categories] {
+        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.kitchen]
+    }
+    static func getTrialCategories() -> [Categories] {
+        return [Categories.fruitsAndVegetables, Categories.appliances]
+    }
+}
+
+enum GameMode: String {
+    case scan = "scan", search = "search", read = "read", library = "library"
+}
+
+
+enum Constants {
+    static func getAll() -> [String] {
+        var objects = [String]()
+        for category in Categories.getCategories() {
+            objects.append(contentsOf: getObjects(category: category))
+        }
+        return objects
+    }
+    
+    static func getObjects(category: Categories) -> [String] {
+        return fetchObjectsByCategory(category:category).map({ $0.name! })
+    }
+    
+    static func getFilteredObjects(category: Categories) -> [String] {
+        return fetchObjectsByCategory(category:category).filter({$0.active == true}).map({ $0.name! })
+    }
+    
+    static let objectsInfo: [String: Int] = [
+        "computer": 2,
+        "cup": 1
+    ]
+    
+    static func getObjectsIds(category: Categories) -> [String: [String]] {
+        return obejcts[category]!
+    }
+    
+    static let obejcts = [
+        //    Categories.furniture: [
+        //        "chair": ["n02791124", "n03376595", "n04099969"],
+        //        "table": ["n03201208", "n03179701"],
+        //        "couch": ["n04344873"],
+        //        "wardrobe": ["n04550184"],
+        //
+        //    ],
+        Categories.fruitsAndVegetables: [
+            "apple": ["n07742313", "n07760859"],
+            "banana": ["n07753592"],
+            "orange": ["n07747607"],
+            "broccoli": ["n07714990"],
+            "cabbage": ["n07714571"],
+            "cucumber": ["n07718472"],
+            "bellPepper": ["n07720875"],
+            "strawberry": ["n07745940"],
+            "lemon": ["n07749582"],
+            "pineapple": ["n07753275"],
+            "pomegranate": ["n07768694"],
+            "cauliflower": ["n07715103"]
+        ],
+        Categories.appliances: [
+            "computer": ["n03832673", "n03642806", "n03085013"],
+            "microwave": ["n03761084"],
+            "cellphone": ["n02992529"],
+            "tv": ["n04404412"],
+            "homeTheater": ["n03529860"],
+            "toaster": ["n04442312"],
+            "lamp": ["n04380533"],
+            "refrigerator": ["n04070727"],
+            "hairDryer": ["n03483316"],
+            "fan": ["n03271574"],
+            "iron": ["n03584829"],
+            "vacuum": ["n04517823"],
+            "washingMachine": ["n04554684"]
+        ],
+//        Categories.animals: [
+//            "cat": ["n02123045"]
+//        ],
+        Categories.clothes: [
+            "tShirt": ["n03595614"],
+            "jeans": ["n03594734"],
+            "hat": ["n03124170"],
+            "shoes": ["n04120489"],
+            "sweatshirt": ["n04370456"],
+            "sock": ["n04254777"],
+            "bra": ["n02892767"],
+            "coat": ["n04479046", "n03404251"],
+            "kimono": ["n03617480"],
+            "laboratoryCoat": ["n03630383"],            
+            "skirt": ["n03770439"],
+            "suit": ["n04350905"],
+            "sandals": ["n04133789"]
+        ],
+        Categories.kitchen: [
+            "plate": ["n07579787"],
+            "cup": ["n03733805", "n07930864", "n03063599"],
+            "glass": ["n02823750"],
+            "fryingPan": ["n03400231"],
+            "corkscrew": ["n03109150"],
+            "ladle": ["n03633091"],
+            "stove": ["n04330267"],
+            "jug": ["n04560804", "n04579145"],
+            "microwave": ["n03761084"]
+        ]
+    ]
+}
+
 let objectsTypes = [
     "n01440764": "tench, Tinca tinca",
     "n01443537": "goldfish, Carassius auratus",
@@ -1011,123 +1129,3 @@ let objectsTypes = [
      "n13133613": "ear, spike, capitulum",
      "n15075141": "toilet tissue, toilet paper, bathroom tissu"
 ]
-
-
-
-enum Categories: String {
-    case fruitsAndVegetables = "FruitsAndVegetables",
-    appliances = "Appliances",
-    clothes = "Clothes",
-//    furniture = "Furniture",
-    animals = "Animals",
-    kitchen = "Kitchen"
-    
-    static func getCategories() -> [Categories] {
-        return [Categories.fruitsAndVegetables, Categories.appliances, Categories.clothes, Categories.animals, Categories.kitchen]
-    }
-    static func getTrialCategories() -> [Categories] {
-        return [Categories.fruitsAndVegetables, Categories.appliances]
-    }
-}
-
-struct Constants {
-    
-    // Add categories
-    static func getAll() -> [String] {
-        var objects = [String]()
-        for category in Categories.getCategories() {
-            objects.append(contentsOf: getObjects(category: category))
-        }
-        return objects
-    }
-    
-    static func getObjects(category: Categories) -> [String] {
-        return CoreDataManager.instance.getAttributes(entity: category.rawValue)
-    }
-    
-    static func getFilteredObjects(category: Categories) -> [String] {
-        let data = CoreDataManager.instance.fetch(entity: category.rawValue)[0]
-        return CoreDataManager.instance.getAttributes(entity: category.rawValue).filter(({ (data.value(forKey: $0) as? Bool)! }))
-    }
-    
-    static let objectsInfo: [String: Int] = [
-        "computer": 2,
-        "cup": 1
-    ]
-    
-    static func getObjectsIds(category: Categories) -> [String: [String]] {
-        return objectsDict[category]!
-    }
-}
-
-
-private let objectsDict = [
-//    Categories.furniture: [
-//        "chair": ["n02791124", "n03376595", "n04099969"],
-//        "table": ["n03201208", "n03179701"],
-//        "couch": ["n04344873"],
-//        "wardrobe": ["n04550184"],
-//
-//    ],
-    Categories.fruitsAndVegetables: [
-        "apple": ["n07742313", "n07760859"],
-        "banana": ["n07753592"],
-        "orange": ["n07747607"],
-        "broccoli": ["n07714990"],
-        "cabbage": ["n07714571"],
-        "cucumber": ["n07718472"],
-        "bellPepper": ["n07720875"],
-        "strawberry": ["n07745940"],
-        "lemon": ["n07749582"],
-        "pineapple": ["n07753275"],
-        "pomegranate": ["n07768694"],
-        "cauliflower": ["n07715103"]
-    ],
-    Categories.appliances: [
-        "computer": ["n03832673", "n03642806", "n03085013"],
-        "microwave": ["n03761084"],
-        "cellphone": ["n02992529"],
-        "tv": ["n04404412"],
-        "homeTheater": ["n03529860"],
-        "toaster": ["n04442312"],
-        "lamp": ["n04380533"],
-        "refrigerator": ["n04070727"],
-        "hairDrier": ["n03483316"],
-        "fan": ["n03271574"],
-        "iron": ["n03584829"],
-        "vacuum": ["n04517823"],
-        "washingMachine": ["n04554684"]
-    ],
-    Categories.animals: [:],
-    Categories.clothes: [
-        "tShirt": ["n03595614"],
-        "jean": ["n03594734"],
-        "hat": ["n03124170"],
-        "shoe": ["n04120489"],
-        "sweatshirt": ["n04370456"],
-        "sock": ["n04254777"],
-        "bra": ["n02892767"],
-        "coat": ["n04479046", "n03404251"],
-        "kimono": ["n03617480"],
-        "laboratoryCoat": ["n03630383"],
-        "overskirt": ["n03866082"],
-        "mini": ["n03770439"],
-        "suit": ["n04350905"],
-        "sandal": ["n04133789"]
-    ],
-    Categories.kitchen: [
-        "plate": ["n07579787"],
-        "cup": ["n03733805", "n07930864", "n03063599"],
-        "glass": ["n02823750"],
-        "fryingPan": ["n03400231"],
-        "corkscrew": ["n03109150"],
-        "ladle": ["n03633091"],
-        "stove": ["n04330267"],
-        "jug": ["n04560804", "n04579145"],
-        "microwave": ["n03761084"]
-    ]
-]
-
-enum GameMode: String {
-    case scan = "scan", search = "search", read = "read", library = "library"
-}

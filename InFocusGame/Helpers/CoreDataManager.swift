@@ -14,37 +14,6 @@ class CoreDataManager {
     
     private init() {}
     
-    func getAttributes(entity: String) -> [String] {
-        let entity = NSEntityDescription.entity(forEntityName: entity, in: self.persistentContainer.viewContext)
-        return (entity?.attributesByName.map(({ $0.key })))!
-    }
-    
-    func setValue<T>(entity: String, key: String, value: T) {
-        let context = self.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                data.setValue(value, forKey: key)
-            }
-            try context.save()
-        } catch {
-            print("Failed")
-        }
-    }
-    
-    func fetch(entity: String) -> [NSManagedObject] {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try self.persistentContainer.viewContext.fetch(request)
-            return result as! [NSManagedObject]
-        } catch {
-            print("Failed")
-        }
-        return []
-    }
     
     lazy var persistentContainer: NSPersistentContainer = {
         /*

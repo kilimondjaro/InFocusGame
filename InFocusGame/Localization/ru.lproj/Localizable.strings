@@ -43,19 +43,18 @@
 
 // Clothes
 "tShirt" = "Футболка";
-"jean" = "Джинсы";
+"jeans" = "Джинсы";
 "hat" = "Шляпа";
-"shoe" = "Ботинки";
+"shoes" = "Ботинки";
 "sweatshirt" = "Кофта";
 "sock" = "Носок";
 "bra" = "Лифчик";
 "coat" = "Пальто";
 "kimono" = "Кимоно";
 "laboratoryCoat" = "Лабораторный халат";
-"overskirt" = "Юбка";
-"mini" = "Мини-юбка";
+"skirt" = "Юбка";
 "suit" = "Костюм";
-"sandal" = "Сандали";
+"sandals" = "Сандали";
 
 // Kitchen
 "plate" = "Тарелка";
@@ -77,7 +76,7 @@
 "toaster" = "Тостер";
 "lamp" = "Лампа";
 "refrigerator" = "Холодильник";
-"hairDrier" = "Фен";
+"hairDryer" = "Фен";
 "fan" = "Вентилятор";
 "iron" = "Утюг";
 "vacuum" = "Пылесос";

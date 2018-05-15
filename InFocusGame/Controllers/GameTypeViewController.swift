@@ -19,7 +19,7 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var infoLabel: UILabel!
     
-    var chosenCategory = Categories.animals
+    var chosenCategory = Categories.fruitsAndVegetables
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,11 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         infoView.layer.borderWidth = 4
     }
     
-    override func viewDidLayoutSubviews() {
+//    override func viewDidLayoutSubviews() {
+//       modeOn()
+//    }
+//
+    override func viewDidAppear(_ animated: Bool) {
        modeOn()
     }
     
@@ -98,6 +102,7 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func modeOn() {
+        print("Animate")
         if let button = getButton() {
             animateOn(button: button)
         }
@@ -122,18 +127,22 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 
     @IBAction func libraryButtonPressed(_ sender: UIButton) {
+        print("libraryButtonPressed")
         changeGameMode(GameMode.library)
     }
     
     @IBAction func readButtonPressed(_ sender: UIButton) {
+        print("readButtonPressed")
         changeGameMode(GameMode.read)
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
+        print("searchButtonPressed")
         changeGameMode(GameMode.search)
     }
     
     @IBAction func scanButtonPressed(_ sender: UIButton) {
+        print("scanButtonPressed")
         changeGameMode(GameMode.scan)
         if UserDefaults.standard.bool(forKey: "firstScan") {
             UserDefaults.standard.set(false, forKey: "firstScan")

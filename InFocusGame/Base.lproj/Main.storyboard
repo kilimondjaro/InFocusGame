@@ -546,7 +546,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Px-i9-3Ze">
-                                <rect key="frame" x="0.0" y="20" width="320" height="434"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
@@ -603,7 +603,7 @@
                         <constraints>
                             <constraint firstItem="KUf-fN-NLO" firstAttribute="centerX" secondItem="O8d-oe-wSE" secondAttribute="centerX" id="5iE-h9-leC"/>
                             <constraint firstItem="1Px-i9-3Ze" firstAttribute="top" secondItem="Jzb-G5-18w" secondAttribute="top" id="Afc-ac-hE7"/>
-                            <constraint firstItem="Jzb-G5-18w" firstAttribute="bottom" secondItem="1Px-i9-3Ze" secondAttribute="bottom" constant="114" id="gy8-SP-zWU"/>
+                            <constraint firstItem="Jzb-G5-18w" firstAttribute="bottom" secondItem="1Px-i9-3Ze" secondAttribute="bottom" constant="73" id="gy8-SP-zWU"/>
                             <constraint firstItem="1Px-i9-3Ze" firstAttribute="leading" secondItem="Jzb-G5-18w" secondAttribute="leading" id="ksY-ia-ANT"/>
                             <constraint firstItem="Jzb-G5-18w" firstAttribute="bottom" secondItem="KUf-fN-NLO" secondAttribute="bottom" constant="20" id="lYr-ij-7Cw"/>
                             <constraint firstItem="1Px-i9-3Ze" firstAttribute="trailing" secondItem="Jzb-G5-18w" secondAttribute="trailing" id="quV-c1-tcb"/>
@@ -1501,7 +1501,7 @@
         <segue reference="DTP-wW-sp6"/>
         <segue reference="QXc-BO-zPx"/>
         <segue reference="bUi-ey-cqu"/>
-        <segue reference="Yvh-84-rLi"/>
+        <segue reference="L5c-fQ-1ti"/>
         <segue reference="zb4-Y4-Pzh"/>
         <segue reference="eCC-V4-cyZ"/>
     </inferredMetricsTieBreakers>
