@@ -32,7 +32,7 @@ enum GameMode: String {
 }
 
 
-enum Constants {        
+enum Constants {
     static func getAll() -> [String] {
         var objects = [String]()
         for category in Categories.getCategories() {
@@ -89,7 +89,7 @@ enum Constants {
             "toaster": ["n04442312"],
             "lamp": ["n04380533"],
             "refrigerator": ["n04070727"],
-            "hairDrier": ["n03483316"],
+            "hairDryer": ["n03483316"],
             "fan": ["n03271574"],
             "iron": ["n03584829"],
             "vacuum": ["n04517823"],

@@ -60,7 +60,7 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Categories.getCategories()[section].rawValue
+        return NSLocalizedString(Categories.getCategories()[section].rawValue, comment: "")
     }
     
     
