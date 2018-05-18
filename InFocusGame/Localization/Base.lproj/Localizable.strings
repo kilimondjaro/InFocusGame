@@ -15,10 +15,9 @@
 "greatJob" = "Great Job!";
 
 // Categories
-"Animals" = "Animals";
-"Furniture" = "Furniture";
+"Kitchen" = "Kitchen";
 "Clothes" = "Clothes";
-"Appliance" = "Appliance";
+"Appliances" = "Appliances";
 "FruitsAndVegetables" = "Fruits/Vegetables";
 
 

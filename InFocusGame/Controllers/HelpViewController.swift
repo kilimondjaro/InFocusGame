@@ -46,6 +46,8 @@ class HelpViewController: UIViewController {
             }
         case HelpMode.fault:
             VoiceAssistant.instance.playFile(name: "\(object)_oops", overlap: true)
+        case HelpMode.none:
+            VoiceAssistant.instance.playSequence(names: ["find", object], overlap: true)
         default:
             return
         }

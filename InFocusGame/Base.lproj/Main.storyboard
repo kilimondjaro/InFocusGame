@@ -40,8 +40,8 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7A-lr-XNN">
                                 <rect key="frame" x="18" y="234" width="284" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue, slide two fingers upward" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gom-7C-4pz">
-                                        <rect key="frame" x="43" y="21" width="199" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue, slide two fingers upward" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gom-7C-4pz">
+                                        <rect key="frame" x="12" y="10" width="261" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.4823529412" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -49,11 +49,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.87991751269999996" green="0.87991751269999996" blue="0.87991751269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="gom-7C-4pz" firstAttribute="top" secondItem="O7A-lr-XNN" secondAttribute="top" constant="21" id="3al-dK-SpQ"/>
+                                    <constraint firstItem="gom-7C-4pz" firstAttribute="top" secondItem="O7A-lr-XNN" secondAttribute="top" constant="10" id="3al-dK-SpQ"/>
                                     <constraint firstAttribute="width" constant="284" id="I6m-aX-kDn"/>
                                     <constraint firstAttribute="height" constant="100" id="Tmn-V2-lqg"/>
                                     <constraint firstItem="gom-7C-4pz" firstAttribute="centerY" secondItem="O7A-lr-XNN" secondAttribute="centerY" id="aeH-sO-vbP"/>
-                                    <constraint firstItem="gom-7C-4pz" firstAttribute="leading" secondItem="O7A-lr-XNN" secondAttribute="leading" constant="43" id="cdv-Tj-pGC"/>
+                                    <constraint firstItem="gom-7C-4pz" firstAttribute="leading" secondItem="O7A-lr-XNN" secondAttribute="leading" constant="12" id="cdv-Tj-pGC"/>
                                     <constraint firstItem="gom-7C-4pz" firstAttribute="centerX" secondItem="O7A-lr-XNN" secondAttribute="centerX" id="oUn-10-XdM"/>
                                 </constraints>
                             </view>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-319" y="112"/>
+            <point key="canvasLocation" x="-320.625" y="111.97183098591549"/>
         </scene>
         <!--Game Type View Controller-->
         <scene sceneID="jjw-5f-Ier">
@@ -549,7 +549,7 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="objectsListsCell" rowHeight="59" id="Vbt-9Z-JDT" customClass="ObjectsListsTableViewCell" customModule="InFocusGame" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vbt-9Z-JDT" id="zFx-3o-6XW">
@@ -692,7 +692,7 @@
                                         <state key="normal" image="help"/>
                                         <connections>
                                             <action selector="helpButtonPressed:" destination="XMe-zC-xdY" eventType="touchUpInside" id="zCJ-q5-hl3"/>
-                                            <segue destination="a7S-Rb-awv" kind="presentation" identifier="showHelpView" id="q55-5a-T5C"/>
+                                            <segue destination="a7S-Rb-awv" kind="presentation" identifier="showHelpView" modalTransitionStyle="crossDissolve" id="q55-5a-T5C"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqx-hi-vdP">
@@ -741,9 +741,9 @@
                         <outlet property="upperView" destination="hfX-MA-UsG" id="Fhj-0X-HlG"/>
                         <outlet property="videoPreview" destination="KgQ-za-QFe" id="9P5-bV-rxC"/>
                         <segue destination="AgD-nc-iRn" kind="presentation" identifier="gameOver" modalTransitionStyle="crossDissolve" id="SLl-fR-EUK"/>
-                        <segue destination="x96-Sm-poR" kind="presentation" identifier="showMatchView" id="7sL-kT-BIC"/>
-                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showNewObject" id="Pgo-hS-gMg"/>
-                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showFaultInfo" id="rpO-sk-GiI"/>
+                        <segue destination="x96-Sm-poR" kind="presentation" identifier="showMatchView" modalTransitionStyle="crossDissolve" id="7sL-kT-BIC"/>
+                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showNewObject" modalTransitionStyle="crossDissolve" id="Pgo-hS-gMg"/>
+                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showFaultInfo" modalTransitionStyle="crossDissolve" id="rpO-sk-GiI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbp-fO-YAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -823,8 +823,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="cwx-xt-iX6" id="d6H-YQ-kH4"/>
-                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showInfo" id="DTP-wW-sp6"/>
-                        <segue destination="xhy-eN-mUC" kind="presentation" identifier="showScan" id="NYz-C5-aIZ"/>
+                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showInfo" modalTransitionStyle="crossDissolve" id="DTP-wW-sp6"/>
+                        <segue destination="xhy-eN-mUC" kind="presentation" identifier="showScan" modalTransitionStyle="crossDissolve" id="NYz-C5-aIZ"/>
                         <segue destination="oal-s2-6ab" kind="presentation" identifier="showGametype" modalTransitionStyle="crossDissolve" id="HGa-zQ-vQ6"/>
                     </connections>
                 </viewController>
@@ -1284,7 +1284,7 @@
                         <outlet property="bottomView" destination="tX1-6i-h3P" id="zvg-mO-AwE"/>
                         <outlet property="scanButton" destination="w4K-Ch-r3p" id="JlM-k9-fHy"/>
                         <outlet property="videoPreview" destination="i7o-Pb-bNg" id="0Rs-bd-95O"/>
-                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showInfo" id="HPF-aJ-dJj"/>
+                        <segue destination="a7S-Rb-awv" kind="presentation" identifier="showInfo" modalTransitionStyle="crossDissolve" id="HPF-aJ-dJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7j-Qp-D73" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1358,7 +1358,7 @@
                         <outlet property="scanButton" destination="H3b-wg-M2D" id="HGJ-ef-tmT"/>
                         <outlet property="videoPreview" destination="6ui-hm-YQQ" id="PBM-mZ-v9x"/>
                         <segue destination="DsW-PU-OVV" kind="presentation" identifier="showTest" id="BP6-x4-qdG"/>
-                        <segue destination="x96-Sm-poR" kind="presentation" identifier="showMatchView" id="FAS-bm-1j6"/>
+                        <segue destination="x96-Sm-poR" kind="presentation" identifier="showMatchView" modalTransitionStyle="crossDissolve" id="FAS-bm-1j6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKu-IS-Sm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1448,7 +1448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eK-NS-ng8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4836" y="-1319"/>
+            <point key="canvasLocation" x="4764" y="-1319"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u18-Wa-vIC">
@@ -1474,7 +1474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvB-xd-aQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5608" y="-1319"/>
+            <point key="canvasLocation" x="5529" y="-1319"/>
         </scene>
     </scenes>
     <resources>
@@ -1496,13 +1496,14 @@
         <image name="tutorial_scan_menu" width="1125" height="2436"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dK5-Nm-l9z"/>
-        <segue reference="7sL-kT-BIC"/>
-        <segue reference="DTP-wW-sp6"/>
+        <segue reference="8vr-wA-1eF"/>
+        <segue reference="NYz-C5-aIZ"/>
+        <segue reference="FAS-bm-1j6"/>
+        <segue reference="HPF-aJ-dJj"/>
         <segue reference="QXc-BO-zPx"/>
         <segue reference="bUi-ey-cqu"/>
-        <segue reference="L5c-fQ-1ti"/>
-        <segue reference="zb4-Y4-Pzh"/>
+        <segue reference="rf1-CB-dju"/>
+        <segue reference="wGe-vV-XZY"/>
         <segue reference="eCC-V4-cyZ"/>
     </inferredMetricsTieBreakers>
 </document>

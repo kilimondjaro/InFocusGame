@@ -179,8 +179,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
             self.timer.invalidate()
             self.objectLabel.setTitle(NSLocalizedString(object, comment: ""), for: .normal)
             self.currentObject = object
-            self.failCounter = 0
-            VoiceAssistant.instance.playSequence(names: ["find", self.currentObject], overlap: true)
+            self.failCounter = 0            
             runTimer()
             
         }

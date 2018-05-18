@@ -1,6 +1,102 @@
 
+/* Class = "UIButton"; normalTitle = "Apple"; ObjectID = "1S3-ys-TBU"; */
+"1S3-ys-TBU.normalTitle" = "Apple";
+
 /* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "2zh-Fj-bVW"; */
 "2zh-Fj-bVW.normalTitle" = "Настройки";
 
+/* Class = "UILabel"; text = "Great Job!"; ObjectID = "6Tn-SB-Wtx"; */
+"6Tn-SB-Wtx.text" = "Отличная работа!";
+
+/* Class = "UIButton"; normalTitle = "Read"; ObjectID = "982-7E-rbK"; */
+"982-7E-rbK.normalTitle" = "Чтение";
+
+/* Class = "UIButton"; normalTitle = "Library"; ObjectID = "98z-C7-EZ8"; */
+"98z-C7-EZ8.normalTitle" = "Словарь";
+
+/* Class = "UIButton"; normalTitle = "Full Version"; ObjectID = "BX4-3s-kR7"; */
+"BX4-3s-kR7.normalTitle" = "Полная версия";
+
+/* Class = "UIButton"; normalTitle = "Again"; ObjectID = "EYR-hk-G1b"; */
+"EYR-hk-G1b.normalTitle" = "Сначала";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "KUf-fN-NLO"; */
+"KUf-fN-NLO.normalTitle" = "Назад";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "LJM-TW-3EZ"; */
+"LJM-TW-3EZ.normalTitle" = "Назад";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "OJn-kH-Z2f"; */
+"OJn-kH-Z2f.normalTitle" = "Назад";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "PnK-yu-KMg"; */
+"PnK-yu-KMg.normalTitle" = "Старт";
+
+/* Class = "UIButton"; normalTitle = "Orange"; ObjectID = "R1H-4t-qDF"; */
+"R1H-4t-qDF.normalTitle" = "Orange";
+
+/* Class = "UILabel"; text = "Kilimondjaro Studio kilimondjaro@gmail.com  Moscow, 2018"; ObjectID = "RU1-Ud-wkK"; */
+"RU1-Ud-wkK.text" = "Kilimondjaro Studio kilimondjaro@gmail.com  Москва, 2018";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "SAT-lf-ZfC"; */
+"SAT-lf-ZfC.normalTitle" = "Поиск";
+
+/* Class = "UIButton"; normalTitle = "Apple"; ObjectID = "SDP-qq-0u1"; */
+"SDP-qq-0u1.normalTitle" = "Apple";
+
+/* Class = "UILabel"; text = "Only names"; ObjectID = "WfI-wc-Wcp"; */
+"WfI-wc-Wcp.text" = "Только названия";
+
 /* Class = "UIButton"; normalTitle = "Play"; ObjectID = "Xev-nv-SSx"; */
 "Xev-nv-SSx.normalTitle" = "Играть";
+
+/* Class = "UIButton"; normalTitle = "Scan"; ObjectID = "Xua-Y7-aD3"; */
+"Xua-Y7-aD3.normalTitle" = "Сканер";
+
+/* Class = "UIButton"; normalTitle = "Banana"; ObjectID = "aZa-DH-23Y"; */
+"aZa-DH-23Y.normalTitle" = "Banana";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "cEa-Mc-8aB"; */
+"cEa-Mc-8aB.text" = "Катеория";
+
+/* Class = "UILabel"; text = "To continue, slide two fingers upward"; ObjectID = "gom-7C-4pz"; */
+"gom-7C-4pz.text" = "To continue, slide two fingers upward";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "h0P-yG-Wi1"; */
+"h0P-yG-Wi1.normalTitle" = "Назад";
+
+/* Class = "UILabel"; text = "Object"; ObjectID = "njs-TC-CUC"; */
+"njs-TC-CUC.text" = "Object";
+
+/* Class = "UIButton"; normalTitle = "About"; ObjectID = "pnG-wc-BQa"; */
+"pnG-wc-BQa.normalTitle" = "О приложении";
+
+/* Class = "UILabel"; text = "Music"; ObjectID = "sNT-pN-NcJ"; */
+"sNT-pN-NcJ.text" = "Музыка";
+
+/* Class = "UILabel"; text = "Activate at least one object of this category"; ObjectID = "t6l-Bm-k44"; */
+"t6l-Bm-k44.text" = "Активируйтся хотя бы один объект данной категории";
+
+/* Class = "UILabel"; text = "Voice assistant"; ObjectID = "tLc-rD-seD"; */
+"tLc-rD-seD.text" = "Голосовой помощник";
+
+/* Class = "UILabel"; text = "Apple"; ObjectID = "uDb-Fo-q0s"; */
+"uDb-Fo-q0s.text" = "Apple";
+
+/* Class = "UIButton"; normalTitle = "Grape"; ObjectID = "uDo-sK-jDH"; */
+"uDo-sK-jDH.normalTitle" = "Grape";
+
+/* Class = "UILabel"; text = "Apple"; ObjectID = "uPQ-Pa-2Zt"; */
+"uPQ-Pa-2Zt.text" = "Apple";
+
+/* Class = "UIButton"; normalTitle = "Active Objects"; ObjectID = "vdw-vW-0je"; */
+"vdw-vW-0je.normalTitle" = "Активные объекты";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "vgX-qj-x8X"; */
+"vgX-qj-x8X.title" = "Настройки";
+
+/* Class = "UIButton"; normalTitle = "Menu"; ObjectID = "zhp-ZF-KhO"; */
+"zhp-ZF-KhO.normalTitle" = "Меню";
+
+/* Class = "UIButton"; normalTitle = "Sound"; ObjectID = "zzi-zc-Hhv"; */
+"zzi-zc-Hhv.normalTitle" = "Звуки";

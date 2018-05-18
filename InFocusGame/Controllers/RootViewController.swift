@@ -16,6 +16,8 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Music.instance.playMusic(name: MusicTypes.mainTheme)
+        
         addGestures()
         
         parentLabel.text = NSLocalizedString("parentGuard", comment: "")

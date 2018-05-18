@@ -15,10 +15,9 @@
 "greatJob" = "Отличная работа!";
 
 // Categories
-"Animals" = "Животные";
-"Furniture" = "Мебель";
+"Kitchen" = "Кухня";
 "Clothes" = "Одежда";
-"Appliance" = "Бытовые приборы";
+"Appliances" = "Бытовые приборы";
 "FruitsAndVegetables" = "Фрукты и овощи";
 
 

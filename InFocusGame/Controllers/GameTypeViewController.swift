@@ -101,8 +101,7 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-    func modeOn() {
-        print("Animate")
+    func modeOn() {        
         if let button = getButton() {
             animateOn(button: button)
         }
@@ -127,22 +126,18 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 
     @IBAction func libraryButtonPressed(_ sender: UIButton) {
-        print("libraryButtonPressed")
         changeGameMode(GameMode.library)
     }
     
     @IBAction func readButtonPressed(_ sender: UIButton) {
-        print("readButtonPressed")
         changeGameMode(GameMode.read)
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        print("searchButtonPressed")
         changeGameMode(GameMode.search)
     }
     
     @IBAction func scanButtonPressed(_ sender: UIButton) {
-        print("scanButtonPressed")
         changeGameMode(GameMode.scan)
         if UserDefaults.standard.bool(forKey: "firstScan") {
             UserDefaults.standard.set(false, forKey: "firstScan")

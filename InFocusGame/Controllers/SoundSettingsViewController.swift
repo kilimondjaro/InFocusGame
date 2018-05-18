@@ -18,6 +18,7 @@ class SoundSettingsViewController: UIViewController {
         super.viewDidLoad()
         voiceAssistantSwitch.isOn = UserDefaults.standard.bool(forKey: "voiceAssistant")
         musicSwitch.isOn = UserDefaults.standard.bool(forKey: "music")
+        onlyNamesSwitch.isOn = UserDefaults.standard.bool(forKey: "onlyNames")
         
         // Do any additional setup after loading the view.
         backButton.layer.cornerRadius = backButton.frame.size.height / 2
@@ -32,10 +33,12 @@ class SoundSettingsViewController: UIViewController {
         UserDefaults.standard.set(onlyNamesSwitch.isOn, forKey: "onlyNames")
     }
     
-    @IBAction func voiceAssistatChange(_ sender: UISwitch) {        UserDefaults.standard.set(voiceAssistantSwitch.isOn, forKey: "voiceAssistant")
+    @IBAction func voiceAssistatChange(_ sender: UISwitch) {
+        UserDefaults.standard.set(voiceAssistantSwitch.isOn, forKey: "voiceAssistant")
     }
     
-    @IBAction func musicChanged(_ sender: UISwitch) {        UserDefaults.standard.set(musicSwitch.isOn, forKey: "music")
+    @IBAction func musicChanged(_ sender: UISwitch) {
+        UserDefaults.standard.set(musicSwitch.isOn, forKey: "music")
         if (musicSwitch.isOn) {
             Music.instance.playMusic(name: MusicTypes.mainTheme)
         }

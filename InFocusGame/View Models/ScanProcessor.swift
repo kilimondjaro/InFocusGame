@@ -47,8 +47,15 @@ class ScanProcessor {
 
             let objectsIds = Constants.getObjectsIds(category: category)
             
+            let sortedObjects = lastScannedObjectsDict.sorted(by: { a, b in a.value < b.value })
+            
+            print(sortedObjects[0])
+            print(sortedObjects[sortedObjects.count - 1])
+//            let last = sortedObjects[0]
+            
+            
             // TODO - move it
-            let last = lastScannedObjectsDict.max { a, b in a.value < b.value }            
+            let last = lastScannedObjectsDict.max { a, b in a.value < b.value }
             if let lastObjectIndex = objectsIds.index(where: { $1.contains((last?.key.components(separatedBy: " ")[0])!) }), objectsIds[lastObjectIndex] != nil {
                 if (objects.contains(objectsIds[lastObjectIndex].key)) {
                     delegate?.objectScanned(object: objectsIds[lastObjectIndex].key)
