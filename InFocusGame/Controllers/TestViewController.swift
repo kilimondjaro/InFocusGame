@@ -32,6 +32,7 @@ class TestViewController: UIViewController {
         secondButton.layer.cornerRadius = secondButton.frame.size.height / 10
         thirdButton.layer.cornerRadius = thirdButton.frame.size.height / 10
         fourthButton.layer.cornerRadius = fourthButton.frame.size.height / 10
+    
         
         let objects = Constants.getAll()
         let randomNumbers = (0...objects.count-1).shuffled()
@@ -40,6 +41,19 @@ class TestViewController: UIViewController {
         }
         
         generateAnswers()
+        
+        //        firstButton.titleLabel?.numberOfLines = 0;
+        firstButton.titleLabel?.textAlignment = .center
+        firstButton.titleLabel?.lineBreakMode = .byWordWrapping;
+        //        secondButton.titleLabel?.numberOfLines = 0;
+        secondButton.titleLabel?.lineBreakMode = .byWordWrapping;
+        secondButton.titleLabel?.textAlignment = .center
+        //        thirdButton.titleLabel?.numberOfLines = 0;
+        thirdButton.titleLabel?.lineBreakMode = .byWordWrapping;
+        thirdButton.titleLabel?.textAlignment = .center
+        //        fourthButton.titleLabel?.numberOfLines = 0;
+        fourthButton.titleLabel?.lineBreakMode = .byWordWrapping;
+        fourthButton.titleLabel?.textAlignment = .center
     }
     
     override func viewDidLayoutSubviews() {

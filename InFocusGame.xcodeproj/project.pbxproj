@@ -16,7 +16,6 @@
 		26109E482088658600038E4F /* ObjectsListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E472088658600038E4F /* ObjectsListsViewController.swift */; };
 		26109E4A2088727400038E4F /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E492088727400038E4F /* HelpViewController.swift */; };
 		26109E4C2088875B00038E4F /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26109E4B2088875B00038E4F /* GameOverViewController.swift */; };
-		26109E4E20888F5500038E4F /* apple_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E4D20888F5500038E4F /* apple_desc.mp3 */; };
 		26109E50208891B700038E4F /* chair_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E4F208891B700038E4F /* chair_desc.mp3 */; };
 		26109E52208891F800038E4F /* computer_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E51208891F800038E4F /* computer_desc.mp3 */; };
 		26109E542088926A00038E4F /* table_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 26109E532088926A00038E4F /* table_desc.mp3 */; };
@@ -35,6 +34,18 @@
 		262C30F420909E3E008BF588 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C30F320909E3E008BF588 /* ReadViewController.swift */; };
 		262C30F82090AA1E008BF588 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C30F72090AA1E008BF588 /* TestViewController.swift */; };
 		263602ED209C96FD00A7E3ED /* main_theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 263602EC209C96FD00A7E3ED /* main_theme.mp3 */; };
+		264AE64D20BAE76200982585 /* pineapple_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE64C20BAE76200982585 /* pineapple_desc.mp3 */; };
+		264AE64F20BAE7DB00982585 /* strawberry_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE64E20BAE7DB00982585 /* strawberry_desc.mp3 */; };
+		264AE65120BAE83900982585 /* broccoli_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE65020BAE83900982585 /* broccoli_desc.mp3 */; };
+		264AE65520BAE8D100982585 /* lemon_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE65420BAE8D100982585 /* lemon_desc.mp3 */; };
+		264AE65720BAE8E000982585 /* apple_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE65620BAE8DF00982585 /* apple_desc.mp3 */; };
+		264AE65920BAE93100982585 /* cucumber_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE65820BAE93000982585 /* cucumber_desc.mp3 */; };
+		264AE65B20BAE95C00982585 /* cauliflower_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE65A20BAE95C00982585 /* cauliflower_desc.mp3 */; };
+		264AE65D20BAE98800982585 /* cabbage_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE65C20BAE98800982585 /* cabbage_desc.mp3 */; };
+		264AE65F20BAE9B200982585 /* orange_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE65E20BAE9B200982585 /* orange_desc.mp3 */; };
+		264AE66120BAE9F900982585 /* pomegranate_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE66020BAE9F900982585 /* pomegranate_desc.mp3 */; };
+		264AE66520BAEA3E00982585 /* banana_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264AE66420BAEA3E00982585 /* banana_desc.mp3 */; };
+		265006EC20B5D283000735E6 /* MobileNets.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 265006EB20B5D283000735E6 /* MobileNets.mlmodel */; };
 		266503832085F13300947473 /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266503822085F13300947473 /* GameTypeViewController.swift */; };
 		2665038520860B9000947473 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038420860B9000947473 /* LearnViewController.swift */; };
 		2665038720860BC800947473 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665038620860BC800947473 /* VideoCapture.swift */; };
@@ -142,7 +153,6 @@
 		26109E472088658600038E4F /* ObjectsListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListsViewController.swift; sourceTree = "<group>"; };
 		26109E492088727400038E4F /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		26109E4B2088875B00038E4F /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
-		26109E4D20888F5500038E4F /* apple_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple_desc.mp3; sourceTree = "<group>"; };
 		26109E4F208891B700038E4F /* chair_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chair_desc.mp3; sourceTree = "<group>"; };
 		26109E51208891F800038E4F /* computer_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = computer_desc.mp3; sourceTree = "<group>"; };
 		26109E532088926A00038E4F /* table_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = table_desc.mp3; sourceTree = "<group>"; };
@@ -170,6 +180,18 @@
 		262C30F320909E3E008BF588 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		262C30F72090AA1E008BF588 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		263602EC209C96FD00A7E3ED /* main_theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main_theme.mp3; sourceTree = "<group>"; };
+		264AE64C20BAE76200982585 /* pineapple_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pineapple_desc.mp3; sourceTree = "<group>"; };
+		264AE64E20BAE7DB00982585 /* strawberry_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = strawberry_desc.mp3; sourceTree = "<group>"; };
+		264AE65020BAE83900982585 /* broccoli_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = broccoli_desc.mp3; sourceTree = "<group>"; };
+		264AE65420BAE8D100982585 /* lemon_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lemon_desc.mp3; sourceTree = "<group>"; };
+		264AE65620BAE8DF00982585 /* apple_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple_desc.mp3; sourceTree = "<group>"; };
+		264AE65820BAE93000982585 /* cucumber_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cucumber_desc.mp3; sourceTree = "<group>"; };
+		264AE65A20BAE95C00982585 /* cauliflower_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cauliflower_desc.mp3; sourceTree = "<group>"; };
+		264AE65C20BAE98800982585 /* cabbage_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cabbage_desc.mp3; sourceTree = "<group>"; };
+		264AE65E20BAE9B200982585 /* orange_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = orange_desc.mp3; sourceTree = "<group>"; };
+		264AE66020BAE9F900982585 /* pomegranate_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pomegranate_desc.mp3; sourceTree = "<group>"; };
+		264AE66420BAEA3E00982585 /* banana_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = banana_desc.mp3; path = ../../../../../../../Desktop/audio/banana_desc.mp3; sourceTree = "<group>"; };
+		265006EB20B5D283000735E6 /* MobileNets.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNets.mlmodel; sourceTree = "<group>"; };
 		266503822085F13300947473 /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
 		2665038420860B9000947473 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		2665038620860BC800947473 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -420,12 +442,22 @@
 		26CF16C72089E99B00775B7A /* Description */ = {
 			isa = PBXGroup;
 			children = (
+				264AE66420BAEA3E00982585 /* banana_desc.mp3 */,
+				264AE66020BAE9F900982585 /* pomegranate_desc.mp3 */,
+				264AE65E20BAE9B200982585 /* orange_desc.mp3 */,
+				264AE65C20BAE98800982585 /* cabbage_desc.mp3 */,
+				264AE65A20BAE95C00982585 /* cauliflower_desc.mp3 */,
+				264AE65820BAE93000982585 /* cucumber_desc.mp3 */,
+				264AE65620BAE8DF00982585 /* apple_desc.mp3 */,
+				264AE65420BAE8D100982585 /* lemon_desc.mp3 */,
+				264AE65020BAE83900982585 /* broccoli_desc.mp3 */,
+				264AE64E20BAE7DB00982585 /* strawberry_desc.mp3 */,
+				264AE64C20BAE76200982585 /* pineapple_desc.mp3 */,
 				26109E572088936F00038E4F /* banana_desc.mp3 */,
 				26109E55208892E200038E4F /* cup_desc.mp3 */,
 				26109E532088926A00038E4F /* table_desc.mp3 */,
 				26109E51208891F800038E4F /* computer_desc.mp3 */,
 				26109E4F208891B700038E4F /* chair_desc.mp3 */,
-				26109E4D20888F5500038E4F /* apple_desc.mp3 */,
 			);
 			path = Description;
 			sourceTree = "<group>";
@@ -446,6 +478,7 @@
 		26E035482085DC8E00832BDF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				265006EB20B5D283000735E6 /* MobileNets.mlmodel */,
 				2665038820860C0B00947473 /* MobileNet.mlmodel */,
 			);
 			path = Models;
@@ -685,21 +718,28 @@
 			files = (
 				26109E50208891B700038E4F /* chair_desc.mp3 in Resources */,
 				26BCCF5820A587D50027DEA4 /* glass.mp3 in Resources */,
+				264AE65120BAE83900982585 /* broccoli_desc.mp3 in Resources */,
+				264AE65B20BAE95C00982585 /* cauliflower_desc.mp3 in Resources */,
 				26BCCF4120A580E20027DEA4 /* sweatshirt.mp3 in Resources */,
 				2623F45F20AEDF8600C0F1F4 /* strawberry.mp3 in Resources */,
 				26CF16D02089EBE800775B7A /* computer_oops.mp3 in Resources */,
 				26BCCF4B20A580E20027DEA4 /* kimono.mp3 in Resources */,
 				26EED70720AEEDF300B5EF57 /* homeTheater.mp3 in Resources */,
-				26109E4E20888F5500038E4F /* apple_desc.mp3 in Resources */,
 				26BCCF4220A580E20027DEA4 /* jeans.mp3 in Resources */,
 				26F8724420851AAC004A9CC0 /* LaunchScreen.storyboard in Resources */,
 				26109E462087CF9300038E4F /* oops.mp3 in Resources */,
 				26CF16CA2089E9E100775B7A /* table_oops.mp3 in Resources */,
+				264AE65F20BAE9B200982585 /* orange_desc.mp3 in Resources */,
+				264AE64D20BAE76200982585 /* pineapple_desc.mp3 in Resources */,
+				264AE65920BAE93100982585 /* cucumber_desc.mp3 in Resources */,
 				26CF16D32089EBE800775B7A /* cup_oops.mp3 in Resources */,
 				26109E542088926A00038E4F /* table_desc.mp3 in Resources */,
+				264AE65D20BAE98800982585 /* cabbage_desc.mp3 in Resources */,
+				264AE65520BAE8D100982585 /* lemon_desc.mp3 in Resources */,
 				2623F44320AED31100C0F1F4 /* broccoli.mp3 in Resources */,
 				26CF16B32089069600775B7A /* chair.mp3 in Resources */,
 				26E035512085DF4400832BDF /* Localizable.strings in Resources */,
+				264AE66120BAE9F900982585 /* pomegranate_desc.mp3 in Resources */,
 				2623F44B20AED54E00C0F1F4 /* cabbage.mp3 in Resources */,
 				26BCCF5920A587D50027DEA4 /* jug.mp3 in Resources */,
 				26CF16B62089069600775B7A /* table.mp3 in Resources */,
@@ -720,9 +760,11 @@
 				2665038B20862B0100947473 /* noticed.mp3 in Resources */,
 				26CF16C42089E09300775B7A /* cup_info_0.mp3 in Resources */,
 				26F8724120851AAC004A9CC0 /* Assets.xcassets in Resources */,
+				264AE66520BAEA3E00982585 /* banana_desc.mp3 in Resources */,
 				26BCCF4720A580E20027DEA4 /* shoes.mp3 in Resources */,
 				26BCCF6520AEC85F0027DEA4 /* apple.mp3 in Resources */,
 				26CF16D42089EBE800775B7A /* chair_oops.mp3 in Resources */,
+				264AE64F20BAE7DB00982585 /* strawberry_desc.mp3 in Resources */,
 				263602ED209C96FD00A7E3ED /* main_theme.mp3 in Resources */,
 				26BCCF4520A580E20027DEA4 /* hat.mp3 in Resources */,
 				26109E56208892E200038E4F /* cup_desc.mp3 in Resources */,
@@ -731,6 +773,7 @@
 				26CF16C22089DEC000775B7A /* computer_info_1.mp3 in Resources */,
 				2623F44720AED34800C0F1F4 /* cauliflower.mp3 in Resources */,
 				26EED70320AEEDED00B5EF57 /* hairDryer.mp3 in Resources */,
+				264AE65720BAE8E000982585 /* apple_desc.mp3 in Resources */,
 				26BCCF4D20A580E20027DEA4 /* laboratoryCoat.mp3 in Resources */,
 				26F8723C20851AAA004A9CC0 /* Main.storyboard in Resources */,
 				26BCCF4320A580E20027DEA4 /* skirt.mp3 in Resources */,
@@ -808,6 +851,7 @@
 				26A82C14208B73C7009ACE8C /* ScanProcessor.swift in Sources */,
 				26BCCF0620A4DC460027DEA4 /* Helpers.swift in Sources */,
 				26CF16BE2089325900775B7A /* MatchViewController.swift in Sources */,
+				265006EC20B5D283000735E6 /* MobileNets.mlmodel in Sources */,
 				26109E442087C97800038E4F /* Extensions.swift in Sources */,
 				26109E4220879B6700038E4F /* CoreDataManager.swift in Sources */,
 				26109E3720875CE600038E4F /* SettingsViewController.swift in Sources */,

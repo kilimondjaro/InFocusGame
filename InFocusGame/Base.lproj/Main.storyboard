@@ -1496,7 +1496,6 @@
         <image name="tutorial_scan_menu" width="1125" height="2436"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8vr-wA-1eF"/>
         <segue reference="NYz-C5-aIZ"/>
         <segue reference="FAS-bm-1j6"/>
         <segue reference="HPF-aJ-dJj"/>

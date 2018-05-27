@@ -94,17 +94,15 @@ class ScanProcessor {
     
     func requestDidComplete(request: VNRequest, error: Error?) {
         if let observations = request.results as? [VNClassificationObservation] {
-            
             let top5 = observations.prefix(through: 4)
                 .map { ($0.identifier, Double($0.confidence)) }
-            
+            print(top5)
             if (isScanning) {
                 processScan(values: top5)
             }
             else {
                 processDetection(values: top5) //Array(top5.prefix(through: 1))
             }
-            
             
             DispatchQueue.main.async {
                 self.semaphore?.signal()
