@@ -33,7 +33,12 @@ class RootViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func playButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
+    }
+    
     @IBAction func settingsButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         parentView.isHidden = false
     }
     

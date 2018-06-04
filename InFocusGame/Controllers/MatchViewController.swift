@@ -78,6 +78,7 @@ class MatchViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         dismiss(animated: true, completion: nil)
         VoiceAssistant.instance.stop()
         delegate?.removeBlurredBackgroundView()

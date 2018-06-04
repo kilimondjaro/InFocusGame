@@ -124,20 +124,28 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
+    }
+    
     @IBAction func libraryButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         changeGameMode(GameMode.library)
     }
     
     @IBAction func readButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         changeGameMode(GameMode.read)
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         changeGameMode(GameMode.search)
     }
     
     @IBAction func scanButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         changeGameMode(GameMode.scan)
         if UserDefaults.standard.bool(forKey: "firstScan") {
             UserDefaults.standard.set(false, forKey: "firstScan")
@@ -146,6 +154,7 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     @IBAction func fullVersionButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         // Buying full version
         UserDefaults.standard.set(false, forKey: "trial")
     }
@@ -176,7 +185,21 @@ class GameTypeViewController: UIViewController, UICollectionViewDelegate, UIColl
         return Categories.getCategories().count
     }
     
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoriesCell", for: indexPath) as! LibraryCollectionViewCell
+//        cell.imageView.image = UIImage(named: "banana.png")
+        cell.label.text = "AAA"
+//        cell.imageView.tintColor = UIColor.gray
+//        cell.backgroundColor = UIColor.gray
+//        cell.imageView.isHighlighted = true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         chosenCategory = Categories.getCategories()[indexPath.row]
         
         if (UserDefaults.standard.bool(forKey: "trial") && !Categories.getTrialCategories().contains(chosenCategory)) {

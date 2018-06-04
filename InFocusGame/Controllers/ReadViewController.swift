@@ -153,6 +153,11 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, TestModalView
     }
     
     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "showTest" {

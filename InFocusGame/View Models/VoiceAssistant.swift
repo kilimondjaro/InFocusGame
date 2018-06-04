@@ -10,13 +10,15 @@ import Foundation
 import AVFoundation
 
 enum Voice {
-    case noticed, oops
+    case noticed, oops, click
     func getUrl() -> String {
         switch self {
         case .noticed:
             return "noticed"
         case .oops:
             return "oops"
+        case .click:
+            return "click"
         }
     }
 }

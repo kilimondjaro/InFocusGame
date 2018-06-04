@@ -13,6 +13,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
     var category = Categories.fruitsAndVegetables
     var fromGameType = false
     
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var objects: [String] = []
     var pressedObject = ""
@@ -20,6 +21,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryLabel.text = NSLocalizedString(category.rawValue, comment: "")
         
         objects = Constants.getFilteredObjects(category: category)
         
@@ -33,6 +35,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         if (fromGameType) {
             self.performSegue(withIdentifier: "showGametype", sender: self)
         }
@@ -58,6 +61,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         pressedObject = objects[indexPath.row]
         self.overlayBlurredBackgroundView(style: .dark)
         self.performSegue(withIdentifier: "showInfo", sender: self)

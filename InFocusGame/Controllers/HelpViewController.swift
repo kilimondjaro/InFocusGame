@@ -59,6 +59,7 @@ class HelpViewController: UIViewController {
     }
     
     @IBAction func okButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         dismiss(animated: true, completion: nil)
         delegate?.removeBlurredBackgroundView()
         VoiceAssistant.instance.stop()

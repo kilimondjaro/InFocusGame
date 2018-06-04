@@ -208,6 +208,11 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
         VoiceAssistant.instance.playFile(name: currentObject, overlap: true)
     }
     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
+    }
+    
+    
     func overlayBlurredBackgroundView(style: UIBlurEffectStyle) {
         self.definesPresentationContext = true
         self.providesPresentationContextTransitionStyle = true

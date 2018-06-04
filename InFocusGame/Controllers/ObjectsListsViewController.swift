@@ -63,6 +63,9 @@ class ObjectsListsViewController: UIViewController, UITableViewDelegate, UITable
         return NSLocalizedString(Categories.getCategories()[section].rawValue, comment: "")
     }
     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
+    }
     
     /*
      // Override to support conditional editing of the table view.

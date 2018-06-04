@@ -38,4 +38,9 @@ class GameOverViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
+    }
+    
 }
