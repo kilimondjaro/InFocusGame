@@ -112,6 +112,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     
     func continueProcess(from: String?) {
         if let f = from, f == "match" {
+            self.currentLives = 3
             pickUpNewObject()
             self.overlayBlurredBackgroundView(style: .dark)
             self.performSegue(withIdentifier: "showNewObject", sender: self)
@@ -123,7 +124,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
     
     func updateTimer(timer: Timer) {
         seconds -= 1
-        if (seconds == 30) {
+        if (seconds == 40) {
             timer.invalidate()
             if let infoCount = Constants.objectsInfo[self.currentObject], loopCounter < infoCount {
                 VoiceAssistant.instance.playFile(name: "\(self.currentObject)_info_\(loopCounter)", overlap: false)
@@ -151,20 +152,23 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
             }
             else {
                 self.failCounter += 1
-                if (self.failCounter == 1) {
+                if (self.failCounter % 2 == 1) {
                     VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
                 }
-                if let incorrectObjName = incorrectObject, self.failCounter == 2 {
-                    self.incorrectObject = incorrectObjName
-                    
-                    self.overlayBlurredBackgroundView(style: .dark)
-                    self.performSegue(withIdentifier: "showFaultInfo", sender: self)
+                else {
+                    if let incorrectObjName = incorrectObject {
+                        self.incorrectObject = incorrectObjName
+                        
+                        self.overlayBlurredBackgroundView(style: .dark)
+                        self.performSegue(withIdentifier: "showFaultInfo", sender: self)
+                    }
                 }
-                if (self.failCounter == 3) {
+                
+                if (self.failCounter % 3 == 0) {
                     // TODO - Add animation and special sound
                     
-                    VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
-                    self.failCounter = 0
+//                    VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
+//                    self.failCounter = 0
                     
                     if (self.currentLives > 0) {
                         self.currentLives -= 1

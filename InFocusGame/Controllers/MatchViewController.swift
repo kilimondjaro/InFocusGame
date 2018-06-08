@@ -58,6 +58,7 @@ class MatchViewController: UIViewController {
             star.frame =  star.frame.insetBy(dx: -50, dy: -50)
             star.rotate360Degrees(duration: 0.7, completionDelegate: nil)
         }){ (succeed) -> Void in
+            VoiceAssistant.instance.playParallel(name: "star_\(counter + 1)", overlap: true)
             UIView.animate(withDuration: 0.7, animations: {
                 star.frame = star.frame.insetBy(dx: 50, dy: 50)
                 star.image = UIImage(named: "star")
@@ -78,9 +79,9 @@ class MatchViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        VoiceAssistant.instance.stop()
         VoiceAssistant.instance.playFile(type: Voice.click, overlap: true)
         dismiss(animated: true, completion: nil)
-        VoiceAssistant.instance.stop()
         delegate?.removeBlurredBackgroundView()
         delegate?.continueProcess(from: "match")
     }

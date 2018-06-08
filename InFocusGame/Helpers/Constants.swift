@@ -51,7 +51,11 @@ enum Constants {
     
     static let objectsInfo: [String: Int] = [
         "computer": 2,
-        "cup": 1
+        "cup": 1,
+        "apple": 2,
+        "banana": 2,
+        "lemon": 2,
+        "orange": 2
     ]
     
     static func getObjectsIds(category: Categories) -> [String: [String]] {

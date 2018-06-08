@@ -42,24 +42,25 @@ class TestViewController: UIViewController {
         
         generateAnswers()
         
-        //        firstButton.titleLabel?.numberOfLines = 0;
-        firstButton.titleLabel?.textAlignment = .center
-        firstButton.titleLabel?.lineBreakMode = .byWordWrapping;
-        //        secondButton.titleLabel?.numberOfLines = 0;
-        secondButton.titleLabel?.lineBreakMode = .byWordWrapping;
+        firstButton.titleLabel?.numberOfLines = 2
+        firstButton.titleLabel?.textAlignment = . center
+        firstButton.titleLabel?.lineBreakMode = .byWordWrapping
+                secondButton.titleLabel?.numberOfLines = 2
+        secondButton.titleLabel?.lineBreakMode = .byWordWrapping
         secondButton.titleLabel?.textAlignment = .center
-        //        thirdButton.titleLabel?.numberOfLines = 0;
-        thirdButton.titleLabel?.lineBreakMode = .byWordWrapping;
+                thirdButton.titleLabel?.numberOfLines = 2
+        thirdButton.titleLabel?.lineBreakMode = .byWordWrapping
         thirdButton.titleLabel?.textAlignment = .center
-        //        fourthButton.titleLabel?.numberOfLines = 0;
-        fourthButton.titleLabel?.lineBreakMode = .byWordWrapping;
+                fourthButton.titleLabel?.numberOfLines = 2
+        fourthButton.titleLabel?.lineBreakMode = .byWordWrapping
         fourthButton.titleLabel?.textAlignment = .center
     }
     
     override func viewDidLayoutSubviews() {
         view.backgroundColor = UIColor.clear
         imageView.image = UIImage(named: object)
-        VoiceAssistant.instance.playSequence(names: ["title", object], overlap: true)
+        VoiceAssistant.instance.playFile(name: object, overlap: true)
+//        VoiceAssistant.instance.playSequence(names: ["title", object], overlap: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -160,7 +161,7 @@ class TestViewController: UIViewController {
             return
         }
         if (number != self.correct) {
-            VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
+//            VoiceAssistant.instance.playFile(type: Voice.oops, overlap: true)
         }
         animation(number: number, counter: counter)
         areButtonsActive = false

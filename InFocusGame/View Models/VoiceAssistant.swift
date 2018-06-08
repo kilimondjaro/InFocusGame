@@ -25,6 +25,7 @@ enum Voice {
 
 class VoiceAssistant {
     private var player: AVAudioPlayer?
+    private var parallelPlayer: AVAudioPlayer?
     private var sequencePlayer: AVQueuePlayer?
     
     private init() {}
@@ -46,6 +47,19 @@ class VoiceAssistant {
         do {
             if let url = Bundle.main.url(forResource: name, withExtension: "mp3") {
                 player = try AVAudioPlayer(contentsOf: url)
+                return true
+            }
+            return false
+        } catch {
+            print("Could not load \"\(name)\" audio file")
+        }
+        return false
+    }
+    
+    private func loadParallelFile(name: String) -> Bool {
+        do {
+            if let url = Bundle.main.url(forResource: name, withExtension: "mp3") {
+                parallelPlayer = try AVAudioPlayer(contentsOf: url)
                 return true
             }
             return false
@@ -77,7 +91,8 @@ class VoiceAssistant {
             return
         }
         
-        loadFile(type: type)        
+        loadFile(type: type)
+        stop()
         player?.play()
     }
     
@@ -87,6 +102,7 @@ class VoiceAssistant {
         }
         let res = loadFile(name: name)
         if res {
+            stop()
             player?.play()
         }
     }    
@@ -100,9 +116,23 @@ class VoiceAssistant {
         sequencePlayer?.play()
     }
     
+    func playParallel(name: String, overlap: Bool) {
+        if ((parallelPlayer != nil && (parallelPlayer?.isPlaying)! && !overlap) || (sequencePlayer?.currentItem != nil && !overlap) || !UserDefaults.standard.bool(forKey: "voiceAssistant")) {
+            return
+        }
+        let res = loadParallelFile(name: name)
+        if res {
+            parallelPlayer?.play()
+        }
+    }
+    
     func stop() {
         if (player != nil && (player?.isPlaying)!) {
             player?.stop()
+        }
+        
+        if (parallelPlayer != nil && (parallelPlayer?.isPlaying)!) {
+            parallelPlayer?.stop()
         }
         
         if (sequencePlayer != nil) {
