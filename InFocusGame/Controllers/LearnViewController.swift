@@ -245,7 +245,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                     viewController.delegate = self
                     viewController.object = self.currentObject
                     viewController.mode = HelpMode.none
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .fullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }
@@ -255,7 +255,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                     viewController.delegate = self
                     viewController.object = self.currentObject
                     viewController.mode = HelpMode.help
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .fullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }
@@ -265,7 +265,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                     viewController.delegate = self
                     viewController.object = self.incorrectObject
                     viewController.mode = HelpMode.fault
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .fullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }
@@ -275,7 +275,7 @@ class LearnViewController: UIViewController, LearnProcessorDelegate, ModalViewCo
                     viewController.delegate = self
                     viewController.object = self.currentObject
                     viewController.stars = self.currentLives
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .fullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }

@@ -97,7 +97,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
                 if let viewController = segue.destination as? HelpViewController {
                     viewController.delegate = self
                     viewController.object = self.pressedObject
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .fullScreen
                     viewController.mode = HelpMode.help
                     VoiceAssistant.instance.stop()
                 }

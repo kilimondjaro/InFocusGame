@@ -165,7 +165,7 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, TestModalView
                     viewController.delegate = self
                     viewController.object = self.scannedObject
                     viewController.category = category
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .fullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }
@@ -175,7 +175,7 @@ class ReadViewController: UIViewController, ScanProcessorDelegate, TestModalView
                     viewController.delegate = self
                     viewController.object = self.scannedObject
                     viewController.stars = self.numberOfStars
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .fullScreen
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
                 }

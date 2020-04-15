@@ -199,9 +199,7 @@
 		26109E51208891F800038E4F /* computer_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = computer_desc.mp3; sourceTree = "<group>"; };
 		26109E532088926A00038E4F /* table_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = table_desc.mp3; sourceTree = "<group>"; };
 		26109E55208892E200038E4F /* cup_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cup_desc.mp3; sourceTree = "<group>"; };
-		2623D71420C981410057592B /* different.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = different.mp3; sourceTree = "<group>"; };
-		2623D71F20C989F10057592B /* Base */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Base; path = Base.lproj/different.mp3; sourceTree = "<group>"; };
-		2623D72120C989F30057592B /* ru */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ru; path = ru.lproj/different.mp3; sourceTree = "<group>"; };
+		2623D71420C981410057592B /* different.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = different.mp3; sourceTree = "<group>"; };			
 		2623F44020AED24900C0F1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Base; path = Base.lproj/bellPepper.mp3; sourceTree = "<group>"; };
 		2623F44220AED24C00C0F1F4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ru; path = ru.lproj/bellPepper.mp3; sourceTree = "<group>"; };
 		2623F44420AED31100C0F1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Base; path = Base.lproj/broccoli.mp3; sourceTree = "<group>"; };
@@ -1108,8 +1106,7 @@
 				2623D71F20C989F10057592B /* Base */,
 				2623D72120C989F30057592B /* ru */,
 			);
-			name = different.mp3;
-			path = ../../../../../../Desktop/audio;
+			name = different.mp3;			
 			sourceTree = "<group>";
 		};
 		2623F44120AED24900C0F1F4 /* bellPepper.mp3 */ = {

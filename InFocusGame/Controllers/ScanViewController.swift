@@ -153,7 +153,7 @@ class ScanViewController: UIViewController, ScanProcessorDelegate, ModalViewCont
                 if let viewController = segue.destination as? HelpViewController {
                     viewController.delegate = self
                     viewController.object = self.scannedObject
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .fullScreen
                     viewController.mode = HelpMode.help
                     self.videoCapture.stop()
                     VoiceAssistant.instance.stop()
